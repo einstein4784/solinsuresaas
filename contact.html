@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Sol-Insure | Request a Demo | Get Pricing</title>
+    <title>Contact Sol-Insure | Get in Touch | Request a Demo</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Contact Sol-Insure to request a demo, get pricing information, or learn more about our modern P&C insurance platform. Our team is ready to help transform your insurance operations." />
@@ -19,12 +19,20 @@
     <meta property="og:description" content="Get in touch with Sol-Insure. Request a demo, get pricing, or learn how we can transform your insurance operations." />
     <meta property="og:image" content="https://sol-insure.com/global/og-image.png" />
     <meta property="og:site_name" content="Sol-Insure" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sol-insure.com/contact" />
     <meta name="twitter:title" content="Contact Sol-Insure | Request a Demo" />
     <meta name="twitter:description" content="Get in touch with Sol-Insure. Request a demo, get pricing, or learn how we can transform your insurance operations." />
     <meta name="twitter:image" content="https://sol-insure.com/global/og-image.png" />
+    
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://sol-insure.com/contact" />
+    <link rel="alternate" hreflang="es" href="https://sol-insure.com/contact?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="https://sol-insure.com/contact" />
     
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#0f172a" />
@@ -42,10 +50,19 @@
       "mainEntity": {
         "@type": "Organization",
         "name": "Sol-Insure",
+        "telephone": "+1-868-460-3788",
+        "email": "saas@solace-systems.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Port Of Spain",
+          "addressCountry": "Trinidad and Tobago"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "sales",
-          "availableLanguage": "English"
+          "telephone": "+1-868-460-3788",
+          "email": "saas@solace-systems.com",
+          "availableLanguage": ["English", "Spanish"]
         }
       }
     }
@@ -57,15 +74,10 @@
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/contact.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script type="module" src="/script/i18n.js"></script>
   </head>
   <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-      <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-      <div class="lang-divider"></div>
-      <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-    </div>
-
     <div class="transition">
       <div class="transition-overlay overlay"></div>
       <div class="transition-logo">
@@ -75,112 +87,287 @@
     <div class="mask-transition"></div>
     <div class="mask-bg-overlay"></div>
 
-    <nav class="menu">
-      <div class="menu-header">
-        <a href="/" class="menu-logo"><img src="/global/logo.png" alt="Sol-Insure" /></a>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <div class="menu menu-hamburger-icon">
-            <span class="menu-item"></span>
-            <span class="menu-item"></span>
-          </div>
-        </button>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+      <!-- Ambient Effects -->
+      <div class="contact-aurora"></div>
+      <div class="contact-grid-pattern"></div>
+      <div class="contact-floating-orbs">
+        <div class="contact-orb contact-orb-1"></div>
+        <div class="contact-orb contact-orb-2"></div>
+        <div class="contact-orb contact-orb-3"></div>
       </div>
-      <div class="menu-overlay">
-        <nav class="menu-nav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/work">Features</a></li>
-            <li><a href="/project">How It Works</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="menu-footer">
-          <div class="menu-social">
-            <a href="#"><span>&#9654;</span> Instagram</a>
-            <a href="#"><span>&#9654;</span> LinkedIn</a>
-          </div>
-          <div class="menu-time">23:24:02 NY</div>
-        </div>
+      <div class="contact-glow-lines">
+        <div class="glow-line glow-line-1"></div>
+        <div class="glow-line glow-line-2"></div>
       </div>
-    </nav>
 
-    <section class="contact">
-      <div class="home-spotlight-top-bar">
-        <div class="container">
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-light.png" alt="Symbol" />
+      <!-- Header Navigation -->
+      <header class="contact-header-nav">
+        <div class="contact-nav-container">
+          <div class="contact-nav-left">
+            <a href="/" class="contact-logo">
+              <img src="/global/LOGO233.png" alt="Sol-Insure" />
+            </a>
+            <!-- Language Toggle -->
+            <div class="language-toggle">
+              <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+              <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
             </div>
           </div>
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-light.png" alt="Symbol" />
+          <nav class="contact-nav-links">
+            <a href="/" data-i18n="nav_home">Home</a>
+            <a href="/work" data-i18n="nav_features">Features</a>
+            <a href="/pricing" data-i18n="pricing_nav_pricing">Pricing</a>
+            <a href="/project" data-i18n="nav_how_it_works">How It Works</a>
+            <a href="/ai" data-i18n="nav_ai">AI</a>
+            <a href="/about" data-i18n="nav_about">About</a>
+            <a href="/contact" class="active" data-i18n="nav_contact">Contact</a>
+          </nav>
+          <div class="nav-buttons">
+            <a href="/login" class="nav-login" data-i18n="nav_login">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+              </svg>
+              Login
+            </a>
+            <a href="/pricing" class="contact-nav-cta" data-i18n="nav_get_started">Get Started</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Content -->
+      <div class="contact-hero-content">
+        <div class="contact-hero-badge">
+          <span class="badge-icon">💬</span>
+          <span data-i18n="contact_badge">Let's Connect</span>
+        </div>
+        <h1 class="contact-hero-title">
+          <span class="title-line" data-i18n="contact_title_1">We'd Love to</span>
+          <span class="title-gradient" data-i18n="contact_title_2">Hear From You</span>
+        </h1>
+        <p class="contact-hero-subtitle" data-i18n="contact_subtitle">
+          Whether you're ready to transform your insurance operations or just exploring possibilities, our team is here to help you every step of the way.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main">
+      <div class="contact-container">
+        <!-- Contact Info Cards -->
+        <div class="contact-info-grid">
+          <!-- Email Card -->
+          <div class="contact-info-card">
+            <div class="info-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <h3 data-i18n="contact_email_title">Email Us</h3>
+              <p data-i18n="contact_email_desc">For inquiries and support</p>
+              <a href="mailto:saas@solace-systems.com" class="info-card-link">saas@solace-systems.com</a>
+            </div>
+            <div class="info-card-glow"></div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="contact-info-card">
+            <div class="info-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <h3 data-i18n="contact_phone_title">Call Us</h3>
+              <p data-i18n="contact_phone_desc">Mon-Fri from 8am to 6pm</p>
+              <a href="tel:+18684603788" class="info-card-link">1 (868) 460-3788</a>
+            </div>
+            <div class="info-card-glow"></div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="contact-info-card">
+            <div class="info-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <h3 data-i18n="contact_location_title">Visit Us</h3>
+              <p data-i18n="contact_location_desc">Our headquarters</p>
+              <span class="info-card-link">Port Of Spain, Trinidad</span>
+            </div>
+            <div class="info-card-glow"></div>
+          </div>
+        </div>
+
+        <!-- Main Contact Grid -->
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <div class="form-header">
+              <h2 data-i18n="contact_form_title">Send Us a Message</h2>
+              <p data-i18n="contact_form_subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName" data-i18n="contact_first_name">First Name</label>
+                  <input type="text" id="firstName" name="firstName" required placeholder="John" data-i18n-placeholder="contact_first_name_placeholder">
+                  <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                  <label for="lastName" data-i18n="contact_last_name">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" required placeholder="Doe" data-i18n-placeholder="contact_last_name_placeholder">
+                  <div class="input-glow"></div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email" data-i18n="contact_email">Email Address</label>
+                  <input type="email" id="email" name="email" required placeholder="john@company.com" data-i18n-placeholder="contact_email_placeholder">
+                  <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                  <label for="phone" data-i18n="contact_phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+1 (868) 000-0000" data-i18n-placeholder="contact_phone_placeholder">
+                  <div class="input-glow"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="company" data-i18n="contact_company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Your Company" data-i18n-placeholder="contact_company_placeholder">
+                <div class="input-glow"></div>
+              </div>
+              <div class="form-group">
+                <label for="subject" data-i18n="contact_subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="" data-i18n="contact_select_subject">Select a subject...</option>
+                  <option value="demo" data-i18n="contact_subject_demo">Request a Demo</option>
+                  <option value="pricing" data-i18n="contact_subject_pricing">Pricing Information</option>
+                  <option value="support" data-i18n="contact_subject_support">Technical Support</option>
+                  <option value="partnership" data-i18n="contact_subject_partnership">Partnership Inquiry</option>
+                  <option value="other" data-i18n="contact_subject_other">Other</option>
+                </select>
+                <div class="input-glow"></div>
+              </div>
+              <div class="form-group">
+                <label for="message" data-i18n="contact_message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your insurance operations and how we can help..." data-i18n-placeholder="contact_message_placeholder"></textarea>
+                <div class="input-glow"></div>
+              </div>
+              <button type="submit" class="form-submit-btn">
+                <span data-i18n="contact_submit">Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <div class="btn-glow"></div>
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick Actions Panel -->
+          <div class="contact-quick-actions">
+            <div class="quick-action-card demo-card">
+              <div class="action-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <h3 data-i18n="contact_demo_title">Schedule a Demo</h3>
+              <p data-i18n="contact_demo_desc">See Sol-Insure in action with a personalized walkthrough of our platform.</p>
+              <a href="#contactForm" class="action-btn" data-i18n="contact_demo_btn">Book Demo</a>
+              <div class="action-card-bg"></div>
+            </div>
+
+            <div class="quick-action-card support-card">
+              <div class="action-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <h3 data-i18n="contact_support_title">Support Center</h3>
+              <p data-i18n="contact_support_desc">Access our knowledge base, tutorials, and technical documentation.</p>
+              <a href="#" class="action-btn" data-i18n="contact_support_btn">Get Help</a>
+              <div class="action-card-bg"></div>
+            </div>
+
+            <div class="quick-action-card sales-card">
+              <div class="action-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 data-i18n="contact_sales_title">Talk to Sales</h3>
+              <p data-i18n="contact_sales_desc">Get a custom quote tailored to your organization's specific needs.</p>
+              <a href="tel:+18684603788" class="action-btn" data-i18n="contact_sales_btn">Call Now</a>
+              <div class="action-card-bg"></div>
+            </div>
+
+            <!-- Response Time Card -->
+            <div class="response-time-card">
+              <div class="response-icon">⚡</div>
+              <div class="response-content">
+                <h4 data-i18n="contact_response_title">Fast Response Guarantee</h4>
+                <p data-i18n="contact_response_desc">We typically respond within 2-4 business hours during working days.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="contact-header">
-          <div class="contact-callout">
-            <p
-              class="mono"
-              data-animate-type="scramble"
-              data-animate-delay="0.25"
-            >
-              <span>&#9654;</span> Get in Touch
-            </p>
-          </div>
-          <div class="contact-header-title">
-            <h2 data-animate-type="line-reveal" data-animate-delay="0.25">
-              Ready to Transform Your Insurance Operations?
-            </h2>
-          </div>
-        </div>
-        <div class="contact-gif">
-          <img src="/contact/contact.gif" alt="" />
-        </div>
-      </div>
-      <div class="home-spotlight-bottom-bar">
-        <div class="container">
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-          >
-            <span>&#9654;</span> Schedule a Demo
-          </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-          >
-            <span>&#9654;</span> Request Pricing
-          </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-          >
-            <span>&#9654;</span> Technical Support
-          </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-          >
-            <span>&#9654;</span> General Inquiry
-          </p>
         </div>
       </div>
     </section>
 
+    <!-- Map Section -->
+    <section class="contact-map-section">
+      <div class="map-overlay"></div>
+      <div class="map-content">
+        <div class="map-badge">
+          <span>🌍</span>
+          <span data-i18n="contact_global_title">Global Reach, Local Touch</span>
+        </div>
+        <h2 data-i18n="contact_global_subtitle">Serving Insurance Companies Worldwide</h2>
+        <p data-i18n="contact_global_desc">Based in Trinidad and Tobago, our cloud-native platform empowers insurers across the Caribbean and beyond.</p>
+        <div class="global-stats">
+          <div class="global-stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label" data-i18n="contact_stat_clients">Enterprise Clients</span>
+          </div>
+          <div class="global-stat">
+            <span class="stat-number">15+</span>
+            <span class="stat-label" data-i18n="contact_stat_countries">Countries Served</span>
+          </div>
+          <div class="global-stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label" data-i18n="contact_stat_support">Support Available</span>
+          </div>
+        </div>
+      </div>
+      <div class="world-map-animation" id="worldMapLottie"></div>
+    </section>
+
+    <!-- Footer -->
     <section class="footer-section">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-col-2">
-            <img class="footer-logo-img" src="/global/logo.png" alt="Sol-Insure" />
+            <img class="footer-logo-img" src="/global/LOGO233.png" alt="Sol-Insure" />
             <p class="footer-description">Modern P&C Insurance. Delivered as SaaS. Enterprise power without enterprise complexity. A cloud-native platform built for insurers who demand clarity, speed, and control.</p>
+            <div class="footer-contact-info">
+              <p><strong>Email:</strong> <a href="mailto:saas@solace-systems.com">saas@solace-systems.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+18684603788">1 (868) 460-3788</a></p>
+              <p><strong>Location:</strong> Port Of Spain, Trinidad</p>
+            </div>
             <ul class="footer-social">
               <li>
                 <a href="#" title="Twitter" class="footer-social-link">
@@ -190,18 +377,9 @@
                 </a>
               </li>
               <li>
-                <a href="#" title="Facebook" class="footer-social-link">
+                <a href="#" title="LinkedIn" class="footer-social-link">
                   <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="Instagram" class="footer-social-link">
-                  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
-                    <circle cx="16.806" cy="7.207" r="1.078"></circle>
-                    <path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                   </svg>
                 </a>
               </li>
@@ -215,32 +393,28 @@
             </ul>
           </div>
           <div class="footer-col">
-            <p class="footer-heading">Company</p>
+            <p class="footer-heading">Product</p>
             <ul class="footer-links-list">
-              <li><a href="/about" class="footer-link">About</a></li>
               <li><a href="/work" class="footer-link">Features</a></li>
+              <li><a href="/pricing" class="footer-link" data-i18n="pricing_nav_pricing">Pricing</a></li>
               <li><a href="/project" class="footer-link">How It Works</a></li>
-              <li><a href="/contact" class="footer-link">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <p class="footer-heading">Help</p>
+            <p class="footer-heading">Company</p>
             <ul class="footer-links-list">
-              <li><a href="#" class="footer-link">Customer Support</a></li>
-              <li><a href="#" class="footer-link">Documentation</a></li>
-              <li><a href="#" class="footer-link">Terms & Conditions</a></li>
-              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="/about" class="footer-link">About</a></li>
+              <li><a href="/contact" class="footer-link">Contact</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
             </ul>
           </div>
-          <div class="footer-col-2 footer-newsletter">
-            <p class="footer-heading">Subscribe to newsletter</p>
-            <form action="#" method="POST" class="footer-form">
-              <div>
-                <label for="email-contact" class="sr-only">Email</label>
-                <input type="email" name="email" id="email-contact" placeholder="Enter your email" class="footer-input" />
-              </div>
-              <button type="submit" class="footer-button">Subscribe</button>
-            </form>
+          <div class="footer-col">
+            <p class="footer-heading">Support</p>
+            <ul class="footer-links-list">
+              <li><a href="#" class="footer-link">Help Center</a></li>
+              <li><a href="#" class="footer-link">Documentation</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            </ul>
           </div>
         </div>
         <hr class="footer-divider" />

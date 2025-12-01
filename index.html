@@ -20,6 +20,7 @@
     <meta property="og:image" content="https://sol-insure.com/global/og-image.png" />
     <meta property="og:site_name" content="Sol-Insure" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,6 +34,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://sol-insure.com/" />
+    <link rel="alternate" hreflang="es" href="https://sol-insure.com/?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="https://sol-insure.com/" />
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="/global/site-icon.png" />
@@ -77,15 +83,10 @@
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/chatbot.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
   </head>
   <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-      <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-      <div class="lang-divider"></div>
-      <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-    </div>
-
     <div class="transition">
       <div class="transition-overlay overlay"></div>
       <div class="transition-logo">
@@ -95,35 +96,7 @@
     <div class="mask-transition"></div>
     <div class="mask-bg-overlay"></div>
 
-    <nav class="menu">
-      <div class="menu-header">
-        <a href="/" class="menu-logo"><img src="/global/logo.png" alt="Sol-Insure" /></a>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <div class="menu menu-hamburger-icon">
-            <span class="menu-item"></span>
-            <span class="menu-item"></span>
-          </div>
-        </button>
-      </div>
-      <div class="menu-overlay">
-        <nav class="menu-nav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/work">Features</a></li>
-            <li><a href="/project">How It Works</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="menu-footer">
-          <div class="menu-social">
-            <a href="#"><span>&#9654;</span> Instagram</a>
-            <a href="#"><span>&#9654;</span> LinkedIn</a>
-          </div>
-          <div class="menu-time">23:24:02 NY</div>
-        </div>
-      </div>
-    </nav>
+    <!-- Main menu removed - using hero header nav instead -->
 
     <section class="hero morphing-bg">
       <!-- GOD-LEVEL Ambient Visual Effects -->
@@ -161,21 +134,40 @@
       <header class="hero-header-nav bg-gray-900 border-b border-gray-800">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 xl:px-12">
           <div class="flex items-center justify-between h-16 lg:h-[72px]">
-            <div class="flex items-center flex-shrink-0">
+            <div class="flex items-center flex-shrink-0 gap-4">
               <a href="/" title="Sol-Insure" class="inline-flex">
                 <span class="sr-only">Sol-Insure logo</span>
                 <img class="w-auto h-8" src="/global/LOGO233.png" alt="Sol-Insure" />
               </a>
+              <!-- Language Toggle -->
+              <div class="language-toggle">
+                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+              </div>
             </div>
 
             <div class="hidden lg:flex lg:justify-center lg:space-x-10 xl:space-x-14">
               <a href="/work" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_features">Features</a>
               <a href="/project" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_how_it_works">How It Works</a>
+              <a href="/pricing" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="pricing_nav_pricing">Pricing</a>
+              <a href="/ai" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_ai">AI</a>
               <a href="/about" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_about">About</a>
               <a href="/contact" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_contact">Contact</a>
             </div>
 
-            <div class="flex items-center justify-end space-x-5">
+            <div class="flex items-center justify-end space-x-4">
+              <a href="/login" class="hidden lg:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-300 transition-all duration-200 border border-gray-600 rounded-lg hover:bg-gray-800 hover:text-white hover:border-gray-500" data-i18n="nav_login">
+                <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+                </svg>
+                Login
+              </a>
+              <a href="/contact" class="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg hover:from-indigo-600 hover:to-purple-700 shadow-lg shadow-indigo-500/25" data-i18n="nav_get_started">
+                Get Started
+                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
               <button type="button" class="p-2 -m-2 text-white transition-all duration-200 lg:hidden hover:text-gray-200 menu-toggle" aria-label="Toggle menu">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -192,65 +184,136 @@
           <div class="hero-lottie-bg" id="hero-lottie-bg-desktop"></div>
         </div>
 
-        <div class="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div class="max-w-xl mx-auto text-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0">
-            <h1 class="text-3xl font-bold text-white sm:text-4xl xl:text-5xl xl:leading-tight" data-i18n="hero_title">Sol-Insure</h1>
-            <p class="mt-8 text-base font-normal leading-7 text-gray-400 lg:max-w-md xl:pr-0 lg:pr-16" data-i18n="hero_description">Transform your insurance operations with our cloud-native platform. Built for P&C insurers who demand speed, transparency, and control.</p>
+        <!-- Floating Decorative Elements -->
+        <div class="hero-floating-elements">
+          <div class="hero-float-orb hero-float-orb-1"></div>
+          <div class="hero-float-orb hero-float-orb-2"></div>
+          <div class="hero-float-orb hero-float-orb-3"></div>
+          <div class="hero-glow-line hero-glow-line-1"></div>
+          <div class="hero-glow-line hero-glow-line-2"></div>
+        </div>
 
-            <div class="flex items-center justify-center mt-8 space-x-5 xl:mt-16 lg:justify-start">
-              <a
-                href="/contact"
-                title=""
-                class="
-                  inline-flex
-                  items-center
-                  justify-center
-                  px-3
-                  py-3
-                  text-base
-                  font-bold
-                  leading-7
-                  text-gray-900
-                  transition-all
-                  duration-200
-                  bg-white
-                  border border-transparent
-                  rounded-md
-                  sm:px-6
-                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-white
-                  hover:bg-gray-200
-                "
-                role="button"
-              >
-                <span data-i18n="hero_cta_demo">Request Demo</span>
-              </a>
+        <div class="relative px-4 mx-auto sm:px-6 lg:px-8 hero-container">
+          <div class="hero-content-grid">
+            <!-- Left: Text Content -->
+            <div class="hero-text-content">
+              <!-- Badge -->
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span class="hero-badge-text">Next-Gen Insurance Platform</span>
+              </div>
+              
+              <!-- Main Heading with Gradient -->
+              <h1 class="hero-main-title">
+                <span class="hero-title-gradient" data-i18n="hero_title">Sol-Insure</span>
+              </h1>
+              
+              <!-- Animated Tagline -->
+              <p class="hero-tagline">
+                <span class="hero-tagline-line">The Future of</span>
+                <span class="hero-tagline-highlight">Insurance Technology</span>
+              </p>
+              
+              <!-- Description -->
+              <p class="hero-description" data-i18n="hero_description">Transform your insurance operations with our cloud-native platform. Built for P&C insurers who demand speed, transparency, and control.</p>
 
-              <a
-                href="/work"
-                title=""
-                class="
-                  inline-flex
-                  items-center
-                  justify-center
-                  px-2
-                  py-3
-                  text-base
-                  font-bold
-                  leading-7
-                  text-white
-                  transition-all
-                  duration-200
-                  bg-transparent
-                  border border-transparent
-                  rounded-md
-                  sm:px-4
-                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-gray-700
-                  hover:bg-gray-700
-                "
-                role="button"
-              >
-                <span data-i18n="hero_cta_features">Explore Features</span>
-              </a>
+              <!-- CTA Buttons -->
+              <div class="hero-cta-group">
+                <a href="/contact" class="hero-cta-primary" role="button">
+                  <span class="hero-cta-glow"></span>
+                  <span class="hero-cta-text" data-i18n="hero_cta_demo">Request Demo</span>
+                  <svg class="hero-cta-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+                <a href="/work" class="hero-cta-secondary" role="button">
+                  <span class="hero-cta-text" data-i18n="hero_cta_features">Explore Features</span>
+                  <svg class="hero-cta-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Stats Row -->
+              <div class="hero-stats">
+                <div class="hero-stat">
+                  <span class="hero-stat-number">99.9%</span>
+                  <span class="hero-stat-label">Uptime</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                  <span class="hero-stat-number">50%</span>
+                  <span class="hero-stat-label">Faster Claims</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                  <span class="hero-stat-number">24/7</span>
+                  <span class="hero-stat-label">Support</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Enhanced Image Carousel -->
+            <div class="hero-carousel-container">
+              <div class="hero-carousel-wrapper">
+                <div class="carousel-ring carousel-ring-1"></div>
+                <div class="carousel-ring carousel-ring-2"></div>
+                <div class="hero-carousel">
+                  <div class="carousel-track">
+                    <div class="carousel-slide active">
+                      <img src="https://picsum.photos/seed/dashboard/600/400" alt="Insurance Dashboard" />
+                      <div class="slide-overlay">
+                        <div class="slide-icon">📊</div>
+                        <span class="slide-label">Dashboard Analytics</span>
+                        <span class="slide-desc">Real-time performance metrics</span>
+                      </div>
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="https://picsum.photos/seed/insights/600/400" alt="Data Insights" />
+                      <div class="slide-overlay">
+                        <div class="slide-icon">💡</div>
+                        <span class="slide-label">Real-Time Insights</span>
+                        <span class="slide-desc">AI-powered analytics</span>
+                      </div>
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="https://picsum.photos/seed/team/600/400" alt="Team Collaboration" />
+                      <div class="slide-overlay">
+                        <div class="slide-icon">🤝</div>
+                        <span class="slide-label">Team Collaboration</span>
+                        <span class="slide-desc">Seamless workflows</span>
+                      </div>
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="https://picsum.photos/seed/cloud/600/400" alt="Cloud Platform" />
+                      <div class="slide-overlay">
+                        <div class="slide-icon">☁️</div>
+                        <span class="slide-label">Cloud Platform</span>
+                        <span class="slide-desc">Enterprise-grade security</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-nav">
+                    <button class="carousel-btn prev" aria-label="Previous slide">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <div class="carousel-dots">
+                      <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
+                      <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
+                      <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
+                      <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+                    </div>
+                    <button class="carousel-btn next" aria-label="Next slide">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="carousel-reflection"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -527,177 +590,193 @@
       <div class="section-transition-bottom"></div>
     </section>
 
-    <section class="home-about">
-      <!-- Ambient Visual Effects -->
-      <div class="particle-field">
-        <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 30%; left: 80%; animation-delay: -3s;"></div>
-        <div class="particle" style="top: 50%; left: 40%; animation-delay: -6s;"></div>
-        <div class="particle" style="top: 70%; left: 60%; animation-delay: -9s;"></div>
-        <div class="particle" style="top: 90%; left: 25%; animation-delay: -12s;"></div>
-        <div class="particle" style="top: 20%; left: 90%; animation-delay: -2s; background: rgba(168, 85, 247, 0.6);"></div>
-        <div class="particle" style="top: 45%; left: 10%; animation-delay: -5s; background: rgba(168, 85, 247, 0.6);"></div>
-        <div class="particle" style="top: 75%; left: 70%; animation-delay: -8s; background: rgba(99, 102, 241, 0.6);"></div>
-      </div>
-      <div class="home-about-world-map-bg" id="home-about-world-map"></div>
-      <div class="section-border-bottom"></div>
-      <div class="section-border-artifact-left"></div>
-      <div class="section-border-artifact-right"></div>
-      <div class="home-about-wrapper">
-        <div class="home-about-container">
-          <div class="home-about-header-section">
-            <div class="home-about-header-text">
-              <p class="home-about-subtitle">Our core values drive everything we build</p>
-              <h2 class="home-about-title">Built for Insurers</h2>
-            </div>
-            <div class="home-about-video-container">
-              <video autoplay loop muted playsinline class="home-about-video" preload="auto">
-                <source src="/LOGOReveal1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+      <!-- Ambient Effects -->
+      <div class="pricing-bg-gradient"></div>
+      <div class="pricing-grid-pattern"></div>
+      <div class="pricing-floating-orb pricing-orb-1"></div>
+      <div class="pricing-floating-orb pricing-orb-2"></div>
+      <div class="pricing-floating-orb pricing-orb-3"></div>
+      
+      <div class="pricing-container">
+        <!-- Header -->
+        <div class="pricing-header">
+          <div class="pricing-badge">
+            <span class="pricing-badge-icon">💎</span>
+            <span>Transparent Pricing</span>
           </div>
+          <h2 class="pricing-title">
+            <span class="pricing-title-gradient">Choose Your Plan</span>
+          </h2>
+          <p class="pricing-subtitle">Flexible pricing that scales with your business. No hidden fees, no surprises.</p>
+          
+          <!-- Billing Toggle -->
+          <div class="billing-toggle">
+            <span class="billing-option active">Monthly</span>
+            <div class="toggle-switch">
+              <div class="toggle-slider"></div>
+            </div>
+            <span class="billing-option">Annual</span>
+            <span class="billing-save">Save 20%</span>
+          </div>
+        </div>
 
-          <div class="home-about-cards-wrapper">
-            <div class="home-about-gradient-blur"></div>
-            <div class="home-about-cards-grid">
-              <div class="home-about-card" id="value-card-1">
-                <div class="value-card-inner">
-                  <div class="value-card-front">
-                    <div class="value-card-content">
-                      <div class="value-icon-wrapper">
-                        <svg class="value-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="50" cy="50" r="45" stroke="#44b0ff" stroke-width="2" fill="none"/>
-                          <path d="M30 50 L45 65 L70 35" stroke="#44b0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                          <rect x="20" y="20" width="20" height="20" rx="2" fill="#44b0ff" opacity="0.2"/>
-                          <rect x="60" y="20" width="20" height="20" rx="2" fill="#44b0ff" opacity="0.2"/>
-                          <rect x="20" y="60" width="20" height="20" rx="2" fill="#44b0ff" opacity="0.2"/>
-                          <rect x="60" y="60" width="20" height="20" rx="2" fill="#44b0ff" opacity="0.2"/>
-                          <line x1="30" y1="30" x2="38" y2="38" stroke="#44b0ff" stroke-width="1.5"/>
-                          <line x1="70" y1="30" x2="62" y2="38" stroke="#44b0ff" stroke-width="1.5"/>
-                          <line x1="30" y1="70" x2="38" y2="62" stroke="#44b0ff" stroke-width="1.5"/>
-                          <line x1="70" y1="70" x2="62" y2="62" stroke="#44b0ff" stroke-width="1.5"/>
-                        </svg>
-                      </div>
-                      <h4>Transparency</h4>
-                    </div>
-                  </div>
-                  <div class="value-card-back">
-                    <div class="value-card-content">
-                      <h4>Transparency</h4>
-                      <p class="value-description">Complete visibility into every process, decision, and transaction. Real-time dashboards, audit trails, and comprehensive reporting ensure you always know what's happening in your insurance operations.</p>
-                      <ul class="value-features">
-                        <li>Real-time dashboards</li>
-                        <li>Complete audit trails</li>
-                        <li>Comprehensive reporting</li>
-                        <li>Full process visibility</li>
-                      </ul>
-                    </div>
-                  </div>
+        <!-- Pricing Cards Grid -->
+        <div class="pricing-cards-wrapper">
+          <div class="pricing-cards-glow"></div>
+          <div class="pricing-cards-grid">
+            
+            <!-- Starter Plan -->
+            <div class="pricing-card" data-plan="starter">
+              <div class="pricing-card-inner">
+                <div class="pricing-card-header">
+                  <div class="plan-icon">🚀</div>
+                  <h3 class="plan-name">Starter</h3>
+                  <p class="plan-desc">Perfect for small agencies</p>
                 </div>
-              </div>
-
-              <div class="home-about-card" id="value-card-2">
-                <div class="value-card-inner">
-                  <div class="value-card-front">
-                    <div class="value-card-content">
-                      <div class="value-icon-wrapper">
-                        <svg class="value-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="50" cy="50" r="40" stroke="#44b0ff" stroke-width="2" fill="none"/>
-                          <path d="M50 20 L50 50 L70 50" stroke="#44b0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                          <circle cx="50" cy="50" r="5" fill="#44b0ff"/>
-                          <path d="M30 30 L25 25 M70 30 L75 25 M30 70 L25 75 M70 70 L75 75" stroke="#44b0ff" stroke-width="2" stroke-linecap="round"/>
-                          <circle cx="30" cy="30" r="3" fill="#44b0ff" opacity="0.6"/>
-                          <circle cx="70" cy="30" r="3" fill="#44b0ff" opacity="0.6"/>
-                          <circle cx="30" cy="70" r="3" fill="#44b0ff" opacity="0.6"/>
-                          <circle cx="70" cy="70" r="3" fill="#44b0ff" opacity="0.6"/>
-                          <path d="M50 20 L50 15 M50 80 L50 85" stroke="#44b0ff" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                      </div>
-                      <h4>Reliability</h4>
-                    </div>
-                  </div>
-                  <div class="value-card-back">
-                    <div class="value-card-content">
-                      <h4>Reliability</h4>
-                      <p class="value-description">Built on AWS infrastructure with 99.9% uptime SLA. Automated backups, disaster recovery, and continuous monitoring ensure your operations never stop.</p>
-                      <ul class="value-features">
-                        <li>99.9% uptime SLA</li>
-                        <li>AWS infrastructure</li>
-                        <li>Automated backups</li>
-                        <li>Enterprise security</li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="pricing-card-price">
+                  <span class="currency">$</span>
+                  <span class="amount">299</span>
+                  <span class="period">/month</span>
                 </div>
-              </div>
-
-              <div class="home-about-card" id="value-card-3">
-                <div class="value-card-inner">
-                  <div class="value-card-front">
-                    <div class="value-card-content">
-                      <div class="value-icon-wrapper">
-                        <svg class="value-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M50 20 L60 40 L80 40 L65 55 L70 75 L50 65 L30 75 L35 55 L20 40 L40 40 Z" stroke="#44b0ff" stroke-width="2" fill="#44b0ff" opacity="0.1"/>
-                          <circle cx="50" cy="50" r="35" stroke="#44b0ff" stroke-width="2" fill="none"/>
-                          <path d="M35 35 L45 45 M55 45 L65 35 M35 65 L45 55 M55 55 L65 65" stroke="#44b0ff" stroke-width="2" stroke-linecap="round"/>
-                          <circle cx="50" cy="50" r="8" fill="#44b0ff" opacity="0.3"/>
-                          <path d="M50 42 L50 58 M42 50 L58 50" stroke="#44b0ff" stroke-width="2" stroke-linecap="round"/>
-                          <path d="M25 25 L30 30 M75 25 L70 30 M25 75 L30 70 M75 75 L70 70" stroke="#44b0ff" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                        </svg>
-                      </div>
-                      <h4>Innovation</h4>
-                    </div>
-                  </div>
-                  <div class="value-card-back">
-                    <div class="value-card-content">
-                      <h4>Innovation</h4>
-                      <p class="value-description">Cloud-native architecture, AI-powered fraud detection, and continuous feature updates keep you ahead of the curve. Built with modern technologies that scale with your business.</p>
-                      <ul class="value-features">
-                        <li>Cloud-native architecture</li>
-                        <li>AI-powered features</li>
-                        <li>Continuous updates</li>
-                        <li>Scalable technology</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="home-about-card" id="value-card-4">
-                <div class="value-card-inner">
-                  <div class="value-card-front">
-                    <div class="value-card-content">
-                      <div class="value-icon-wrapper">
-                        <svg class="value-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="50" cy="50" r="40" stroke="#44b0ff" stroke-width="2" fill="none"/>
-                          <path d="M30 50 L50 30 L70 50 L50 70 Z" fill="#44b0ff" opacity="0.1"/>
-                          <path d="M30 50 L50 30 L70 50" stroke="#44b0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M50 30 L50 70" stroke="#44b0ff" stroke-width="2" stroke-linecap="round"/>
-                          <path d="M30 50 L70 50" stroke="#44b0ff" stroke-width="2" stroke-linecap="round"/>
-                          <circle cx="50" cy="50" r="6" fill="#44b0ff"/>
-                          <path d="M20 20 L25 25 M80 20 L75 25 M20 80 L25 75 M80 80 L75 75" stroke="#44b0ff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                          <path d="M15 50 L20 50 M85 50 L80 50 M50 15 L50 20 M50 85 L50 80" stroke="#44b0ff" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
-                        </svg>
-                      </div>
-                      <h4>Speed & Efficiency</h4>
-                    </div>
-                  </div>
-                  <div class="value-card-back">
-                    <div class="value-card-content">
-                      <h4>Speed & Efficiency</h4>
-                      <p class="value-description">Automated workflows, intelligent routing, and streamlined processes reduce manual work by up to 70%. Get quotes in seconds, process claims faster, and launch new products in days.</p>
-                      <ul class="value-features">
-                        <li>70% less manual work</li>
-                        <li>Instant quote generation</li>
-                        <li>Faster claims processing</li>
-                        <li>Rapid product launches</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <ul class="pricing-features">
+                  <li><span class="check">✓</span> Up to 1,000 policies</li>
+                  <li><span class="check">✓</span> Basic claims management</li>
+                  <li><span class="check">✓</span> Email support</li>
+                  <li><span class="check">✓</span> Standard reporting</li>
+                  <li><span class="check">✓</span> Single user</li>
+                  <li class="disabled"><span class="x">×</span> API access</li>
+                  <li class="disabled"><span class="x">×</span> Custom integrations</li>
+                </ul>
+                <a href="/pricing" class="pricing-cta">Get Started</a>
               </div>
             </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card" data-plan="professional">
+              <div class="pricing-card-inner">
+                <div class="pricing-card-header">
+                  <div class="plan-icon">⚡</div>
+                  <h3 class="plan-name">Professional</h3>
+                  <p class="plan-desc">For growing insurers</p>
+                </div>
+                <div class="pricing-card-price">
+                  <span class="currency">$</span>
+                  <span class="amount">799</span>
+                  <span class="period">/month</span>
+                </div>
+                <ul class="pricing-features">
+                  <li><span class="check">✓</span> Up to 10,000 policies</li>
+                  <li><span class="check">✓</span> Advanced claims workflow</li>
+                  <li><span class="check">✓</span> Priority support</li>
+                  <li><span class="check">✓</span> Advanced analytics</li>
+                  <li><span class="check">✓</span> Up to 10 users</li>
+                  <li><span class="check">✓</span> API access</li>
+                  <li class="disabled"><span class="x">×</span> Custom integrations</li>
+                </ul>
+                <a href="/pricing" class="pricing-cta">Get Started</a>
+              </div>
+            </div>
+
+            <!-- Business Plan - Popular -->
+            <div class="pricing-card popular" data-plan="business">
+              <div class="popular-badge">Most Popular</div>
+              <div class="pricing-card-glow"></div>
+              <div class="pricing-card-inner">
+                <div class="pricing-card-header">
+                  <div class="plan-icon">🏆</div>
+                  <h3 class="plan-name">Business</h3>
+                  <p class="plan-desc">Best for mid-size carriers</p>
+                </div>
+                <div class="pricing-card-price">
+                  <span class="currency">$</span>
+                  <span class="amount">1,499</span>
+                  <span class="period">/month</span>
+                </div>
+                <ul class="pricing-features">
+                  <li><span class="check">✓</span> Up to 50,000 policies</li>
+                  <li><span class="check">✓</span> Full claims automation</li>
+                  <li><span class="check">✓</span> 24/7 priority support</li>
+                  <li><span class="check">✓</span> AI-powered insights</li>
+                  <li><span class="check">✓</span> Up to 50 users</li>
+                  <li><span class="check">✓</span> Full API access</li>
+                  <li><span class="check">✓</span> Custom integrations</li>
+                </ul>
+                <a href="/pricing" class="pricing-cta primary">Get Started</a>
+              </div>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card" data-plan="enterprise">
+              <div class="pricing-card-inner">
+                <div class="pricing-card-header">
+                  <div class="plan-icon">🏢</div>
+                  <h3 class="plan-name">Enterprise</h3>
+                  <p class="plan-desc">For large carriers</p>
+                </div>
+                <div class="pricing-card-price">
+                  <span class="currency">$</span>
+                  <span class="amount">2,999</span>
+                  <span class="period">/month</span>
+                </div>
+                <ul class="pricing-features">
+                  <li><span class="check">✓</span> Unlimited policies</li>
+                  <li><span class="check">✓</span> Multi-branch support</li>
+                  <li><span class="check">✓</span> Dedicated success manager</li>
+                  <li><span class="check">✓</span> Advanced compliance tools</li>
+                  <li><span class="check">✓</span> Unlimited users</li>
+                  <li><span class="check">✓</span> White-label options</li>
+                  <li><span class="check">✓</span> SLA guarantee</li>
+                </ul>
+                <a href="/pricing" class="pricing-cta">Contact Sales</a>
+              </div>
+            </div>
+
+            <!-- Custom Plan -->
+            <div class="pricing-card custom" data-plan="custom">
+              <div class="pricing-card-inner">
+                <div class="pricing-card-header">
+                  <div class="plan-icon">✨</div>
+                  <h3 class="plan-name">Custom</h3>
+                  <p class="plan-desc">Tailored solutions</p>
+                </div>
+                <div class="pricing-card-price custom-price">
+                  <span class="custom-text">Let's Talk</span>
+                </div>
+                <ul class="pricing-features">
+                  <li><span class="check">✓</span> Everything in Enterprise</li>
+                  <li><span class="check">✓</span> Custom development</li>
+                  <li><span class="check">✓</span> On-premise deployment</li>
+                  <li><span class="check">✓</span> Dedicated infrastructure</li>
+                  <li><span class="check">✓</span> Custom SLA</li>
+                  <li><span class="check">✓</span> Training & onboarding</li>
+                  <li><span class="check">✓</span> 24/7 phone support</li>
+                </ul>
+                <a href="/pricing" class="pricing-cta">Contact Sales</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pricing-trust">
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <span>Enterprise Security</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">📊</span>
+            <span>99.9% Uptime</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🌍</span>
+            <span>GDPR Compliant</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">💬</span>
+            <span>24/7 Support</span>
           </div>
         </div>
       </div>
@@ -873,160 +952,437 @@
       <div class="section-transition-bottom"></div>
     </section>
 
-    <section class="home-services">
-      <!-- Ambient Visual Effects -->
-      <div class="hex-grid"></div>
-      <div class="ambient-spotlight ambient-spotlight-1"></div>
-      <div class="ambient-spotlight ambient-spotlight-2"></div>
-      <div class="home-services-lottie-bg" id="home-services-family-insurance"></div>
-      <div class="section-border-bottom"></div>
-      <div class="section-border-artifact-left"></div>
-      <div class="section-border-artifact-right"></div>
-      <div class="home-services-top-bar">
-        <div class="container">
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-dark.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s3-dark.png" alt="Symbol" />
-            </div>
-          </div>
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s3-dark.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s1-dark.png" alt="Symbol" />
-            </div>
-          </div>
+    <!-- TRUST PLATFORM SECTION - ENHANCED -->
+    <section class="trust-platform-section">
+      <!-- Dramatic Background Effects -->
+      <div class="trust-aurora"></div>
+      <div class="trust-mesh-gradient"></div>
+      <div class="trust-noise-overlay"></div>
+      <div class="trust-spotlight spotlight-1"></div>
+      <div class="trust-spotlight spotlight-2"></div>
+      <div class="trust-spotlight spotlight-3"></div>
+      
+      <!-- Animated Hex Grid -->
+      <div class="trust-hex-grid">
+        <div class="hex-cell"></div>
+        <div class="hex-cell"></div>
+        <div class="hex-cell"></div>
+        <div class="hex-cell"></div>
+        <div class="hex-cell"></div>
+        <div class="hex-cell"></div>
+      </div>
+      
+      <!-- Floating 3D Elements -->
+      <div class="trust-floating-elements">
+        <div class="float-element el-shield">
+          <svg viewBox="0 0 100 100" fill="none">
+            <defs>
+              <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#818cf8"/>
+                <stop offset="100%" stop-color="#6366f1"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 5 L90 25 L90 55 Q90 80 50 95 Q10 80 10 55 L10 25 Z" 
+                  stroke="url(#shieldGrad)" stroke-width="2" fill="none" opacity="0.6"/>
+            <path d="M50 15 L80 30 L80 52 Q80 72 50 85 Q20 72 20 52 L20 30 Z" 
+                  stroke="url(#shieldGrad)" stroke-width="1" fill="rgba(99, 102, 241, 0.1)"/>
+            <path d="M35 50 L45 60 L65 40" stroke="#22c55e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="float-element el-lock">
+          <svg viewBox="0 0 80 100" fill="none">
+            <rect x="10" y="40" width="60" height="50" rx="8" stroke="#a855f7" stroke-width="2" fill="rgba(168, 85, 247, 0.1)"/>
+            <path d="M25 40 V30 Q25 10 40 10 Q55 10 55 30 V40" stroke="#a855f7" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="65" r="8" fill="#a855f7"/>
+            <path d="M40 73 V82" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="float-element el-globe">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="40" stroke="#22c55e" stroke-width="1.5" opacity="0.5"/>
+            <ellipse cx="50" cy="50" rx="40" ry="15" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+            <ellipse cx="50" cy="50" rx="15" ry="40" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+            <path d="M10 50 H90" stroke="#22c55e" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="50" cy="50" r="4" fill="#22c55e"/>
+          </svg>
         </div>
       </div>
-      <div class="home-services-bottom-bar">
-        <div class="container">
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.2"
-            data-animate-on-scroll="true"
-          >
-            <span>&#9654;</span> Core Modules
-          </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-            data-animate-on-scroll="true"
-          >
-            [ Platform Features ]
-          </p>
+      
+      <!-- Animated Data Streams -->
+      <div class="data-streams">
+        <div class="stream stream-1"></div>
+        <div class="stream stream-2"></div>
+        <div class="stream stream-3"></div>
+      </div>
+
+      <!-- Header with Enhanced Typography -->
+      <div class="trust-header">
+        <div class="trust-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="eyebrow-icon">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+            Enterprise-Grade Security
+          </span>
+          <span class="eyebrow-line"></span>
+        </div>
+        
+        <h2 class="trust-mega-title">
+          <span class="title-row">
+            <span class="title-word" data-word="THE">THE</span>
+            <span class="title-word accent" data-word="FOUNDATION">FOUNDATION</span>
+          </span>
+          <span class="title-row">
+            <span class="title-word" data-word="OF">OF</span>
+            <span class="title-word gradient" data-word="TRUST">TRUST</span>
+          </span>
+        </h2>
+        
+        <p class="trust-tagline">
+          <span class="tagline-number">03</span>
+          <span class="tagline-divider"></span>
+          <span class="tagline-text">Powerful modules. One unified platform. Unshakeable reliability.</span>
+        </p>
+      </div>
+
+      <!-- Interactive Module Showcase -->
+      <div class="trust-modules-showcase">
+        
+        <!-- Core Module - Premium Card -->
+        <div class="premium-module-card" data-module="core">
+          <div class="card-shine"></div>
+          <div class="card-border-glow"></div>
+          <div class="card-inner">
+            <!-- Module Number -->
+            <div class="module-number">
+              <span class="number-outline">01</span>
+              <span class="number-fill">01</span>
+            </div>
+            
+            <!-- Icon Container with Animation -->
+            <div class="module-icon-wrapper">
+              <div class="icon-ring ring-outer"></div>
+              <div class="icon-ring ring-inner"></div>
+              <div class="icon-core">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              <div class="icon-particles">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="module-content">
+              <h3 class="module-name">CORE</h3>
+              <p class="module-tagline">Policy Lifecycle Engine</p>
+              
+              <!-- Feature Pills -->
+              <div class="feature-pills">
+                <span class="pill">Policy Admin</span>
+                <span class="pill">Underwriting</span>
+                <span class="pill">Rating</span>
+                <span class="pill">CRM</span>
+                <span class="pill">Documents</span>
+              </div>
+            </div>
+            
+            <!-- Stats Bar -->
+            <div class="module-stats-bar">
+              <div class="stat-item">
+                <div class="stat-progress" style="--progress: 99.9%"></div>
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Uptime</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-progress" style="--progress: 85%"></div>
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Automation</span>
+              </div>
+            </div>
+            
+            <!-- Action -->
+            <a href="/features/policy-admin" class="module-action">
+              <span>Explore Module</span>
+              <div class="action-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Live Status -->
+          <div class="live-indicator">
+            <span class="pulse"></span>
+            <span class="text">LIVE</span>
+          </div>
+        </div>
+
+        <!-- Claims Module - Premium Card -->
+        <div class="premium-module-card card-featured" data-module="claims">
+          <div class="card-shine"></div>
+          <div class="card-border-glow"></div>
+          <div class="featured-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span>FEATURED</span>
+          </div>
+          <div class="card-inner">
+            <!-- Module Number -->
+            <div class="module-number claims-color">
+              <span class="number-outline">02</span>
+              <span class="number-fill">02</span>
+            </div>
+            
+            <!-- Icon Container with Animation -->
+            <div class="module-icon-wrapper icon-claims">
+              <div class="icon-ring ring-outer"></div>
+              <div class="icon-ring ring-inner"></div>
+              <div class="icon-core">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                </svg>
+              </div>
+              <div class="icon-particles">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="module-content">
+              <h3 class="module-name">CLAIMS</h3>
+              <p class="module-tagline">Intelligent Processing Hub</p>
+              
+              <!-- Feature Pills -->
+              <div class="feature-pills">
+                <span class="pill">FNOL</span>
+                <span class="pill">Reserves</span>
+                <span class="pill">Fraud AI</span>
+                <span class="pill">Adjusters</span>
+                <span class="pill">Payments</span>
+              </div>
+            </div>
+            
+            <!-- Stats Bar -->
+            <div class="module-stats-bar">
+              <div class="stat-item">
+                <div class="stat-progress" style="--progress: 50%"></div>
+                <span class="stat-number">50%</span>
+                <span class="stat-label">Faster</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-progress" style="--progress: 92%"></div>
+                <span class="stat-number">92%</span>
+                <span class="stat-label">Accuracy</span>
+              </div>
+            </div>
+            
+            <!-- Action -->
+            <a href="/features/claims" class="module-action">
+              <span>Explore Module</span>
+              <div class="action-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Live Status -->
+          <div class="live-indicator">
+            <span class="pulse"></span>
+            <span class="text">LIVE</span>
+          </div>
+        </div>
+
+        <!-- IFRS-17 Module - Premium Card -->
+        <div class="premium-module-card" data-module="ifrs">
+          <div class="card-shine"></div>
+          <div class="card-border-glow"></div>
+          <div class="card-inner">
+            <!-- Module Number -->
+            <div class="module-number ifrs-color">
+              <span class="number-outline">03</span>
+              <span class="number-fill">03</span>
+            </div>
+            
+            <!-- Icon Container with Animation -->
+            <div class="module-icon-wrapper icon-ifrs">
+              <div class="icon-ring ring-outer"></div>
+              <div class="icon-ring ring-inner"></div>
+              <div class="icon-core">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div class="icon-particles">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="module-content">
+              <h3 class="module-name">IFRS-17</h3>
+              <p class="module-tagline">Compliance Command Center</p>
+              
+              <!-- Feature Pills -->
+              <div class="feature-pills">
+                <span class="pill">CSM</span>
+                <span class="pill">Grouping</span>
+                <span class="pill">PAA/GMM</span>
+                <span class="pill">Cashflow</span>
+                <span class="pill">Reports</span>
+              </div>
+            </div>
+            
+            <!-- Stats Bar -->
+            <div class="module-stats-bar">
+              <div class="stat-item">
+                <div class="stat-progress" style="--progress: 100%"></div>
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Compliant</span>
+              </div>
+              <div class="stat-item">
+                <div class="stat-progress" style="--progress: 78%"></div>
+                <span class="stat-number">78%</span>
+                <span class="stat-label">Time Saved</span>
+              </div>
+            </div>
+            
+            <!-- Action -->
+            <a href="/features/ifrs17" class="module-action">
+              <span>Explore Module</span>
+              <div class="action-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+          
+          <!-- Certified Badge -->
+          <div class="certified-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+            <span>CERTIFIED</span>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Trust Shield Banner -->
+      <div class="trust-shield-banner">
+        <div class="shield-container">
+          <div class="main-shield">
+            <svg viewBox="0 0 120 140" fill="none">
+              <defs>
+                <linearGradient id="shieldMainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#818cf8"/>
+                  <stop offset="50%" stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#4f46e5"/>
+                </linearGradient>
+                <filter id="shieldGlow">
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path d="M60 5 L110 25 L110 65 Q110 105 60 135 Q10 105 10 65 L10 25 Z" 
+                    fill="url(#shieldMainGrad)" opacity="0.15" filter="url(#shieldGlow)"/>
+              <path d="M60 15 L100 32 L100 62 Q100 97 60 123 Q20 97 20 62 L20 32 Z" 
+                    stroke="url(#shieldMainGrad)" stroke-width="2" fill="none"/>
+              <path d="M40 65 L55 80 L85 50" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shieldGlow)"/>
+            </svg>
+          </div>
+          
+          <div class="trust-certifications">
+            <div class="cert-row">
+              <div class="cert-badge">
+                <div class="cert-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                  </svg>
+                </div>
+                <div class="cert-info">
+                  <span class="cert-name">SOC 2 Type II</span>
+                  <span class="cert-status">
+                    <span class="status-check">✓</span>
+                    Certified
+                  </span>
+                </div>
+              </div>
+              
+              <div class="cert-badge">
+                <div class="cert-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+                <div class="cert-info">
+                  <span class="cert-name">ISO 27001</span>
+                  <span class="cert-status">
+                    <span class="status-check">✓</span>
+                    Certified
+                  </span>
+                </div>
+              </div>
+              
+              <div class="cert-badge">
+                <div class="cert-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div class="cert-info">
+                  <span class="cert-name">GDPR</span>
+                  <span class="cert-status">
+                    <span class="status-check">✓</span>
+                    Compliant
+                  </span>
+                </div>
+              </div>
+              
+              <div class="cert-badge">
+                <div class="cert-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                  </svg>
+                </div>
+                <div class="cert-info">
+                  <span class="cert-name">99.99% SLA</span>
+                  <span class="cert-status">
+                    <span class="status-check">✓</span>
+                    Guaranteed
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Connecting Lines -->
+        <div class="banner-lines">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
         </div>
       </div>
-      <div class="cards">
-        <div class="cards-container">
-          <div class="card" id="card-1">
-            <div class="card-wrapper">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="card-title">
-                    <p class="mono">Core</p>
-                    <p class="mono">01</p>
-                  </div>
-                  <div class="card-title">
-                    <p class="mono">01</p>
-                    <p class="mono">Core</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="card-title">
-                    <p class="mono">Core</p>
-                    <p class="mono">01</p>
-                  </div>
-                  <div class="card-copy">
-                    <p>Policy Administration</p>
-                    <p>Underwriting</p>
-                    <p>Rating Engine</p>
-                    <p>Customer Management</p>
-                    <p>Document Generator</p>
-                    <p>Dashboards & KPIs</p>
-                  </div>
-                  <div class="card-title">
-                    <p class="mono">01</p>
-                    <p class="mono">Core</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card" id="card-2">
-            <div class="card-wrapper">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="card-title">
-                    <p class="mono">Claims</p>
-                    <p class="mono">02</p>
-                  </div>
-                  <div class="card-title">
-                    <p class="mono">02</p>
-                    <p class="mono">Claims</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="card-title">
-                    <p class="mono">Claims</p>
-                    <p class="mono">02</p>
-                  </div>
-                  <div class="card-copy">
-                    <p>FNOL Capture</p>
-                    <p>Reserve Management</p>
-                    <p>Fraud Detection</p>
-                    <p>Adjuster Assignment</p>
-                    <p>Payments & Recoveries</p>
-                    <p>Claims Analytics</p>
-                  </div>
-                  <div class="card-title">
-                    <p class="mono">02</p>
-                    <p class="mono">Claims</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card" id="card-3">
-            <div class="card-wrapper">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="card-title">
-                    <p class="mono">IFRS-17</p>
-                    <p class="mono">03</p>
-                  </div>
-                  <div class="card-title">
-                    <p class="mono">03</p>
-                    <p class="mono">IFRS-17</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="card-title">
-                    <p class="mono">IFRS-17</p>
-                    <p class="mono">03</p>
-                  </div>
-                  <div class="card-copy">
-                    <p>CSM Engine</p>
-                    <p>Contract Grouping</p>
-                    <p>PAA/GMM Support</p>
-                    <p>Cashflow Mapping</p>
-                    <p>Disclosure Reports</p>
-                    <p>Actuarial Export</p>
-                  </div>
-                  <div class="card-title">
-                    <p class="mono">03</p>
-                    <p class="mono">IFRS-17</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <!-- Bottom CTA -->
+      <div class="trust-bottom-cta">
+        <p class="cta-text">Ready to build on a foundation of trust?</p>
+        <a href="/contact" class="cta-button">
+          <span>Start Your Journey</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </section>
 
@@ -1178,127 +1534,443 @@
       <div class="section-transition-bottom"></div>
     </section>
 
-    <section class="home-spotlight">
-      <!-- Ambient Visual Effects -->
-      <div class="vignette"></div>
-      <div class="spotlight-beam"></div>
-      <div class="section-border-bottom"></div>
-      <div class="section-border-artifact-left"></div>
-      <div class="section-border-artifact-right"></div>
-      <div class="home-spotlight-top-bar">
-        <div class="container">
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-light.png" alt="Symbol" />
+    <!-- Global Compliance Section -->
+    <section class="compliance-nexus">
+      <!-- Animated Background Effects -->
+      <div class="compliance-matrix-bg"></div>
+      <div class="compliance-scan-lines"></div>
+      <div class="compliance-grid-overlay"></div>
+      <div class="compliance-radar-sweep"></div>
+      
+      <!-- Floating Data Particles -->
+      <div class="data-particles">
+        <div class="data-particle dp-1"></div>
+        <div class="data-particle dp-2"></div>
+        <div class="data-particle dp-3"></div>
+        <div class="data-particle dp-4"></div>
+        <div class="data-particle dp-5"></div>
+        <div class="data-particle dp-6"></div>
+        <div class="data-particle dp-7"></div>
+        <div class="data-particle dp-8"></div>
+      </div>
+
+      <!-- Header -->
+      <div class="compliance-header">
+        <div class="compliance-badge-animated">
+          <div class="badge-pulse"></div>
+          <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span>Global Compliance</span>
+        </div>
+        <h2 class="compliance-title">
+          <span class="title-word">International</span>
+          <span class="title-word highlight">Standards</span>
+          <span class="title-word">Verified</span>
+        </h2>
+        <p class="compliance-subtitle">Real-time screening against global watchlists. Instant KYC verification. Complete regulatory compliance.</p>
+      </div>
+
+      <!-- Central Globe Visualization -->
+      <div class="compliance-globe-section">
+        <div class="globe-container">
+          <!-- Animated Globe -->
+          <div class="globe-visual">
+            <div class="globe-sphere">
+              <div class="globe-grid"></div>
+              <div class="globe-highlight"></div>
             </div>
-            <div class="symbol">
-              <img src="/symbols/s2-light.png" alt="Symbol" />
+            <div class="globe-ring ring-1"></div>
+            <div class="globe-ring ring-2"></div>
+            <div class="globe-ring ring-3"></div>
+            
+            <!-- Connection Points - Inner Ring -->
+            <div class="globe-point gp-1">
+              <div class="point-pulse"></div>
+              <div class="point-label">OFAC</div>
             </div>
-            <div class="symbol">
-              <img src="/symbols/s3-light.png" alt="Symbol" />
+            <div class="globe-point gp-2">
+              <div class="point-pulse"></div>
+              <div class="point-label">UN</div>
+            </div>
+            <div class="globe-point gp-3">
+              <div class="point-pulse"></div>
+              <div class="point-label">EU</div>
+            </div>
+            <div class="globe-point gp-4">
+              <div class="point-pulse"></div>
+              <div class="point-label">PEP</div>
+            </div>
+            
+            <!-- Connection Points - Outer Ring -->
+            <div class="globe-point gp-5">
+              <div class="point-pulse"></div>
+              <div class="point-label">Trulioo</div>
+            </div>
+            <div class="globe-point gp-6">
+              <div class="point-pulse"></div>
+              <div class="point-label">Onfido</div>
+            </div>
+            <div class="globe-point gp-7">
+              <div class="point-pulse"></div>
+              <div class="point-label">Jumio</div>
+            </div>
+            <div class="globe-point gp-8">
+              <div class="point-pulse"></div>
+              <div class="point-label">Veriff</div>
+            </div>
+            <div class="globe-point gp-9">
+              <div class="point-pulse"></div>
+              <div class="point-label">LexisNexis</div>
+            </div>
+            <div class="globe-point gp-10">
+              <div class="point-pulse"></div>
+              <div class="point-label">Dow Jones</div>
+            </div>
+            <div class="globe-point gp-11">
+              <div class="point-pulse"></div>
+              <div class="point-label">Refinitiv</div>
+            </div>
+            <div class="globe-point gp-12">
+              <div class="point-pulse"></div>
+              <div class="point-label">Experian</div>
             </div>
           </div>
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s3-light.png" alt="Symbol" />
+          
+          <!-- Scanning Effect -->
+          <div class="scan-overlay">
+            <div class="scan-line"></div>
+          </div>
+        </div>
+
+        <!-- Floating Compliance Cards -->
+        <div class="compliance-cards-orbit">
+          <div class="compliance-orbit-card card-ofac">
+            <div class="orbit-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
             </div>
-            <div class="symbol">
-              <img src="/symbols/s2-light.png" alt="Symbol" />
+            <div class="orbit-card-content">
+              <h4>OFAC SDN</h4>
+              <p>US Treasury Sanctions</p>
+              <div class="card-status">
+                <span class="status-dot"></span>
+                <span>Live Screening</span>
+              </div>
             </div>
-            <div class="symbol">
-              <img src="/symbols/s1-light.png" alt="Symbol" />
+          </div>
+          
+          <div class="compliance-orbit-card card-un">
+            <div class="orbit-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="orbit-card-content">
+              <h4>UN Security</h4>
+              <p>Council Sanctions</p>
+              <div class="card-status">
+                <span class="status-dot"></span>
+                <span>Active</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="compliance-orbit-card card-eu">
+            <div class="orbit-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <circle cx="12" cy="12" r="8"/>
+                <path d="M12 4v1M12 19v1M4 12h1M19 12h1M6.3 6.3l.7.7M17 17l.7.7M6.3 17.7l.7-.7M17 7l.7-.7"/>
+              </svg>
+            </div>
+            <div class="orbit-card-content">
+              <h4>EU Consolidated</h4>
+              <p>European Sanctions</p>
+              <div class="card-status">
+                <span class="status-dot"></span>
+                <span>Connected</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="compliance-orbit-card card-pep">
+            <div class="orbit-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="orbit-card-content">
+              <h4>PEP Screening</h4>
+              <p>Political Exposure</p>
+              <div class="card-status">
+                <span class="status-dot"></span>
+                <span>Monitoring</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="home-spotlight-bottom-bar">
-        <div class="container">
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.2"
-            data-animate-on-scroll="true"
-          >
-            <span>&#9654;</span> Platform Overview
-          </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-            data-animate-on-scroll="true"
-          >
-            / System Highlights
-          </p>
+
+      <!-- Integration Partners Showcase -->
+      <div class="integration-partners-section">
+        <div class="integration-header">
+          <span class="integration-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+            Universal API Integration
+          </span>
+          <h3>Connect to Any Compliance Platform</h3>
+          <p>Seamlessly integrate with leading global verification, AML, and KYC providers through our universal API architecture.</p>
+        </div>
+
+        <!-- Scrolling API Partners -->
+        <div class="api-partners-showcase">
+          <div class="partners-track track-1">
+            <div class="partner-chip">ComplyAdvantage</div>
+            <div class="partner-chip">Refinitiv World-Check</div>
+            <div class="partner-chip">LexisNexis</div>
+            <div class="partner-chip">Dow Jones</div>
+            <div class="partner-chip">Trulioo</div>
+            <div class="partner-chip">Onfido</div>
+            <div class="partner-chip">Jumio</div>
+            <div class="partner-chip">Veriff</div>
+            <div class="partner-chip">ShuftiPro</div>
+            <div class="partner-chip">SumSub</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="partner-chip">ComplyAdvantage</div>
+            <div class="partner-chip">Refinitiv World-Check</div>
+            <div class="partner-chip">LexisNexis</div>
+            <div class="partner-chip">Dow Jones</div>
+            <div class="partner-chip">Trulioo</div>
+            <div class="partner-chip">Onfido</div>
+            <div class="partner-chip">Jumio</div>
+            <div class="partner-chip">Veriff</div>
+          </div>
+          
+          <div class="partners-track track-2">
+            <div class="partner-chip chip-outline">OFAC SDN</div>
+            <div class="partner-chip chip-outline">UN Sanctions</div>
+            <div class="partner-chip chip-outline">EU Consolidated</div>
+            <div class="partner-chip chip-outline">UK OFSI</div>
+            <div class="partner-chip chip-outline">Dun & Bradstreet</div>
+            <div class="partner-chip chip-outline">OpenCorporates</div>
+            <div class="partner-chip chip-outline">Experian</div>
+            <div class="partner-chip chip-outline">Sift Science</div>
+            <div class="partner-chip chip-outline">Acuant</div>
+            <div class="partner-chip chip-outline">Persona</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="partner-chip chip-outline">OFAC SDN</div>
+            <div class="partner-chip chip-outline">UN Sanctions</div>
+            <div class="partner-chip chip-outline">EU Consolidated</div>
+            <div class="partner-chip chip-outline">UK OFSI</div>
+            <div class="partner-chip chip-outline">Dun & Bradstreet</div>
+            <div class="partner-chip chip-outline">OpenCorporates</div>
+          </div>
+        </div>
+
+        <!-- Integration Categories -->
+        <div class="integration-categories">
+          <div class="category-card">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h4>AML & Sanctions</h4>
+            <p>20+ global watchlist providers</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h4>Identity (KYC)</h4>
+            <p>15+ ID verification APIs</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h4>Business (KYB)</h4>
+            <p>10+ company verification APIs</p>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h4>Fraud & Risk</h4>
+            <p>10+ fraud detection APIs</p>
+          </div>
         </div>
       </div>
-      <div class="container">
-        <div class="spotlight-intro-header">
-          <h3
-            data-animate-type="line-reveal"
-            data-animate-delay="0.3"
-            data-animate-on-scroll="true"
-          >
-            Replace legacy systems with a modern, cloud-native alternative
-          </h3>
+
+      <!-- KYC Process Visualization -->
+      <div class="kyc-process-section">
+        <h3 class="kyc-title">Automated KYC Verification Flow</h3>
+        
+        <div class="kyc-flow">
+          <div class="kyc-step">
+            <div class="step-number">01</div>
+            <div class="step-visual">
+              <div class="step-icon-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <div class="icon-glow"></div>
+              </div>
+            </div>
+            <h4>Identity Capture</h4>
+            <p>Document upload & biometric verification</p>
+            <div class="step-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+            </div>
+          </div>
+          
+          <div class="kyc-step">
+            <div class="step-number">02</div>
+            <div class="step-visual">
+              <div class="step-icon-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                <div class="icon-glow"></div>
+              </div>
+            </div>
+            <h4>Document Analysis</h4>
+            <p>AI-powered authenticity verification</p>
+            <div class="step-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+            </div>
+          </div>
+          
+          <div class="kyc-step">
+            <div class="step-number">03</div>
+            <div class="step-visual">
+              <div class="step-icon-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <path d="M8 11h6M11 8v6"/>
+                </svg>
+                <div class="icon-glow"></div>
+              </div>
+            </div>
+            <h4>Watchlist Scan</h4>
+            <p>Real-time global sanctions screening</p>
+            <div class="step-connector">
+              <div class="connector-line"></div>
+              <div class="connector-dot"></div>
+            </div>
+          </div>
+          
+          <div class="kyc-step">
+            <div class="step-number">04</div>
+            <div class="step-visual">
+              <div class="step-icon-container">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <div class="icon-glow success"></div>
+              </div>
+            </div>
+            <h4>Verified</h4>
+            <p>Instant compliance clearance</p>
+          </div>
         </div>
       </div>
-      <div class="home-spotlight-images">
-        <div class="home-spotlight-images-row">
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-1.jpg" alt="" />
+
+      <!-- Stats Banner -->
+      <div class="compliance-stats-banner">
+        <div class="stat-item">
+          <div class="stat-value">
+            <span class="stat-number" data-count="200">0</span>
+            <span class="stat-suffix">+</span>
           </div>
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-2.jpg" alt="" />
-          </div>
+          <div class="stat-label">Watchlist Sources</div>
+          <div class="stat-bar"></div>
         </div>
-        <div class="home-spotlight-images-row">
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-3.jpg" alt="" />
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">
+            <span class="stat-number" data-count="99">0</span>
+            <span class="stat-suffix">.9%</span>
           </div>
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image"></div>
+          <div class="stat-label">Match Accuracy</div>
+          <div class="stat-bar"></div>
         </div>
-        <div class="home-spotlight-images-row">
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-4.jpg" alt="" />
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">
+            <span class="stat-prefix">&lt;</span>
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-suffix">s</span>
           </div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-5.jpg" alt="" />
-          </div>
-          <div class="home-spotlight-image"></div>
+          <div class="stat-label">Screening Time</div>
+          <div class="stat-bar"></div>
         </div>
-        <div class="home-spotlight-images-row">
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-6.jpg" alt="" />
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">
+            <span class="stat-number" data-count="24">0</span>
+            <span class="stat-suffix">/7</span>
           </div>
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-7.jpg" alt="" />
-          </div>
-        </div>
-        <div class="home-spotlight-images-row">
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-8.jpg" alt="" />
-          </div>
-          <div class="home-spotlight-image"></div>
-          <div class="home-spotlight-image image-holder">
-            <img src="/spotlight-images/spotlight-img-9.jpg" alt="" />
-          </div>
-          <div class="home-spotlight-image"></div>
+          <div class="stat-label">Monitoring</div>
+          <div class="stat-bar"></div>
         </div>
       </div>
-      <div class="spotlight-mask-image-container">
-        <div class="spotlight-mask-image">
-          <img src="/spotlight-images/spotlight-banner.jpg" alt="" />
-        </div>
-        <div class="container">
-          <div class="spotlight-mask-header">
-            <h3>A modular platform that grows with your business</h3>
+
+      <!-- Compliance Standards Footer -->
+      <div class="compliance-standards">
+        <p class="standards-label">Meeting International Standards</p>
+        <div class="standards-badges">
+          <div class="standard-badge">
+            <span>FATF</span>
+          </div>
+          <div class="standard-badge">
+            <span>AML</span>
+          </div>
+          <div class="standard-badge">
+            <span>CFT</span>
+          </div>
+          <div class="standard-badge">
+            <span>GDPR</span>
+          </div>
+          <div class="standard-badge">
+            <span>SOC 2</span>
+          </div>
+          <div class="standard-badge">
+            <span>ISO 27001</span>
           </div>
         </div>
       </div>
@@ -1364,8 +2036,13 @@
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-col-2">
-            <img class="footer-logo-img" src="/global/logo.png" alt="Sol-Insure" />
+            <img class="footer-logo-img" src="/global/LOGO233.png" alt="Sol-Insure" />
             <p class="footer-description">Modern P&C Insurance. Delivered as SaaS. Enterprise power without enterprise complexity. A cloud-native platform built for insurers who demand clarity, speed, and control.</p>
+            <div class="footer-contact-info">
+              <p><strong>Email:</strong> <a href="mailto:saas@solace-systems.com">saas@solace-systems.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+18684603788">1 (868) 460-3788</a></p>
+              <p><strong>Location:</strong> Port Of Spain, Trinidad</p>
+            </div>
             <ul class="footer-social">
               <li>
                 <a href="#" title="Twitter" class="footer-social-link">
@@ -1405,6 +2082,7 @@
               <li><a href="/about" class="footer-link">About</a></li>
               <li><a href="/work" class="footer-link">Features</a></li>
               <li><a href="/project" class="footer-link">How It Works</a></li>
+              <li><a href="/pricing" class="footer-link" data-i18n="pricing_nav_pricing">Pricing</a></li>
               <li><a href="/contact" class="footer-link">Contact</a></li>
             </ul>
           </div>
@@ -1437,6 +2115,7 @@
     <script type="module" src="/script/transition.js"></script>
     <script type="module" src="/script/menu.js"></script>
     <script type="module" src="/script/home.js"></script>
+    <script src="/script/chatbot.js"></script>
   </body>
 </html>
 

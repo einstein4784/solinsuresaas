@@ -1,85 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://sol-insure.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- About Page -->
   <url>
     <loc>https://sol-insure.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/about?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/about"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Features Overview -->
   <url>
     <loc>https://sol-insure.com/work</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/work"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/work?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/work"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- How It Works -->
   <url>
     <loc>https://sol-insure.com/project</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/project"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/project?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/project"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Contact -->
   <url>
     <loc>https://sol-insure.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/contact?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/contact"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pricing -->
+  <url>
+    <loc>https://sol-insure.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/pricing?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/pricing"/>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Feature Pages -->
   <url>
     <loc>https://sol-insure.com/features/policy-admin</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/policy-admin"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/policy-admin?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/policy-admin"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/claims</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/claims"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/claims?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/claims"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/billing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/billing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/billing?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/billing"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/analytics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/analytics"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/analytics?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/analytics"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/reinsurance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/reinsurance"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/reinsurance?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/reinsurance"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/ifrs17</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/ifrs17"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/ifrs17?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/ifrs17"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/portals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/portals"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/portals?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/portals"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://sol-insure.com/features/reserves</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sol-insure.com/features/reserves"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sol-insure.com/features/reserves?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/reserves"/>
     <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
-

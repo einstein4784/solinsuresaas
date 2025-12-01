@@ -1,487 +1,418 @@
 import gsap from "gsap";
-import slides from "./slides";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { initI18n } from "./i18n";
 
-// SplitText is premium - using fallback
-let SplitText = null;
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   initI18n(); // Initialize language system
-  const totalSlides = slides.length;
-  let currentSlide = 1;
 
-  let isAnimating = false;
-  let scrollAllowed = false;
-  let lastScrollTime = 0;
-  let imagesPreloaded = false;
+  // Hero animations
+  initHeroAnimations();
+  
+  // Feature cards animations
+  initFeatureCards();
+  
+  // Benefits cards animations
+  initBenefitsCards();
+  
+  // Compliance section animations
+  initComplianceAnimations();
+  
+  // Integration section animations
+  initIntegrationAnimations();
+  
+  // Lifecycle timeline animations
+  initLifecycleAnimations();
+  
+  // CTA section animations
+  initCtaAnimations();
+});
 
-  gsap.set(".slider", {
+function initHeroAnimations() {
+  const heroContent = document.querySelector(".features-hero-content");
+  if (!heroContent) return;
+
+  const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+  // Badge animation
+  tl.from(".features-hero-badge", {
     opacity: 0,
+    y: 30,
+    duration: 0.8,
   });
 
-  gsap.to(".slider", {
-    opacity: 1,
-    duration: 0.5,
-    ease: "power2.out",
+  // Title animations
+  tl.from(".features-hero-title .title-line", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+  }, "-=0.4");
+
+  tl.from(".features-hero-title .title-gradient", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+  }, "-=0.7");
+
+  // Subtitle animation
+  tl.from(".features-hero-subtitle", {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+  }, "-=0.5");
+
+  // Stats animation
+  tl.from(".hero-stat", {
+    opacity: 0,
+    y: 40,
+    duration: 0.8,
+    stagger: 0.15,
+  }, "-=0.3");
+
+  // Floating orbs continuous animation
+  gsap.to(".feature-orb-1", {
+    x: 30,
+    y: 20,
+    duration: 8,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true,
   });
 
-  function preloadImages() {
-    return new Promise((resolve) => {
-      let loadedCount = 0;
-      const totalImages = slides.length;
+  gsap.to(".feature-orb-2", {
+    x: -25,
+    y: 35,
+    duration: 10,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true,
+  });
 
-      if (totalImages === 0) {
-        resolve();
-        return;
-      }
+  gsap.to(".feature-orb-3", {
+    x: 20,
+    y: -25,
+    duration: 12,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true,
+  });
+}
 
-      slides.forEach((slide) => {
-        const img = new Image();
-        img.onload = img.onerror = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            imagesPreloaded = true;
-            resolve();
-          }
-        };
-        img.src = slide.slideImg;
-      });
-    });
-  }
+function initFeatureCards() {
+  const featureCards = document.querySelectorAll(".feature-card");
+  if (featureCards.length === 0) return;
 
-  function createSlide(slideIndex) {
-    const slideData = slides[slideIndex - 1];
-
-    const slide = document.createElement("div");
-    slide.className = "slide";
-
-    const slideImg = document.createElement("div");
-    slideImg.className = "slide-img";
-    const img = document.createElement("img");
-    img.src = slideData.slideImg;
-    img.alt = "";
-
-    img.style.opacity = "0";
-
-    if (imagesPreloaded) {
-      img.style.opacity = "1";
-    } else {
-      img.onload = () => {
-        gsap.to(img, { opacity: 1, duration: 0.3 });
-      };
-    }
-
-    slideImg.appendChild(img);
-
-    const slideHeader = document.createElement("div");
-    slideHeader.className = "slide-header";
-
-    const slideTitle = document.createElement("div");
-    slideTitle.className = "slide-title";
-    const h2 = document.createElement("h2");
-    h2.textContent = slideData.slideTitle;
-    slideTitle.appendChild(h2);
-
-    const slideDescription = document.createElement("div");
-    slideDescription.className = "slide-description";
-    const p = document.createElement("p");
-    p.textContent = slideData.slideDescription;
-    slideDescription.appendChild(p);
-
-    const slideLink = document.createElement("div");
-    slideLink.className = "slide-link";
-    const a = document.createElement("a");
-    a.href = slideData.slideUrl;
-    a.textContent = "View Project";
-    slideLink.appendChild(a);
-
-    slideHeader.appendChild(slideTitle);
-    slideHeader.appendChild(slideDescription);
-    slideHeader.appendChild(slideLink);
-
-    const slideInfo = document.createElement("div");
-    slideInfo.className = "slide-info";
-
-    const slideTags = document.createElement("div");
-    slideTags.className = "slide-tags";
-    const tagsLabel = document.createElement("p");
-    tagsLabel.className = "mono";
-    tagsLabel.textContent = "Tags";
-    slideTags.appendChild(tagsLabel);
-
-    slideData.slideTags.forEach((tag) => {
-      const tagP = document.createElement("p");
-      tagP.className = "mono";
-      tagP.textContent = tag;
-      slideTags.appendChild(tagP);
-    });
-
-    const slideIndexWrapper = document.createElement("div");
-    slideIndexWrapper.className = "slide-index-wrapper";
-    const slideIndexCopy = document.createElement("p");
-    slideIndexCopy.className = "mono";
-    slideIndexCopy.textContent = slideIndex.toString().padStart(2, "0");
-    const slideIndexSeparator = document.createElement("p");
-    slideIndexSeparator.className = "mono";
-    slideIndexSeparator.textContent = "/";
-    const slidesTotalCount = document.createElement("p");
-    slidesTotalCount.className = "mono";
-    slidesTotalCount.textContent = totalSlides.toString().padStart(2, "0");
-
-    slideIndexWrapper.appendChild(slideIndexCopy);
-    slideIndexWrapper.appendChild(slideIndexSeparator);
-    slideIndexWrapper.appendChild(slidesTotalCount);
-
-    slideInfo.appendChild(slideTags);
-    slideInfo.appendChild(slideIndexWrapper);
-
-    slide.appendChild(slideImg);
-    slide.appendChild(slideHeader);
-    slide.appendChild(slideInfo);
-
-    return slide;
-  }
-
-  function splitText(slide) {
-    if (!SplitText) {
-      // Fallback: just animate elements directly
-      const slideHeader = slide.querySelector(".slide-title h2");
-      const slideContent = slide.querySelectorAll("p, a");
-      gsap.set([slideHeader, ...slideContent], { opacity: 0, y: 20 });
-      gsap.to([slideHeader, ...slideContent], { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 });
-      return;
-    }
-    
-    const slideHeader = slide.querySelector(".slide-title h2");
-    if (slideHeader) {
-      try {
-        SplitText.create(slideHeader, {
-          type: "words",
-          wordsClass: "word",
-          mask: "words",
-        });
-      } catch (e) {
-        gsap.set(slideHeader, { opacity: 0 });
-        gsap.to(slideHeader, { opacity: 1, duration: 0.8 });
-      }
-    }
-
-    const slideContent = slide.querySelectorAll("p, a");
-    slideContent.forEach((element) => {
-      try {
-        SplitText.create(element, {
-          type: "lines",
-          linesClass: "line",
-          mask: "lines",
-          reduceWhiteSpace: false,
-        });
-      } catch (e) {
-        gsap.set(element, { opacity: 0 });
-        gsap.to(element, { opacity: 1, duration: 0.5 });
-      }
-    });
-  }
-
-  function initializeFirstSlide() {
-    const slider = document.querySelector(".slider");
-
-    const firstSlide = createSlide(1);
-    slider.appendChild(firstSlide);
-
-    splitText(firstSlide);
-
-    const words = firstSlide.querySelectorAll(".word");
-    const lines = firstSlide.querySelectorAll(".line");
-
-    gsap.set([...words, ...lines], {
-      y: "100%",
-      force3D: true,
-    });
-
-    const tl = gsap.timeline();
-
-    const headerWords = firstSlide.querySelectorAll(".slide-title .word");
-    tl.to(
-      headerWords,
-      {
-        y: "0%",
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.1,
-        force3D: true,
+  featureCards.forEach((card, index) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play none none none",
       },
-      0.5
-    );
-
-    const tagsLines = firstSlide.querySelectorAll(".slide-tags .line");
-    const indexLines = firstSlide.querySelectorAll(
-      ".slide-index-wrapper .line"
-    );
-    const descriptionLines = firstSlide.querySelectorAll(
-      ".slide-description .line"
-    );
-
-    tl.to(
-      tagsLines,
-      {
-        y: "0%",
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.1,
-      },
-      "-=0.75"
-    );
-
-    tl.to(
-      indexLines,
-      {
-        y: "0%",
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.1,
-      },
-      "<"
-    );
-
-    tl.to(
-      descriptionLines,
-      {
-        y: "0%",
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.1,
-      },
-      "<"
-    );
-
-    const linkLines = firstSlide.querySelectorAll(".slide-link .line");
-    tl.to(
-      linkLines,
-      {
-        y: "0%",
-        duration: 1,
-        ease: "power4.out",
-      },
-      "-=1"
-    );
-
-    setTimeout(() => {
-      scrollAllowed = true;
-      lastScrollTime = Date.now();
-    }, 1500);
-  }
-
-  function animateSlide(direction) {
-    if (isAnimating || !scrollAllowed) return;
-
-    isAnimating = true;
-    scrollAllowed = false;
-
-    const slider = document.querySelector(".slider");
-    const currentSlideElement = slider.querySelector(".slide");
-
-    if (direction === "down") {
-      currentSlide = currentSlide === totalSlides ? 1 : currentSlide + 1;
-    } else {
-      currentSlide = currentSlide === 1 ? totalSlides : currentSlide - 1;
-    }
-
-    const exitY = direction === "down" ? "-200vh" : "200vh";
-    const entryY = direction === "down" ? "100vh" : "-100vh";
-
-    gsap.to(currentSlideElement, {
-      scale: 0.25,
       opacity: 0,
-      rotation: 30,
-      y: exitY,
-      duration: 2,
-      ease: "power4.inOut",
-      force3D: true,
-      onComplete: () => {
-        currentSlideElement.remove();
-      },
+      y: 60,
+      duration: 0.8,
+      delay: (index % 4) * 0.1,
+      ease: "power3.out",
     });
 
-    setTimeout(() => {
-      const newSlide = createSlide(currentSlide);
-      const newSlideImg = newSlide.querySelector(".slide-img img");
-
-      gsap.set(newSlide, {
-        y: entryY,
-        force3D: true,
+    // Hover animations
+    card.addEventListener("mouseenter", () => {
+      gsap.to(card, {
+        scale: 1.02,
+        duration: 0.3,
+        ease: "power2.out",
       });
-
-      gsap.set(newSlideImg, {
-        scale: 2,
-        force3D: true,
+      gsap.to(card.querySelector(".feature-icon-wrapper"), {
+        scale: 1.1,
+        rotation: 5,
+        duration: 0.3,
+        ease: "power2.out",
       });
+    });
 
-      slider.appendChild(newSlide);
-
-      splitText(newSlide);
-
-      const words = newSlide.querySelectorAll(".word");
-      const lines = newSlide.querySelectorAll(".line");
-
-      gsap.set([...words, ...lines], {
-        y: "100%",
-        force3D: true,
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out",
       });
+      gsap.to(card.querySelector(".feature-icon-wrapper"), {
+        scale: 1,
+        rotation: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    });
+  });
+}
 
-      gsap.to(newSlide, {
-        y: 0,
-        duration: 1.5,
-        ease: "power4.out",
-        force3D: true,
-        onStart: () => {
-          gsap.to(newSlideImg, {
-            scale: 1,
-            duration: 1.5,
-            ease: "power4.out",
-            force3D: true,
-          });
+function initBenefitsCards() {
+  const benefitCards = document.querySelectorAll(".benefit-card");
+  if (benefitCards.length === 0) return;
 
-          const tl = gsap.timeline();
+  benefitCards.forEach((card, index) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      delay: index * 0.15,
+      ease: "power3.out",
+    });
 
-          const headerWords = newSlide.querySelectorAll(".slide-title .word");
-          tl.to(
-            headerWords,
-            {
-              y: "0%",
-              duration: 1,
-              ease: "power4.out",
-              stagger: 0.1,
-              force3D: true,
-            },
-            0.75
-          );
+    // Animate icon on scroll
+    gsap.from(card.querySelector(".benefit-icon"), {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+      scale: 0,
+      rotation: -180,
+      duration: 0.8,
+      delay: index * 0.15 + 0.2,
+      ease: "back.out(1.7)",
+    });
+  });
+}
 
-          const tagsLines = newSlide.querySelectorAll(".slide-tags .line");
-          const indexLines = newSlide.querySelectorAll(
-            ".slide-index-wrapper .line"
-          );
-          const descriptionLines = newSlide.querySelectorAll(
-            ".slide-description .line"
-          );
+function initComplianceAnimations() {
+  const complianceSection = document.querySelector(".compliance-section");
+  if (!complianceSection) return;
 
-          tl.to(
-            tagsLines,
-            {
-              y: "0%",
-              duration: 1,
-              ease: "power4.out",
-              stagger: 0.1,
-            },
-            "-=0.75"
-          );
+  // Main content animation
+  gsap.from(".compliance-main", {
+    scrollTrigger: {
+      trigger: ".compliance-main",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: "power3.out",
+  });
 
-          tl.to(
-            indexLines,
-            {
-              y: "0%",
-              duration: 1,
-              ease: "power4.out",
-              stagger: 0.1,
-            },
-            "<"
-          );
+  // Compliance features staggered animation
+  gsap.from(".compliance-feature", {
+    scrollTrigger: {
+      trigger: ".compliance-features",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power3.out",
+  });
 
-          tl.to(
-            descriptionLines,
-            {
-              y: "0%",
-              duration: 1,
-              ease: "power4.out",
-              stagger: 0.1,
-            },
-            "<"
-          );
+  // Sidebar stat cards animation
+  gsap.from(".compliance-stat-card", {
+    scrollTrigger: {
+      trigger: ".compliance-sidebar",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: 50,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "power3.out",
+  });
+}
 
-          const linkLines = newSlide.querySelectorAll(".slide-link .line");
-          tl.to(
-            linkLines,
-            {
-              y: "0%",
-              duration: 1,
-              ease: "power4.out",
-            },
-            "-=1"
-          );
+function initIntegrationAnimations() {
+  const integrationSection = document.querySelector(".integration-section");
+  if (!integrationSection) return;
+
+  // Database diagram animation
+  gsap.from(".db-node.central", {
+    scrollTrigger: {
+      trigger: ".database-diagram",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    scale: 0,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from(".db-node:not(.central)", {
+    scrollTrigger: {
+      trigger: ".database-diagram",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    scale: 0,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.15,
+    delay: 0.3,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from(".connection-line", {
+    scrollTrigger: {
+      trigger: ".database-diagram",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    scaleX: 0,
+    duration: 0.6,
+    stagger: 0.1,
+    delay: 0.5,
+    ease: "power3.out",
+  });
+
+  // Integration features animation
+  gsap.from(".int-feature", {
+    scrollTrigger: {
+      trigger: ".integration-features",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: 30,
+    duration: 0.6,
+    stagger: 0.15,
+    ease: "power3.out",
+  });
+
+  // API note animation
+  gsap.from(".api-note", {
+    scrollTrigger: {
+      trigger: ".api-note",
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: "power3.out",
+  });
+}
+
+function initLifecycleAnimations() {
+  const lifecycleSection = document.querySelector(".lifecycle-section");
+  if (!lifecycleSection) return;
+
+  // Timeline track animation
+  gsap.from(".timeline-track", {
+    scrollTrigger: {
+      trigger: ".lifecycle-timeline",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    scaleX: 0,
+    duration: 1.5,
+    ease: "power3.inOut",
+  });
+
+  // Stage markers animation
+  gsap.from(".stage-marker", {
+    scrollTrigger: {
+      trigger: ".lifecycle-timeline",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    scale: 0,
+    duration: 0.6,
+    stagger: 0.2,
+    delay: 0.5,
+    ease: "back.out(1.7)",
+  });
+
+  // Stage content animation
+  gsap.from(".stage-content", {
+    scrollTrigger: {
+      trigger: ".lifecycle-timeline",
+      start: "top 75%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    stagger: 0.2,
+    delay: 0.7,
+    ease: "power3.out",
+  });
+}
+
+function initCtaAnimations() {
+  const ctaSection = document.querySelector(".features-cta-section");
+  if (!ctaSection) return;
+
+  // CTA content animation
+  gsap.from(".cta-content", {
+    scrollTrigger: {
+      trigger: ctaSection,
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    x: -50,
+    duration: 1,
+    ease: "power3.out",
+  });
+
+  // CTA stats animation
+  gsap.from(".cta-stat", {
+    scrollTrigger: {
+      trigger: ".cta-stats",
+      start: "top 85%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 40,
+    scale: 0.8,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "back.out(1.7)",
+  });
+
+  // Counter animation for stats
+  const statValues = ctaSection.querySelectorAll(".cta-stat .value");
+  statValues.forEach((stat) => {
+    const value = stat.textContent;
+    if (value.includes("%")) {
+      const num = parseInt(value);
+      gsap.from(stat, {
+        scrollTrigger: {
+          trigger: stat,
+          start: "top 90%",
+          toggleActions: "play none none none",
         },
-        onComplete: () => {
-          isAnimating = false;
-          setTimeout(() => {
-            scrollAllowed = true;
-            lastScrollTime = Date.now();
-          }, 100);
+        textContent: "0%",
+        duration: 2,
+        ease: "power2.out",
+        snap: { textContent: 1 },
+        onUpdate: function() {
+          const current = Math.round(gsap.getProperty(stat, "textContent") || 0);
+          stat.textContent = current + "%";
         },
       });
-    }, 750);
-  }
-
-  function handleScroll(direction) {
-    const now = Date.now();
-
-    if (isAnimating || !scrollAllowed) return;
-    if (now - lastScrollTime < 1000) return;
-
-    lastScrollTime = now;
-    animateSlide(direction);
-  }
-
-  async function init() {
-    try {
-      await preloadImages();
-    } catch (error) {
-      console.warn("Image preloading failed", error);
     }
+  });
+}
 
-    initializeFirstSlide();
-
-    window.addEventListener(
-      "wheel",
-      (e) => {
-        e.preventDefault();
-        const direction = e.deltaY > 0 ? "down" : "up";
-        handleScroll(direction);
-      },
-      { passive: false }
-    );
-
-    let touchStartY = 0;
-    let isTouchActive = false;
-
-    window.addEventListener(
-      "touchstart",
-      (e) => {
-        touchStartY = e.touches[0].clientY;
-        isTouchActive = true;
-      },
-      { passive: false }
-    );
-
-    window.addEventListener(
-      "touchmove",
-      (e) => {
-        e.preventDefault();
-        if (!isTouchActive || isAnimating || !scrollAllowed) return;
-
-        const touchCurrentY = e.touches[0].clientY;
-        const difference = touchStartY - touchCurrentY;
-
-        if (Math.abs(difference) > 50) {
-          isTouchActive = false;
-          const direction = difference > 0 ? "down" : "up";
-          handleScroll(direction);
-        }
-      },
-      { passive: false }
-    );
-
-    window.addEventListener("touchend", () => {
-      isTouchActive = false;
-    });
-  }
-
-  init();
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: target,
+        ease: "power3.inOut",
+      });
+    }
+  });
 });

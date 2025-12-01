@@ -6,8 +6,8 @@
     <title>Features | Sol-Insure | Complete Insurance Platform Modules</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore Sol-Insure's comprehensive feature set: Policy Administration, Claims Management, Billing, Analytics, Reinsurance, IFRS-17 Compliance, Portals, and Reserve Management." />
-    <meta name="keywords" content="insurance platform features, policy administration system, claims management software, insurance billing, reinsurance management, IFRS-17 compliance, insurance analytics, self-service portals" />
+    <meta name="description" content="Explore Sol-Insure's comprehensive feature set: Policy Administration, Claims Management, Billing, Analytics, Reinsurance, IFRS-17 Compliance, Portals, Reserve Management, AML/KYC Compliance, and Vehicle Database Integration." />
+    <meta name="keywords" content="insurance platform features, policy administration system, claims management software, insurance billing, reinsurance management, IFRS-17 compliance, insurance analytics, self-service portals, AML compliance, KYC verification, vehicle database" />
     <meta name="author" content="Sol-Insure" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sol-insure.com/work" />
@@ -16,15 +16,23 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sol-insure.com/work" />
     <meta property="og:title" content="Sol-Insure Features | Complete Insurance Platform" />
-    <meta property="og:description" content="Explore our comprehensive suite of insurance modules: Policy Admin, Claims, Billing, Analytics, Reinsurance, IFRS-17, Portals, and Reserves." />
+    <meta property="og:description" content="Explore our comprehensive suite of insurance modules: Policy Admin, Claims, Billing, Analytics, Reinsurance, IFRS-17, Portals, Reserves, and Compliance." />
     <meta property="og:image" content="https://sol-insure.com/global/og-image.png" />
     <meta property="og:site_name" content="Sol-Insure" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sol-insure.com/work" />
     <meta name="twitter:title" content="Sol-Insure Features | Complete Insurance Platform" />
     <meta name="twitter:description" content="Explore our comprehensive suite of insurance modules: Policy Admin, Claims, Billing, Analytics, and more." />
     <meta name="twitter:image" content="https://sol-insure.com/global/og-image.png" />
+    
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://sol-insure.com/work" />
+    <link rel="alternate" hreflang="es" href="https://sol-insure.com/work?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="https://sol-insure.com/work" />
     
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#0f172a" />
@@ -57,15 +65,10 @@
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/work.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script type="module" src="/script/i18n.js"></script>
   </head>
   <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-      <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-      <div class="lang-divider"></div>
-      <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-    </div>
-
     <div class="transition">
       <div class="transition-overlay overlay"></div>
       <div class="transition-logo">
@@ -75,44 +78,648 @@
     <div class="mask-transition"></div>
     <div class="mask-bg-overlay"></div>
 
-    <nav class="menu">
-      <div class="menu-header">
-        <a href="/" class="menu-logo"><img src="/global/logo.png" alt="Sol-Insure" /></a>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <div class="menu menu-hamburger-icon">
-            <span class="menu-item"></span>
-            <span class="menu-item"></span>
-          </div>
-        </button>
+    <!-- Features Hero Section -->
+    <section class="features-hero">
+      <!-- Ambient Effects -->
+      <div class="features-aurora"></div>
+      <div class="features-grid-pattern"></div>
+      <div class="features-floating-orbs">
+        <div class="feature-orb feature-orb-1"></div>
+        <div class="feature-orb feature-orb-2"></div>
+        <div class="feature-orb feature-orb-3"></div>
       </div>
-      <div class="menu-overlay">
-        <nav class="menu-nav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/work">Features</a></li>
-            <li><a href="/project">How It Works</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="menu-footer">
-          <div class="menu-social">
-            <a href="#"><span>&#9654;</span> Instagram</a>
-            <a href="#"><span>&#9654;</span> LinkedIn</a>
+
+      <!-- Header Navigation -->
+      <header class="features-header-nav">
+        <div class="features-nav-container">
+          <div class="features-nav-left">
+            <a href="/" class="features-logo">
+              <img src="/global/LOGO233.png" alt="Sol-Insure" />
+            </a>
+            <!-- Language Toggle -->
+            <div class="language-toggle">
+              <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+              <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+            </div>
           </div>
-          <div class="menu-time">23:24:02 NY</div>
+          <nav class="features-nav-links">
+            <a href="/">Home</a>
+            <a href="/work" class="active">Features</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/project">How It Works</a>
+            <a href="/ai">AI</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+          </nav>
+          <div class="nav-buttons">
+            <a href="/login" class="nav-login" data-i18n="nav_login">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+              </svg>
+              Login
+            </a>
+            <a href="/contact" class="features-nav-cta" data-i18n="nav_get_started">Get Started</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Content -->
+      <div class="features-hero-content">
+        <div class="features-hero-badge">
+          <span class="badge-icon">⚡</span>
+          <span>Powerful Platform Features</span>
+        </div>
+        <h1 class="features-hero-title">
+          <span class="title-line">Enterprise Insurance</span>
+          <span class="title-gradient">Made Simple</span>
+        </h1>
+        <p class="features-hero-subtitle">
+          Discover how Sol-Insure accelerates policy generation, ensures lifecycle accuracy, and transforms your insurance operations with intelligent automation.
+        </p>
+        <div class="features-hero-stats">
+          <div class="hero-stat">
+            <span class="stat-value">90%</span>
+            <span class="stat-label">Faster Policy Generation</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value">99.9%</span>
+            <span class="stat-label">Data Accuracy</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value">60%</span>
+            <span class="stat-label">Reduced Processing Time</span>
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <div class="slider"></div>
-    
+    <!-- Speed & Accuracy Section -->
+    <section class="speed-accuracy-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge">🚀 Performance</span>
+          <h2>How We Accelerate Your Operations</h2>
+          <p>Every feature is engineered to maximize speed while maintaining perfect accuracy throughout the entire policy lifecycle.</p>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Instant Policy Generation</h3>
+            <p>Generate complete policy documents in seconds, not hours. Our automated underwriting engine processes applications in real-time with pre-configured rules and templates.</p>
+            <ul class="benefit-list">
+              <li>Real-time risk assessment</li>
+              <li>Auto-populated policy documents</li>
+              <li>Instant premium calculation</li>
+              <li>Digital signature integration</li>
+            </ul>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3>Lifecycle Accuracy</h3>
+            <p>Maintain 99.9% accuracy across every stage of the policy lifecycle—from quote to claim settlement. Automated validation ensures data integrity at every touchpoint.</p>
+            <ul class="benefit-list">
+              <li>Automated data validation</li>
+              <li>Cross-reference verification</li>
+              <li>Audit trail tracking</li>
+              <li>Error prevention algorithms</li>
+            </ul>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 20V10"></path>
+                <path d="M12 20V4"></path>
+                <path d="M6 20v-6"></path>
+              </svg>
+            </div>
+            <h3>Intelligent Automation</h3>
+            <p>Reduce manual intervention by 80% with smart workflows that learn and adapt. From endorsements to renewals, every process is optimized for efficiency.</p>
+            <ul class="benefit-list">
+              <li>Smart workflow routing</li>
+              <li>Automated renewals</li>
+              <li>Batch processing</li>
+              <li>Exception handling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="core-features-section">
+      <div class="section-container">
+        <div class="section-header light">
+          <span class="section-badge dark">📋 Core Modules</span>
+          <h2>Complete Insurance Platform</h2>
+          <p>Eight powerful modules working in harmony to cover every aspect of P&C insurance operations.</p>
+        </div>
+        
+        <div class="features-grid">
+          <!-- Policy Administration -->
+          <a href="/features/policy-admin" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+              <h3>Policy Administration</h3>
+              <p>End-to-end policy lifecycle management from quote to renewal. Configure any line of business with flexible product definitions.</p>
+              <div class="feature-highlights">
+                <span>Quote-to-Bind</span>
+                <span>Endorsements</span>
+                <span>Renewals</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ 90% faster policy issuance</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- Claims Management -->
+          <a href="/features/claims" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                </svg>
+              </div>
+              <h3>Claims Management</h3>
+              <p>Streamlined claims processing with automated workflows. From FNOL to settlement, reduce cycle times dramatically.</p>
+              <div class="feature-highlights">
+                <span>FNOL</span>
+                <span>Assessment</span>
+                <span>Settlement</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ 70% faster claim resolution</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- Billing & Accounting -->
+          <a href="/features/billing" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </div>
+              <h3>Billing & Accounting</h3>
+              <p>Comprehensive premium billing and integrated accounting. Automate collections, commissions, and financial reporting.</p>
+              <div class="feature-highlights">
+                <span>Premium Billing</span>
+                <span>Collections</span>
+                <span>Commissions</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ 95% collection automation</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- Analytics & Reporting -->
+          <a href="/features/analytics" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3>Analytics & Reporting</h3>
+              <p>Real-time dashboards and customizable reports. Make data-driven decisions with comprehensive business intelligence.</p>
+              <div class="feature-highlights">
+                <span>Dashboards</span>
+                <span>Custom Reports</span>
+                <span>KPIs</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ Real-time insights</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- Reinsurance -->
+          <a href="/features/reinsurance" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3>Reinsurance</h3>
+              <p>Manage treaty and facultative arrangements with ease. Automate cessions, recoveries, and reinsurer reporting.</p>
+              <div class="feature-highlights">
+                <span>Treaties</span>
+                <span>Facultative</span>
+                <span>Recoveries</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ Automated cession calculation</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- IFRS-17 -->
+          <a href="/features/ifrs17" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <h3>IFRS-17 Compliance</h3>
+              <p>Built-in IFRS-17 support for regulatory compliance. Automated CSM calculations and comprehensive audit trails.</p>
+              <div class="feature-highlights">
+                <span>CSM Calculation</span>
+                <span>Audit Trails</span>
+                <span>Reporting</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ 100% compliance ready</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- Self-Service Portals -->
+          <a href="/features/portals" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Self-Service Portals</h3>
+              <p>Empower agents, brokers, and customers with branded portals. Reduce support load while improving satisfaction.</p>
+              <div class="feature-highlights">
+                <span>Agent Portal</span>
+                <span>Broker Portal</span>
+                <span>Customer Portal</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ 24/7 self-service access</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+
+          <!-- Reserve Management -->
+          <a href="/features/reserves" class="feature-card">
+            <div class="feature-card-inner">
+              <div class="feature-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3>Reserve Management</h3>
+              <p>Accurate loss reserving with actuarial methods. Track IBNR, case reserves, and development patterns.</p>
+              <div class="feature-highlights">
+                <span>IBNR</span>
+                <span>Case Reserves</span>
+                <span>Development</span>
+              </div>
+              <div class="feature-speed">
+                <span class="speed-badge">⚡ Automated calculations</span>
+              </div>
+              <span class="feature-link">Learn More →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance & Risk Section -->
+    <section class="compliance-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge">🛡️ Compliance & Risk</span>
+          <h2>AML, KYC & Sanctions Screening</h2>
+          <p>Built-in compliance tools to protect your business and meet regulatory requirements.</p>
+        </div>
+
+        <div class="compliance-grid">
+          <div class="compliance-main">
+            <div class="compliance-content">
+              <h3>Integrated Compliance Framework</h3>
+              <p>Sol-Insure comes equipped with comprehensive compliance tools that seamlessly integrate into your policy lifecycle. Every customer interaction is automatically screened against global watchlists, ensuring you stay compliant without slowing down operations.</p>
+              
+              <div class="compliance-features">
+                <div class="compliance-feature">
+                  <div class="cf-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="8.5" cy="7" r="4"></circle>
+                      <polyline points="17 11 19 13 23 9"></polyline>
+                    </svg>
+                  </div>
+                  <div class="cf-content">
+                    <h4>Know Your Customer (KYC)</h4>
+                    <p>Automated identity verification and customer due diligence. Verify documents, validate addresses, and confirm identity in real-time during onboarding.</p>
+                    <ul>
+                      <li>Document verification (ID, Passport, Driver's License)</li>
+                      <li>Address validation and verification</li>
+                      <li>Beneficial owner identification</li>
+                      <li>Risk scoring and categorization</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="compliance-feature">
+                  <div class="cf-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <path d="M12 8v4M12 16h.01"></path>
+                    </svg>
+                  </div>
+                  <div class="cf-content">
+                    <h4>Anti-Money Laundering (AML)</h4>
+                    <p>Continuous transaction monitoring and suspicious activity detection. Our AML engine analyzes patterns and flags unusual behavior automatically.</p>
+                    <ul>
+                      <li>Transaction monitoring and analysis</li>
+                      <li>Suspicious activity reports (SAR) generation</li>
+                      <li>Pattern recognition algorithms</li>
+                      <li>Risk-based monitoring thresholds</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="compliance-feature">
+                  <div class="cf-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="cf-content">
+                    <h4>Sanctions Screening</h4>
+                    <p>Real-time screening against global sanctions lists including OFAC, UN, EU, and local regulatory databases. Automatic blocks and alerts for matches.</p>
+                    <ul>
+                      <li>OFAC SDN list screening</li>
+                      <li>UN Security Council sanctions</li>
+                      <li>EU consolidated sanctions</li>
+                      <li>PEP (Politically Exposed Persons) checks</li>
+          </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="compliance-sidebar">
+            <div class="compliance-stat-card">
+              <div class="stat-icon">🔍</div>
+              <div class="stat-info">
+                <span class="stat-number">Real-time</span>
+                <span class="stat-desc">Screening Speed</span>
+              </div>
+            </div>
+            <div class="compliance-stat-card">
+              <div class="stat-icon">🌐</div>
+              <div class="stat-info">
+                <span class="stat-number">200+</span>
+                <span class="stat-desc">Watchlist Sources</span>
+              </div>
+            </div>
+            <div class="compliance-stat-card">
+              <div class="stat-icon">📊</div>
+              <div class="stat-info">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-desc">Match Accuracy</span>
+              </div>
+            </div>
+            <div class="compliance-stat-card">
+              <div class="stat-icon">📁</div>
+              <div class="stat-info">
+                <span class="stat-number">Complete</span>
+                <span class="stat-desc">Audit Trail</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vehicle Database Integration Section -->
+    <section class="integration-section">
+      <div class="section-container">
+        <div class="section-header light">
+          <span class="section-badge dark">🚗 Data Integration</span>
+          <h2>National Vehicle Database Integration</h2>
+          <p>Connect to national databases for instant vehicle verification and accurate risk assessment.</p>
+        </div>
+
+        <div class="integration-content">
+          <div class="integration-visual">
+            <div class="database-diagram">
+              <div class="db-node central">
+                <div class="node-icon">🏛️</div>
+                <span>Sol-Insure</span>
+              </div>
+              <div class="db-connections">
+                <div class="connection-line line-1"></div>
+                <div class="connection-line line-2"></div>
+                <div class="connection-line line-3"></div>
+                <div class="connection-line line-4"></div>
+              </div>
+              <div class="db-node node-1">
+                <div class="node-icon">🚗</div>
+                <span>Vehicle Registry</span>
+              </div>
+              <div class="db-node node-2">
+                <div class="node-icon">📋</div>
+                <span>DMV Database</span>
+              </div>
+              <div class="db-node node-3">
+                <div class="node-icon">🔧</div>
+                <span>Service Records</span>
+              </div>
+              <div class="db-node node-4">
+                <div class="node-icon">📊</div>
+                <span>Claims History</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="integration-details">
+            <h3>Instant Vehicle Data at Your Fingertips</h3>
+            <p>Sol-Insure seamlessly connects to national vehicle databases wherever public access is available or when you supply an API key. This integration dramatically speeds up the quoting process while ensuring accuracy.</p>
+
+            <div class="integration-features">
+              <div class="int-feature">
+                <div class="int-icon">✓</div>
+                <div class="int-content">
+                  <h4>VIN Lookup & Validation</h4>
+                  <p>Instantly decode VIN numbers to retrieve make, model, year, and specifications. Validate vehicle existence in national registries.</p>
+                </div>
+              </div>
+              <div class="int-feature">
+                <div class="int-icon">✓</div>
+                <div class="int-content">
+                  <h4>Registration Verification</h4>
+                  <p>Confirm current registration status, ownership history, and any liens or encumbrances on the vehicle.</p>
+                </div>
+              </div>
+              <div class="int-feature">
+                <div class="int-icon">✓</div>
+                <div class="int-content">
+                  <h4>Claims History Import</h4>
+                  <p>Pull historical claims data to better assess risk and prevent fraud. Know the vehicle's complete insurance history.</p>
+                </div>
+              </div>
+              <div class="int-feature">
+                <div class="int-icon">✓</div>
+                <div class="int-content">
+                  <h4>Market Value Estimation</h4>
+                  <p>Access real-time market valuations based on vehicle specifications, condition, and local market data.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="api-note">
+              <div class="note-icon">ℹ️</div>
+              <div class="note-content">
+                <strong>Flexible Integration</strong>
+                <p>Works with publicly available databases automatically. For restricted databases, simply configure your API credentials in the admin panel to enable instant access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifecycle Section -->
+    <section class="lifecycle-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge">🔄 Policy Lifecycle</span>
+          <h2>Complete Lifecycle Management</h2>
+          <p>Every stage of the insurance policy lifecycle is optimized for speed and accuracy.</p>
+        </div>
+
+        <div class="lifecycle-timeline">
+          <div class="timeline-track"></div>
+          
+          <div class="lifecycle-stage">
+            <div class="stage-marker">1</div>
+            <div class="stage-content">
+              <h4>Quote</h4>
+              <p>Generate accurate quotes in under 30 seconds with real-time risk assessment and automated underwriting rules.</p>
+              <span class="stage-time">⚡ ~30 seconds</span>
+            </div>
+          </div>
+
+          <div class="lifecycle-stage">
+            <div class="stage-marker">2</div>
+            <div class="stage-content">
+              <h4>Bind</h4>
+              <p>Convert quotes to policies instantly with automated document generation and digital signature capture.</p>
+              <span class="stage-time">⚡ ~2 minutes</span>
+            </div>
+          </div>
+
+          <div class="lifecycle-stage">
+            <div class="stage-marker">3</div>
+            <div class="stage-content">
+              <h4>Endorse</h4>
+              <p>Process mid-term changes with automatic premium adjustments and instant document updates.</p>
+              <span class="stage-time">⚡ ~1 minute</span>
+            </div>
+          </div>
+
+          <div class="lifecycle-stage">
+            <div class="stage-marker">4</div>
+            <div class="stage-content">
+              <h4>Renew</h4>
+              <p>Automated renewal processing with risk re-evaluation and competitive re-rating.</p>
+              <span class="stage-time">⚡ Automated</span>
+            </div>
+          </div>
+
+          <div class="lifecycle-stage">
+            <div class="stage-marker">5</div>
+            <div class="stage-content">
+              <h4>Claim</h4>
+              <p>Streamlined FNOL to settlement with intelligent routing and automated reserve calculation.</p>
+              <span class="stage-time">⚡ 70% faster</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="features-cta-section">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Insurance Operations?</h2>
+          <p>See how Sol-Insure can accelerate your policy processing and improve accuracy across your entire operation.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="cta-primary">Request a Demo</a>
+            <a href="/pricing" class="cta-secondary">View Pricing</a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <div class="cta-stats">
+            <div class="cta-stat">
+              <span class="value">90%</span>
+              <span class="label">Faster Processing</span>
+            </div>
+            <div class="cta-stat">
+              <span class="value">99.9%</span>
+              <span class="label">Data Accuracy</span>
+            </div>
+            <div class="cta-stat">
+              <span class="value">24/7</span>
+              <span class="label">Platform Access</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <section class="footer-section">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-col-2">
-            <img class="footer-logo-img" src="/global/logo.png" alt="Sol-Insure" />
+            <img class="footer-logo-img" src="/global/LOGO233.png" alt="Sol-Insure" />
             <p class="footer-description">Modern P&C Insurance. Delivered as SaaS. Enterprise power without enterprise complexity. A cloud-native platform built for insurers who demand clarity, speed, and control.</p>
+            <div class="footer-contact-info">
+              <p><strong>Email:</strong> <a href="mailto:saas@solace-systems.com">saas@solace-systems.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+18684603788">1 (868) 460-3788</a></p>
+              <p><strong>Location:</strong> Port Of Spain, Trinidad</p>
+            </div>
             <ul class="footer-social">
               <li>
                 <a href="#" title="Twitter" class="footer-social-link">
@@ -122,18 +729,9 @@
                 </a>
               </li>
               <li>
-                <a href="#" title="Facebook" class="footer-social-link">
+                <a href="#" title="LinkedIn" class="footer-social-link">
                   <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="Instagram" class="footer-social-link">
-                  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
-                    <circle cx="16.806" cy="7.207" r="1.078"></circle>
-                    <path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                   </svg>
                 </a>
               </li>
@@ -147,32 +745,28 @@
             </ul>
           </div>
           <div class="footer-col">
-            <p class="footer-heading">Company</p>
+            <p class="footer-heading">Product</p>
             <ul class="footer-links-list">
-              <li><a href="/about" class="footer-link">About</a></li>
               <li><a href="/work" class="footer-link">Features</a></li>
+              <li><a href="/pricing" class="footer-link">Pricing</a></li>
               <li><a href="/project" class="footer-link">How It Works</a></li>
-              <li><a href="/contact" class="footer-link">Contact</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <p class="footer-heading">Help</p>
+            <p class="footer-heading">Company</p>
             <ul class="footer-links-list">
-              <li><a href="#" class="footer-link">Customer Support</a></li>
-              <li><a href="#" class="footer-link">Documentation</a></li>
-              <li><a href="#" class="footer-link">Terms & Conditions</a></li>
-              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="/about" class="footer-link">About</a></li>
+              <li><a href="/contact" class="footer-link">Contact</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
             </ul>
           </div>
-          <div class="footer-col-2 footer-newsletter">
-            <p class="footer-heading">Subscribe to newsletter</p>
-            <form action="#" method="POST" class="footer-form">
-              <div>
-                <label for="email-work" class="sr-only">Email</label>
-                <input type="email" name="email" id="email-work" placeholder="Enter your email" class="footer-input" />
-              </div>
-              <button type="submit" class="footer-button">Subscribe</button>
-            </form>
+          <div class="footer-col">
+            <p class="footer-heading">Support</p>
+            <ul class="footer-links-list">
+              <li><a href="#" class="footer-link">Help Center</a></li>
+              <li><a href="#" class="footer-link">Documentation</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            </ul>
           </div>
         </div>
         <hr class="footer-divider" />

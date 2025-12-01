@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Sol-Insure | Our Story & Mission | Insurance Technology Leaders</title>
+    <title>About Sol-Insure | Our Journey & Story | Insurance Technology Leaders</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Learn about Sol-Insure's mission to transform P&C insurance operations. Discover our story, values, and commitment to delivering modern, cloud-native insurance technology solutions." />
-    <meta name="keywords" content="about Sol-Insure, insurance technology company, insurtech leader, P&C insurance innovation, insurance software company, cloud insurance solutions" />
+    <meta name="description" content="Discover Sol-Insure's 20-year journey from a simple database in St. Lucia to a global SaaS platform. Learn about our evolution, milestones, and vision for transforming P&C insurance." />
+    <meta name="keywords" content="about Sol-Insure, insurance technology history, insurtech evolution, P&C insurance innovation, Sol-Insure timeline, insurance software journey" />
     <meta name="author" content="Sol-Insure" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://sol-insure.com/about" />
@@ -15,19 +15,27 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sol-insure.com/about" />
-    <meta property="og:title" content="About Sol-Insure | Our Story & Mission" />
-    <meta property="og:description" content="Learn about Sol-Insure's mission to transform P&C insurance operations with modern, cloud-native technology solutions." />
+    <meta property="og:title" content="About Sol-Insure | Our Journey & Story" />
+    <meta property="og:description" content="Discover Sol-Insure's 20-year journey from a simple database to a global SaaS platform transforming P&C insurance." />
     <meta property="og:image" content="https://sol-insure.com/global/og-image.png" />
     <meta property="og:site_name" content="Sol-Insure" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About Sol-Insure | Our Story & Mission" />
-    <meta name="twitter:description" content="Learn about Sol-Insure's mission to transform P&C insurance operations with modern, cloud-native technology solutions." />
+    <meta name="twitter:url" content="https://sol-insure.com/about" />
+    <meta name="twitter:title" content="About Sol-Insure | Our Journey & Story" />
+    <meta name="twitter:description" content="Discover Sol-Insure's 20-year journey from a simple database to a global SaaS platform." />
     <meta name="twitter:image" content="https://sol-insure.com/global/og-image.png" />
     
+    <!-- Hreflang for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://sol-insure.com/about" />
+    <link rel="alternate" hreflang="es" href="https://sol-insure.com/about?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="https://sol-insure.com/about" />
+    
     <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/png" href="/global/site-icon.png" />
     <link rel="apple-touch-icon" href="/global/site-icon.png" />
     
@@ -37,9 +45,16 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Sol-Insure",
-      "description": "Modern, cloud-native P&C insurance platform transforming insurance operations worldwide.",
+      "description": "Modern, cloud-native P&C insurance platform with 20 years of industry experience.",
       "url": "https://sol-insure.com",
       "logo": "https://sol-insure.com/global/logo.png",
+      "foundingDate": "2005",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Sol-Insure Team"
+        }
+      ],
       "sameAs": [
         "https://linkedin.com/company/sol-insure",
         "https://twitter.com/solinsure"
@@ -47,7 +62,8 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
-        "url": "https://sol-insure.com/contact"
+        "telephone": "+1-868-460-3788",
+        "email": "saas@solace-systems.com"
       }
     }
     </script>
@@ -55,394 +71,1082 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/globals.css" />
     <link rel="stylesheet" href="/css/transition.css" />
-    <link rel="stylesheet" href="/css/menu.css" />
-    <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <script type="module" src="/script/i18n.js"></script>
   </head>
-  <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-      <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-      <div class="lang-divider"></div>
-      <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-    </div>
-
+  <body class="about-page light-theme">
     <div class="transition">
       <div class="transition-overlay overlay"></div>
       <div class="transition-logo">
         <img src="/global/logo.png" alt="Sol-Insure" />
       </div>
     </div>
-    <div class="mask-transition"></div>
-    <div class="mask-bg-overlay"></div>
 
-    <nav class="menu">
-      <div class="menu-header">
-        <a href="/" class="menu-logo"><img src="/global/logo.png" alt="Sol-Insure" /></a>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <div class="menu menu-hamburger-icon">
-            <span class="menu-item"></span>
-            <span class="menu-item"></span>
+    <!-- Navigation Header -->
+    <header class="about-nav">
+      <div class="nav-container">
+        <div class="nav-left">
+          <a href="/" class="nav-logo">
+            <img src="/global/logo.png" alt="Sol-Insure" />
+          </a>
+          <div class="language-toggle">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
           </div>
-        </button>
-      </div>
-      <div class="menu-overlay">
-        <nav class="menu-nav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/work">Features</a></li>
-            <li><a href="/project">How It Works</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+          <!-- Theme Toggle -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <div class="toggle-track">
+              <div class="toggle-thumb">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="5"/>
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <nav class="nav-links">
+          <a href="/" data-i18n="nav_home">Home</a>
+          <a href="/work" data-i18n="nav_features">Features</a>
+          <a href="/pricing" data-i18n="pricing_nav_pricing">Pricing</a>
+          <a href="/project" data-i18n="nav_how_it_works">How It Works</a>
+          <a href="/ai" data-i18n="nav_ai">AI</a>
+          <a href="/about" class="active" data-i18n="nav_about">About</a>
+          <a href="/contact" data-i18n="nav_contact">Contact</a>
         </nav>
-        <div class="menu-footer">
-          <div class="menu-social">
-            <a href="#"><span>&#9654;</span> Instagram</a>
-            <a href="#"><span>&#9654;</span> LinkedIn</a>
-          </div>
-          <div class="menu-time">23:24:02 NY</div>
+        <div class="nav-buttons">
+          <a href="/login" class="nav-login" data-i18n="nav_login">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+            </svg>
+            Login
+          </a>
+          <a href="/contact" class="nav-cta" data-i18n="nav_get_started">Get Started</a>
         </div>
       </div>
-    </nav>
+    </header>
 
-    <section class="about-hero">
-      <div class="about-hero-img">
-        <img src="/about/about-hero-img.jpg" alt="" />
+    <!-- Hero Section -->
+    <section class="about-hero-section">
+      <div class="hero-bg-pattern"></div>
+      <div class="hero-gradient-orb orb-1"></div>
+      <div class="hero-gradient-orb orb-2"></div>
+      <div class="hero-gradient-orb orb-3"></div>
+      
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          <span>20 Years of Innovation</span>
+        </div>
+        
+        <h1 class="hero-title">
+          <span class="title-line">From a Simple Database</span>
+          <span class="title-line highlight">To a Global Platform</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Sol-Insure's journey began in 2005 with a vision to modernize insurance operations. 
+          Two decades later, we're transforming how insurers across the Caribbean and beyond operate.
+        </p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Countries</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Cloud Native</span>
+          </div>
+        </div>
       </div>
-      <div class="container">
-        <div class="about-header">
-          <h2 data-animate-type="line-reveal" data-animate-delay="0.25">
-            Who We Are
-          </h2>
+      
+      <div class="scroll-indicator">
+        <span>Scroll to explore our journey</span>
+        <div class="scroll-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
         </div>
       </div>
     </section>
 
-    <section class="anime-text-container">
-      <div class="home-spotlight-top-bar">
-        <div class="container">
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-dark.png" alt="Symbol" />
-            </div>
+    <!-- Story Introduction -->
+    <section class="story-intro">
+      <div class="intro-container">
+        <div class="intro-eyebrow">
+          <span class="line"></span>
+          <span class="text">Our Story</span>
+          <span class="line"></span>
+        </div>
+        
+        <h2 class="intro-title">
+          Built from Real-World Experience
+        </h2>
+        
+        <div class="intro-content">
+          <p>
+            Sol-Insure wasn't born in a boardroom or a venture capital pitch meeting. It was born from 
+            <strong>necessity</strong> — on the ground, in the trenches of Caribbean insurance operations, 
+            where legacy systems failed to keep pace with modern demands.
+          </p>
+          <p>
+            What started as a simple Lotus Approach database for a single insurer in St. Lucia has evolved 
+            into a comprehensive, cloud-native platform that's now expanding across Latin America and the Caribbean.
+          </p>
+        </div>
+        
+        <div class="intro-quote">
+          <div class="quote-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
           </div>
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-dark.png" alt="Symbol" />
-            </div>
+          <blockquote>
+            We didn't just build software — we solved problems that we experienced firsthand. 
+            Every feature in Sol-Insure exists because an insurer needed it.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CINEMATIC HORIZONTAL TIMELINE -->
+    <section class="cinematic-timeline">
+      <!-- Ambient Background -->
+      <div class="timeline-ambient">
+        <div class="ambient-gradient"></div>
+        <div class="ambient-particles">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      
+      <!-- Section Header -->
+      <div class="timeline-intro">
+        <div class="intro-badge">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <span>20 Years of Evolution</span>
+        </div>
+        <h2 class="intro-title">
+          <span class="title-thin">The</span>
+          <span class="title-bold">Journey</span>
+        </h2>
+        <p class="intro-desc">Scroll horizontally to explore our story</p>
+        
+        <!-- Scroll Hint -->
+        <div class="scroll-hint">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Scroll to explore</span>
+          <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Horizontal Timeline Track -->
+      <div class="timeline-viewport">
+        <div class="timeline-track">
+          <!-- Journey Path -->
+          <svg class="journey-path" viewBox="0 0 3000 200" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="50%" stop-color="#a855f7"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+            </defs>
+            <path class="path-bg" d="M0,100 Q300,50 600,100 T1200,100 T1800,100 T2400,100 T3000,100" fill="none" stroke="rgba(99,102,241,0.1)" stroke-width="4"/>
+            <path class="path-progress" d="M0,100 Q300,50 600,100 T1200,100 T1800,100 T2400,100 T3000,100" fill="none" stroke="url(#pathGradient)" stroke-width="4" stroke-dasharray="3000" stroke-dashoffset="3000"/>
+          </svg>
+          
+          <!-- Era Cards -->
+          <div class="era-cards">
+            
+            <!-- 2005 - The Beginning -->
+            <article class="era-card" data-year="2005">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">The Beginning</span>
+                  <div class="year-display">
+                    <span class="year-number">2005</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">Legacy System Begins</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="8" y="8" width="32" height="24" rx="2"/>
+                      <path d="M8 28h32M20 32v8M28 32v8M16 40h16"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Designed for St. Lucia Motor & General on Lotus Approach database. The foundation for understanding regional insurance workflows.</p>
+                <div class="card-tags">
+                  <span>Lotus Approach</span>
+                  <span>St. Lucia</span>
+                  <span>Foundation</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2007 - Web Era -->
+            <article class="era-card" data-year="2007">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Digital Transformation</span>
+                  <div class="year-display">
+                    <span class="year-number">2007</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">Web Technology Transition</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <circle cx="24" cy="24" r="18"/>
+                      <ellipse cx="24" cy="24" rx="18" ry="8"/>
+                      <ellipse cx="24" cy="24" rx="8" ry="18"/>
+                      <path d="M6 24h36"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">First web-based version created. Moving insurers from desktop to browser-based, scalable platforms.</p>
+                <ul class="card-features">
+                  <li>Centralized Policy Management</li>
+                  <li>Claims Tracking</li>
+                  <li>Multi-Branch Operations</li>
+                </ul>
+                <div class="card-tags">
+                  <span>Web-Based</span>
+                  <span>Scalable</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2014 - Modernization -->
+            <article class="era-card" data-year="2014">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Major Rebuild</span>
+                  <div class="year-display">
+                    <span class="year-number">2014</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">Platform Modernization</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M24 6v36M6 24h36"/>
+                      <circle cx="24" cy="24" r="8"/>
+                      <circle cx="24" cy="24" r="16" stroke-dasharray="4 4"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Complete architecture overhaul with modern UI/UX, improved database, and early API layers.</p>
+                <ul class="card-features">
+                  <li>Updated UI/UX</li>
+                  <li>API Integration</li>
+                  <li>Multi-Product Support</li>
+                </ul>
+                <div class="card-tags">
+                  <span>Architecture</span>
+                  <span>APIs</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2017 - Compliance -->
+            <article class="era-card" data-year="2017">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Compliance Era</span>
+                  <div class="year-display">
+                    <span class="year-number">2017</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">IFRS Compliance Modules</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M24 4L40 14v20L24 44 8 34V14L24 4z"/>
+                      <path d="M18 24l4 4 8-8"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Development of IFRS compliance engines for structured regulatory data outputs.</p>
+                <ul class="card-features">
+                  <li>Policy Grouping</li>
+                  <li>Claims Reserving</li>
+                  <li>Data Extraction</li>
+                </ul>
+                <div class="card-tags">
+                  <span>IFRS</span>
+                  <span>Regulatory</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2019 - Financial -->
+            <article class="era-card" data-year="2019">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Financial Focus</span>
+                  <div class="year-display">
+                    <span class="year-number">2019</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">IFRS-17 Engine Expansion</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M8 40V20l8-8 8 12 8-16 8 8v24"/>
+                      <circle cx="16" cy="12" r="3"/>
+                      <circle cx="32" cy="8" r="3"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Preparing for IFRS-17 workflows with contract grouping and actuarial export support.</p>
+                <ul class="card-features">
+                  <li>Contract Grouping</li>
+                  <li>Cashflow Mapping</li>
+                  <li>Actuarial Exports</li>
+                </ul>
+                <div class="card-tags">
+                  <span>IFRS-17</span>
+                  <span>Actuarial</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2021 - Regional -->
+            <article class="era-card" data-year="2021">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Regional Standards</span>
+                  <div class="year-display">
+                    <span class="year-number">2021</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">Schedule 19 Development</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="8" y="8" width="32" height="32" rx="4"/>
+                      <path d="M16 18h16M16 24h12M16 30h8"/>
+                      <path d="M18 14l4 4-4 4"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Caribbean-specific Schedule 19 requirements with enhanced compliance reporting.</p>
+                <ul class="card-features">
+                  <li>Audit Trails</li>
+                  <li>Period Tracking</li>
+                  <li>Regulatory Exports</li>
+                </ul>
+                <div class="card-tags">
+                  <span>Caribbean</span>
+                  <span>Compliance</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2023 - Live -->
+            <article class="era-card" data-year="2023">
+              <div class="card-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Live Operations</span>
+                  <div class="year-display">
+                    <span class="year-number">2023</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">St. Lucia Implementations</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <circle cx="24" cy="20" r="8"/>
+                      <path d="M24 28v12M12 44c0-6 5-10 12-10s12 4 12 10"/>
+                      <path d="M32 16l4-4M36 20h4"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Live implementations with multiple St. Lucia insurers. Real-world feedback shapes the SaaS rewrite.</p>
+                <ul class="card-features">
+                  <li>Motor & Property</li>
+                  <li>Claims Management</li>
+                  <li>QuickBooks Sync</li>
+                </ul>
+                <div class="card-tags">
+                  <span>Production</span>
+                  <span>Multi-Insurer</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2024 - SaaS Transformation (Featured) -->
+            <article class="era-card featured" data-year="2024">
+              <div class="featured-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>PIVOTAL YEAR</span>
+              </div>
+              <div class="card-glow featured-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">SaaS Revolution</span>
+                  <div class="year-display">
+                    <span class="year-number">2024</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">Multi-Tenant SaaS Transformation</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M24 8c-8 0-14 4-14 8v16c0 4 6 8 14 8s14-4 14-8V16c0-4-6-8-14-8z"/>
+                      <ellipse cx="24" cy="16" rx="14" ry="8"/>
+                      <path d="M10 24c0 4 6 8 14 8s14-4 14-8"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                  <div class="visual-ring ring-2"></div>
+                </div>
+                <p class="card-desc">Complete transformation into cloud-native, modular SaaS. From regional app to global product.</p>
+                <div class="feature-grid">
+                  <div class="feature-col">
+                    <h4>Architecture</h4>
+                    <ul>
+                      <li>Multi-Tenant</li>
+                      <li>Microservices</li>
+                      <li>Modern UI/UX</li>
+                    </ul>
+                  </div>
+                  <div class="feature-col">
+                    <h4>Compliance</h4>
+                    <ul>
+                      <li>AML & OFAC</li>
+                      <li>UN Sanctions</li>
+                      <li>FATF Standards</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-tags">
+                  <span class="tag-highlight">Cloud-Native</span>
+                  <span class="tag-highlight">SaaS</span>
+                  <span class="tag-highlight">Global</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- 2025 - Current -->
+            <article class="era-card current" data-year="2025">
+              <div class="current-badge">
+                <div class="badge-pulse"></div>
+                <span>NOW</span>
+              </div>
+              <div class="card-glow current-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">Global Expansion</span>
+                  <div class="year-display">
+                    <span class="year-number">2025</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">Caribbean & LATAM Expansion</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <circle cx="24" cy="24" r="18"/>
+                      <path d="M24 6c-6 4-10 10-10 18s4 14 10 18c6-4 10-10 10-18S30 10 24 6z"/>
+                      <path d="M6 24h36"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <p class="card-desc">Expanding across multiple Caribbean markets. Dominant platform in Antigua with 3 of 5 major insurers.</p>
+                <div class="expansion-regions">
+                  <div class="region">
+                    <span class="flag">🇱🇨</span>
+                    <span class="name">St. Lucia</span>
+                  </div>
+                  <div class="region">
+                    <span class="flag">🇦🇬</span>
+                    <span class="name">Antigua</span>
+                  </div>
+                  <div class="region planned">
+                    <span class="flag">🌎</span>
+                    <span class="name">LATAM</span>
+                  </div>
+                </div>
+                <div class="card-tags">
+                  <span>Expansion</span>
+                  <span>Multi-Language</span>
+                </div>
+              </div>
+              <div class="card-connector">
+                <div class="connector-dot"></div>
+                <div class="connector-line"></div>
+              </div>
+            </article>
+            
+            <!-- Future - Roadmap -->
+            <article class="era-card future" data-year="future">
+              <div class="future-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span>ROADMAP</span>
+              </div>
+              <div class="card-glow future-glow"></div>
+              <div class="card-content">
+                <div class="card-header">
+                  <span class="era-label">The Future</span>
+                  <div class="year-display">
+                    <span class="year-number">2026+</span>
+                    <div class="year-decoration"></div>
+                  </div>
+                </div>
+                <h3 class="card-title">What's Next</h3>
+                <div class="card-visual">
+                  <div class="visual-icon">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M24 8v32M16 16l8-8 8 8M8 24h32"/>
+                      <circle cx="24" cy="24" r="4" fill="currentColor"/>
+                    </svg>
+                  </div>
+                  <div class="visual-ring"></div>
+                </div>
+                <div class="future-grid">
+                  <div class="future-item"><span>🤖</span>AI Underwriting</div>
+                  <div class="future-item"><span>🔮</span>Fraud Detection</div>
+                  <div class="future-item"><span>🌐</span>Broker Portals</div>
+                  <div class="future-item"><span>🛒</span>Marketplace</div>
+                  <div class="future-item"><span>💳</span>Embedded Finance</div>
+                  <div class="future-item"><span>🚀</span>Global Scale</div>
+                </div>
+                <div class="card-tags">
+                  <span>AI</span>
+                  <span>Innovation</span>
+                  <span>Growth</span>
+                </div>
+              </div>
+            </article>
+            
           </div>
         </div>
       </div>
-      <div class="home-spotlight-bottom-bar">
-        <div class="container">
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.2"
-            data-animate-on-scroll="true"
-          >
-            <span>&#9654;</span> Our Story
-          </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-            data-animate-on-scroll="true"
-          >
-            / Mission & Vision
-          </p>
+      
+      <!-- Timeline Progress Bar -->
+      <div class="timeline-progress-bar">
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-years">
+          <span data-year="2005">2005</span>
+          <span data-year="2014">2014</span>
+          <span data-year="2021">2021</span>
+          <span data-year="2025" class="current">2025</span>
+          <span data-year="future">Future</span>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WHAT DRIVES US - IMMERSIVE VALUES SECTION
+         ======================================== -->
+    <section class="values-immersive">
+      <!-- Cinematic Background -->
+      <div class="values-cinema-bg">
+        <div class="cinema-gradient"></div>
+        <div class="cinema-mesh"></div>
+        <div class="cinema-particles">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="cinema-orbs">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+        </div>
+        <div class="cinema-lines">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <line x1="0" y1="100" x2="100" y2="0" class="cinema-line"/>
+            <line x1="20" y1="100" x2="100" y2="20" class="cinema-line"/>
+            <line x1="40" y1="100" x2="100" y2="40" class="cinema-line"/>
+          </svg>
         </div>
       </div>
-      <div class="container">
-        <div class="copy-container">
-          <div class="anime-text">
-            <p>
-              Sol-Insure is a next-generation, cloud-native SaaS platform designed specifically for P&C insurers, MGAs, and digital insurers. Built from real-world experience in the Caribbean and LATAM markets, Sol-Insure bridges the gap between heavy enterprise systems and outdated legacy software — offering insurers a modern, scalable, reliable alternative that delivers full operational control at a fraction of the cost.
+      
+      <!-- Section Header -->
+      <div class="values-header-immersive">
+        <div class="header-eyebrow">
+          <div class="eyebrow-line"></div>
+          <span>Our Core Principles</span>
+          <div class="eyebrow-line"></div>
+        </div>
+        <h2 class="values-mega-title">
+          <span class="title-reveal">What</span>
+          <span class="title-reveal gradient-text">Drives</span>
+          <span class="title-reveal">Us</span>
+        </h2>
+        <p class="values-manifesto">
+          In an industry defined by risk and uncertainty, we are the architects of confidence. 
+          Every line of code we write, every solution we deliver, is a promise to transform 
+          how insurance operates — <strong>faster, smarter, and more human</strong>.
+        </p>
+      </div>
+      
+      <!-- Value Cards - Immersive Grid -->
+      <div class="values-showcase">
+        
+        <!-- TRUST - Value 1 -->
+        <article class="value-immersive" data-value="trust">
+          <div class="value-glow"></div>
+          <div class="value-border-animation"></div>
+          
+          <div class="value-content">
+            <div class="value-number">01</div>
+            
+            <div class="value-icon-showcase">
+              <div class="icon-container">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path class="icon-path" d="M32 8L8 20v16c0 14.4 10.4 27.8 24 32 13.6-4.2 24-17.6 24-32V20L32 8z" stroke="currentColor" stroke-width="2"/>
+                  <path class="icon-path-inner" d="M24 32l6 6 12-12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="icon-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+              </div>
+            </div>
+            
+            <h3 class="value-title">Unbreakable Trust</h3>
+            
+            <p class="value-philosophy">
+              When insurers place their entire operation in our hands, they're not just buying software — 
+              they're entrusting us with their livelihood, their reputation, and their clients' peace of mind. 
+              We don't take that lightly. <strong>We guard it fiercely.</strong>
             </p>
-            <p>
-              Sol-Insure was founded to solve a widespread industry problem: mid-size insurers are forced to choose between expensive enterprise platforms with overwhelming complexity or low-end systems that lack compliance, automation, and scalability. We built Sol-Insure to be the perfect middle ground — a powerful, modular, cloud-native platform designed for emerging markets and insurers who demand agility, speed, and modern capabilities.
+            
+            <div class="value-metrics">
+              <div class="metric">
+                <span class="metric-value" data-count="99.99">0</span>
+                <span class="metric-suffix">%</span>
+                <span class="metric-label">Uptime SLA</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value" data-count="256">0</span>
+                <span class="metric-suffix">-bit</span>
+                <span class="metric-label">Encryption</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value" data-count="0">0</span>
+                <span class="metric-suffix"></span>
+                <span class="metric-label">Data Breaches</span>
+              </div>
+            </div>
+            
+            <div class="value-quote">
+              <blockquote>"Trust is built in drops and lost in buckets. We collect every drop."</blockquote>
+            </div>
+          </div>
+          
+          <div class="value-visual">
+            <div class="shield-animation">
+              <svg viewBox="0 0 120 140" fill="none">
+                <path class="shield-body" d="M60 10L10 30v40c0 32 22 62 50 70 28-8 50-38 50-70V30L60 10z"/>
+                <path class="shield-shine" d="M60 10L10 30v40c0 32 22 62 50 70V10z" opacity="0.3"/>
+                <path class="shield-check" d="M40 70l15 15 30-30" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+        
+        <!-- INNOVATION - Value 2 -->
+        <article class="value-immersive featured" data-value="innovation">
+          <div class="value-glow innovation-glow"></div>
+          <div class="value-border-animation"></div>
+          <div class="featured-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>CORE VALUE</span>
+          </div>
+          
+          <div class="value-content">
+            <div class="value-number">02</div>
+            
+            <div class="value-icon-showcase">
+              <div class="icon-container innovation-icon">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path class="icon-path" d="M32 4v8M32 52v8M4 32h8M52 32h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path class="icon-path" d="M12 12l6 6M46 46l6 6M12 52l6-6M46 18l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle class="icon-path-inner" cx="32" cy="32" r="14" stroke="currentColor" stroke-width="2"/>
+                  <circle class="icon-core" cx="32" cy="32" r="6" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="icon-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+              </div>
+              <div class="spark-particles">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            
+            <h3 class="value-title">Relentless Innovation</h3>
+            
+            <p class="value-philosophy">
+              The insurance industry has been solving tomorrow's problems with yesterday's tools for too long. 
+              We refuse to accept "that's how it's always been done." Every feature, every update, every decision 
+              asks one question: <strong>How can we do this better?</strong>
             </p>
+            
+            <div class="innovation-showcase">
+              <div class="innovation-item">
+                <div class="innovation-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <span>Multi-Tenant Architecture</span>
+              </div>
+              <div class="innovation-item">
+                <div class="innovation-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <span>OFAC/AML Compliance</span>
+              </div>
+              <div class="innovation-item">
+                <div class="innovation-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4"/></svg>
+                </div>
+                <span>IFRS-17 Ready</span>
+              </div>
+              <div class="innovation-item">
+                <div class="innovation-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <span>Real-time Processing</span>
+              </div>
+            </div>
+            
+            <div class="value-quote">
+              <blockquote>"We don't follow the industry — we redefine it."</blockquote>
+            </div>
           </div>
-        </div>
+          
+          <div class="value-visual">
+            <div class="innovation-animation">
+              <div class="neural-network">
+                <div class="node node-center"></div>
+                <div class="node node-1"></div>
+                <div class="node node-2"></div>
+                <div class="node node-3"></div>
+                <div class="node node-4"></div>
+                <div class="node node-5"></div>
+                <div class="node node-6"></div>
+                <svg class="connections" viewBox="0 0 200 200">
+                  <line x1="100" y1="100" x2="40" y2="40"/>
+                  <line x1="100" y1="100" x2="160" y2="40"/>
+                  <line x1="100" y1="100" x2="40" y2="160"/>
+                  <line x1="100" y1="100" x2="160" y2="160"/>
+                  <line x1="100" y1="100" x2="20" y2="100"/>
+                  <line x1="100" y1="100" x2="180" y2="100"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- PARTNERSHIP - Value 3 -->
+        <article class="value-immersive" data-value="partnership">
+          <div class="value-glow"></div>
+          <div class="value-border-animation"></div>
+          
+          <div class="value-content">
+            <div class="value-number">03</div>
+            
+            <div class="value-icon-showcase">
+              <div class="icon-container">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path class="icon-path" d="M20 28c-4.4 0-8 3.6-8 8s3.6 8 8 8M44 28c4.4 0 8 3.6 8 8s-3.6 8-8 8" stroke="currentColor" stroke-width="2"/>
+                  <path class="icon-path-inner" d="M24 32h16M32 24v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle class="icon-path" cx="32" cy="20" r="8" stroke="currentColor" stroke-width="2"/>
+                  <path class="icon-path" d="M16 48c0-8 7-12 16-12s16 4 16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="icon-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+              </div>
+            </div>
+            
+            <h3 class="value-title">True Partnership</h3>
+            
+            <p class="value-philosophy">
+              We don't see clients — we see partners. Your success is our success. Your challenges become our 
+              challenges. When you're up at 2 AM worried about a policy deadline, we're right there with you. 
+              <strong>We win together, or we don't win at all.</strong>
+            </p>
+            
+            <div class="value-metrics">
+              <div class="metric">
+                <span class="metric-value" data-count="24">0</span>
+                <span class="metric-suffix">/7</span>
+                <span class="metric-label">Support</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value" data-count="4">0</span>
+                <span class="metric-suffix">hr</span>
+                <span class="metric-label">Avg Response</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value" data-count="98">0</span>
+                <span class="metric-suffix">%</span>
+                <span class="metric-label">Retention</span>
+              </div>
+            </div>
+            
+            <div class="value-quote">
+              <blockquote>"Your midnight emergency is our midnight priority."</blockquote>
+            </div>
+          </div>
+          
+          <div class="value-visual">
+            <div class="partnership-animation">
+              <div class="handshake-icon">
+                <svg viewBox="0 0 100 100" fill="none">
+                  <path class="hand-left" d="M20 60L35 45l15 10 15-15" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path class="hand-right" d="M80 60L65 45 50 55 35 45" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="connection-pulse"></div>
+            </div>
+          </div>
+        </article>
+        
+        <!-- RELIABILITY - Value 4 -->
+        <article class="value-immersive" data-value="reliability">
+          <div class="value-glow"></div>
+          <div class="value-border-animation"></div>
+          
+          <div class="value-content">
+            <div class="value-number">04</div>
+            
+            <div class="value-icon-showcase">
+              <div class="icon-container">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle class="icon-path" cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2"/>
+                  <path class="icon-path-inner" d="M32 16v16l12 8" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle class="icon-core" cx="32" cy="32" r="4" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="icon-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+              </div>
+            </div>
+            
+            <h3 class="value-title">Unwavering Reliability</h3>
+            
+            <p class="value-philosophy">
+              Insurance doesn't sleep. Neither do we. Every policy renewal, every claim, every transaction 
+              depends on systems that simply cannot fail. We've built Sol-Insure to be the foundation you 
+              never have to think about — <strong>because it just works.</strong>
+            </p>
+            
+            <div class="uptime-display">
+              <div class="uptime-bar">
+                <div class="uptime-fill" data-uptime="99.99"></div>
+              </div>
+              <div class="uptime-stats">
+                <span class="uptime-value">99.99%</span>
+                <span class="uptime-label">Historical Uptime</span>
+              </div>
+              <div class="uptime-detail">
+                <span>That's only <strong>52 minutes</strong> of downtime per year.</span>
+              </div>
+            </div>
+            
+            <div class="value-quote">
+              <blockquote>"Reliability isn't a feature. It's a foundation."</blockquote>
+            </div>
+          </div>
+          
+          <div class="value-visual">
+            <div class="reliability-animation">
+              <div class="server-rack">
+                <div class="server server-1">
+                  <div class="server-light active"></div>
+                </div>
+                <div class="server server-2">
+                  <div class="server-light active"></div>
+                </div>
+                <div class="server server-3">
+                  <div class="server-light active"></div>
+                </div>
+              </div>
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+        </article>
+        
       </div>
-    </section>
-
-    <section class="about-skills">
-      <div class="container">
-        <div class="about-skills-col">
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-light.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s2-light.png" alt="Symbol" />
-            </div>
+      
+      <!-- Values Manifesto Footer -->
+      <div class="values-manifesto-footer">
+        <div class="manifesto-content">
+          <div class="manifesto-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M24 4l6 12 12 2-8 8 2 12-12-6-12 6 2-12-8-8 12-2 6-12z"/>
+            </svg>
           </div>
-          <div class="about-skills-copy-wrapper">
-            <div class="about-skills-callout">
-              <p
-                class="mono"
-                data-animate-type="scramble"
-                data-animate-delay="0.2"
-                data-animate-on-scroll="true"
-              >
-                <span>&#9654;</span> What We Believe
-              </p>
-            </div>
-            <div class="about-skills-header">
-              <h3
-                data-animate-type="line-reveal"
-                data-animate-delay="0.4"
-                data-animate-on-scroll="true"
-              >
-                Our core principles guide everything we build
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div class="about-skills-col skills-playground">
-          <div class="object-container">
-            <div class="object os-1"><p class="mono">Transparency</p></div>
-            <div class="object os-2"><p class="mono">Reliability</p></div>
-            <div class="object os-3"><p class="mono">Innovation</p></div>
-            <div class="object os-1"><p class="mono">Speed</p></div>
-            <div class="object os-2"><p class="mono">Efficiency</p></div>
-            <div class="object os-3"><p class="mono">Partnership</p></div>
-            <div class="object os-1"><p class="mono">Trust</p></div>
-            <div class="object os-2"><p class="mono">Security</p></div>
-            <div class="object os-3"><p class="mono">Modernization</p></div>
-            <div class="object os-1"><p class="mono">Simplicity</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-sticky-cards">
-      <div class="sticky-cards-header">
-        <h3
-          data-animate-type="line-reveal"
-          data-animate-delay="0.2"
-          data-animate-on-scroll="true"
-        >
-          Mission & Vision
-        </h3>
-      </div>
-      <div class="home-spotlight-top-bar">
-        <div class="container">
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-dark.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s2-dark.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s3-dark.png" alt="Symbol" />
-            </div>
-          </div>
-          <div class="symbols-container">
-            <div class="symbol">
-              <img src="/symbols/s1-dark.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s2-dark.png" alt="Symbol" />
-            </div>
-            <div class="symbol">
-              <img src="/symbols/s3-dark.png" alt="Symbol" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="home-spotlight-bottom-bar">
-        <div class="container">
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.2"
-            data-animate-on-scroll="true"
-          >
-            <span>&#9654;</span> Our Purpose
+          <p class="manifesto-text">
+            These aren't just words on a website. They're the promises we make every day 
+            to the insurers who trust us with their business. When you partner with Sol-Insure, 
+            you're not just getting software — <strong>you're gaining an ally in your corner.</strong>
           </p>
-          <p
-            class="mono"
-            data-animate-type="scramble"
-            data-animate-delay="0.25"
-            data-animate-on-scroll="true"
-          >
-            / Brand Promise
-          </p>
+          <a href="/contact" class="manifesto-cta">
+            <span>Experience the Difference</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-img">
-          <img src="/gallery-images/gallery-img-1.jpg" alt="" />
-        </div>
-        <div class="gallery-card-content"><p class="mono">Mission</p></div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-img">
-          <img src="/gallery-images/gallery-img-2.jpg" alt="" />
-        </div>
-        <div class="gallery-card-content"><p class="mono">Vision</p></div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-img">
-          <img src="/gallery-images/gallery-img-3.jpg" alt="" />
-        </div>
-        <div class="gallery-card-content"><p class="mono">Promise</p></div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-img">
-          <img src="/gallery-images/gallery-img-4.jpg" alt="" />
-        </div>
-        <div class="gallery-card-content"><p class="mono">Values</p></div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-img">
-          <img src="/gallery-images/gallery-img-5.jpg" alt="" />
-        </div>
-        <div class="gallery-card-content"><p class="mono">Innovation</p></div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-img">
-          <img src="/gallery-images/gallery-img-6.jpg" alt="" />
-        </div>
-        <div class="gallery-card-content"><p class="mono">Partnership</p></div>
       </div>
     </section>
 
-    <section class="outro">
-      <div class="container">
-        <h3>Technology should empower insurers, not slow them down</h3>
-      </div>
-      <div class="outro-strips">
-        <div class="outro-strip os-1">
-          <div class="skill skill-var-1"><p class="mono">Modernization</p></div>
-          <div class="skill skill-var-2"><p class="mono">Accessible</p></div>
-          <div class="skill skill-var-3"><p class="mono">Affordable</p></div>
-          <div class="skill skill-var-1"><p class="mono">Low-Risk</p></div>
-          <div class="skill skill-var-3"><p class="mono">Cloud-Native</p></div>
-          <div class="skill skill-var-1"><p class="mono">Transparent</p></div>
-        </div>
-        <div class="outro-strip os-2">
-          <div class="skill skill-var-2"><p class="mono">Trust</p></div>
-          <div class="skill skill-var-3"><p class="mono">Evolution</p></div>
-          <div class="skill skill-var-1"><p class="mono">Automation</p></div>
-        </div>
-        <div class="outro-strip os-3">
-          <div class="skill skill-var-2"><p class="mono">Data Intelligence</p></div>
-          <div class="skill skill-var-3"><p class="mono">Regional Needs</p></div>
-          <div class="skill skill-var-1"><p class="mono">Regulatory</p></div>
-          <div class="skill skill-var-2"><p class="mono">Customer-Centric</p></div>
-          <div class="skill skill-var-3"><p class="mono">Digital Experiences</p></div>
-          <div class="skill skill-var-3"><p class="mono">Agile</p></div>
-          <div class="skill skill-var-1"><p class="mono">Data-Driven</p></div>
-        </div>
-        <div class="outro-strip os-4">
-          <div class="skill skill-var-1"><p class="mono">Clear Pricing</p></div>
-          <div class="skill skill-var-2"><p class="mono">Clear Workflows</p></div>
-          <div class="skill skill-var-3">
-            <p class="mono">Clear Communication</p>
+    <!-- CTA Section -->
+    <section class="about-cta">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2>Ready to Be Part of Our Story?</h2>
+          <p>Join the insurers who are transforming their operations with Sol-Insure.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="cta-primary">
+              <span>Schedule a Demo</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/work" class="cta-secondary">
+              <span>Explore Features</span>
+            </a>
           </div>
         </div>
-        <div class="outro-strip os-5">
-          <div class="skill skill-var-1"><p class="mono">AWS Infrastructure</p></div>
-          <div class="skill skill-var-2"><p class="mono">Uptime</p></div>
-          <div class="skill skill-var-3"><p class="mono">Security</p></div>
-          <div class="skill skill-var-1"><p class="mono">Stability</p></div>
-          <div class="skill skill-var-2"><p class="mono">Fast Implementation</p></div>
-          <div class="skill skill-var-3"><p class="mono">Fast Launches</p></div>
-          <div class="skill skill-var-1"><p class="mono">Fast Adoption</p></div>
-          <div class="skill skill-var-2"><p class="mono">Customer Partnership</p></div>
-        </div>
-        <div class="outro-strip os-6">
-          <div class="skill skill-var-3"><p class="mono">Emerging Markets</p></div>
-          <div class="skill skill-var-1"><p class="mono">LATAM Focus</p></div>
-          <div class="skill skill-var-2"><p class="mono">Caribbean</p></div>
-          <div class="skill skill-var-3"><p class="mono">Regional Support</p></div>
-        </div>
       </div>
     </section>
 
-    <section class="footer-section">
+    <!-- Footer -->
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
-          <div class="footer-col-2">
-            <img class="footer-logo-img" src="/global/logo.png" alt="Sol-Insure" />
-            <p class="footer-description">Modern P&C Insurance. Delivered as SaaS. Enterprise power without enterprise complexity. A cloud-native platform built for insurers who demand clarity, speed, and control.</p>
-            <ul class="footer-social">
-              <li>
-                <a href="#" title="Twitter" class="footer-social-link">
-                  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="Facebook" class="footer-social-link">
-                  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="Instagram" class="footer-social-link">
-                  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
-                    <circle cx="16.806" cy="7.207" r="1.078"></circle>
-                    <path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="GitHub" class="footer-social-link">
-                  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+          <div class="footer-brand">
+            <img src="/global/LOGO233.png" alt="Sol-Insure" class="footer-logo" />
+            <p class="footer-tagline" data-i18n="footer_tagline">Modern insurance technology for forward-thinking insurers.</p>
+            <div class="footer-contact-info">
+              <p><strong>Email:</strong> <a href="mailto:saas@solace-systems.com">saas@solace-systems.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+18684603788">1(868)-460-3788</a></p>
+              <p><strong>Location:</strong> Port Of Spain, Trinidad</p>
+            </div>
           </div>
-          <div class="footer-col">
-            <p class="footer-heading">Company</p>
-            <ul class="footer-links-list">
-              <li><a href="/about" class="footer-link">About</a></li>
-              <li><a href="/work" class="footer-link">Features</a></li>
-              <li><a href="/project" class="footer-link">How It Works</a></li>
-              <li><a href="/contact" class="footer-link">Contact</a></li>
-            </ul>
+          
+          <div class="footer-links">
+            <h4 data-i18n="footer_product">Product</h4>
+            <a href="/work" data-i18n="nav_features">Features</a>
+            <a href="/pricing" data-i18n="pricing_nav_pricing">Pricing</a>
+            <a href="/project" data-i18n="nav_how_it_works">How It Works</a>
           </div>
-          <div class="footer-col">
-            <p class="footer-heading">Help</p>
-            <ul class="footer-links-list">
-              <li><a href="#" class="footer-link">Customer Support</a></li>
-              <li><a href="#" class="footer-link">Documentation</a></li>
-              <li><a href="#" class="footer-link">Terms & Conditions</a></li>
-              <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            </ul>
+          
+          <div class="footer-links">
+            <h4 data-i18n="footer_company">Company</h4>
+            <a href="/about" data-i18n="nav_about">About</a>
+            <a href="/contact" data-i18n="nav_contact">Contact</a>
           </div>
-          <div class="footer-col-2 footer-newsletter">
-            <p class="footer-heading">Subscribe to newsletter</p>
-            <form action="#" method="POST" class="footer-form">
-              <div>
-                <label for="email-about" class="sr-only">Email</label>
-                <input type="email" name="email" id="email-about" placeholder="Enter your email" class="footer-input" />
-              </div>
-              <button type="submit" class="footer-button">Subscribe</button>
-            </form>
+          
+          <div class="footer-links">
+            <h4 data-i18n="footer_legal">Legal</h4>
+            <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+            <a href="#" data-i18n="footer_terms">Terms of Service</a>
           </div>
         </div>
-        <hr class="footer-divider" />
-        <p class="footer-copyright">© Copyright 2025, All Rights Reserved by Sol-Insure</p>
+        
+        <div class="footer-bottom">
+          <p data-i18n="footer_copyright">© 2025 Sol-Insure. All rights reserved.</p>
+        </div>
       </div>
-    </section>
+    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-    <script type="module" src="/script/lenis-scroll.js"></script>
-    <script type="module" src="/script/transition.js"></script>
-    <script type="module" src="/script/menu.js"></script>
     <script type="module" src="/script/about.js"></script>
   </body>
 </html>

@@ -52,6 +52,100 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
+  // ====================================
+  // HERO IMAGE CAROUSEL
+  // ====================================
+  const carousel = document.querySelector('.hero-carousel');
+  if (carousel) {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    let currentSlide = 0;
+    let autoplayInterval;
+    const autoplayDelay = 5000; // 5 seconds
+
+    function goToSlide(index) {
+      // Remove active class from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Update current slide index
+      currentSlide = index;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      
+      // Add active class to current slide and dot
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, autoplayDelay);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+
+    // Event Listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoplay();
+        startAutoplay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoplay();
+        startAutoplay();
+      });
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        stopAutoplay();
+        startAutoplay();
+      });
+    });
+
+    // Pause autoplay on hover
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // Start autoplay
+    startAutoplay();
+
+    // Animate carousel entrance with GSAP
+    gsap.fromTo(carousel,
+      {
+        opacity: 0,
+        x: 50,
+        scale: 0.95
+      },
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.5
+      }
+    );
+  }
+
   // Initialize World Map Lottie animation for home-about section
   const homeAboutWorldMap = document.getElementById("home-about-world-map");
   if (homeAboutWorldMap) {
@@ -977,34 +1071,7 @@ document.addEventListener("DOMContentLoaded", () => {
   vignette.className = 'cinematic-vignette';
   document.body.appendChild(vignette);
 
-  // Create Section Navigation Dots
-  const sectionCounter = document.createElement('div');
-  sectionCounter.className = 'section-counter';
-  const allSections = document.querySelectorAll('section');
-  allSections.forEach((section, index) => {
-    const dot = document.createElement('div');
-    dot.className = 'section-dot';
-    dot.dataset.section = index;
-    dot.addEventListener('click', () => {
-      section.scrollIntoView({ behavior: 'smooth' });
-    });
-    sectionCounter.appendChild(dot);
-  });
-  document.body.appendChild(sectionCounter);
-
-  // Update Active Section Dot
-  const sectionDots = document.querySelectorAll('.section-dot');
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const index = Array.from(allSections).indexOf(entry.target);
-        sectionDots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-  allSections.forEach(section => sectionObserver.observe(section));
+  // Section Navigation Dots - REMOVED
 
   // Create Scroll Indicator
   const scrollIndicator = document.createElement('div');
@@ -1027,58 +1094,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Create Sound Wave Visualization
-  const soundWave = document.createElement('div');
-  soundWave.className = 'sound-wave';
-  for (let i = 0; i < 12; i++) {
-    const bar = document.createElement('div');
-    bar.className = 'sound-bar';
-    soundWave.appendChild(bar);
-  }
-  document.body.appendChild(soundWave);
-
-  // Create DNA Helix
-  const dnaHelix = document.createElement('div');
-  dnaHelix.className = 'dna-helix';
-  const dnaStrand = document.createElement('div');
-  dnaStrand.className = 'dna-strand';
-  for (let i = 0; i < 10; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'dna-dot';
-    dot.style.top = (i * 20) + 'px';
-    dot.style.animationDelay = (i * 0.2) + 's';
-    dnaStrand.appendChild(dot);
-  }
-  dnaHelix.appendChild(dnaStrand);
-  document.body.appendChild(dnaHelix);
-
-  // Create Glow Trail
-  const glowTrail = document.createElement('div');
-  glowTrail.className = 'glow-trail';
-  document.body.appendChild(glowTrail);
-
-  // Smooth glow trail following
-  let glowX = 0;
-  let glowY = 0;
-  function animateGlowTrail() {
-    const dx = mouseX - glowX;
-    const dy = mouseY - glowY;
-    glowX += dx * 0.05;
-    glowY += dy * 0.05;
-    glowTrail.style.left = glowX + 'px';
-    glowTrail.style.top = glowY + 'px';
-    requestAnimationFrame(animateGlowTrail);
-  }
-  animateGlowTrail();
-
-  // Add Flow Connectors to Sections
-  allSections.forEach((section, index) => {
-    if (index < allSections.length - 1) {
-      const connector = document.createElement('div');
-      connector.className = 'flow-connector';
-      section.appendChild(connector);
-    }
-  });
+  // Floating elements removed for cleaner design
 
   // Smooth Scroll with Momentum
   let scrollMomentum = 0;
@@ -1273,6 +1289,326 @@ document.addEventListener("DOMContentLoaded", () => {
     const glowOpacity = Math.min(mouseVelocity * 0.02, 0.8);
     glowTrail.style.opacity = glowOpacity;
   });
+
+  // ====================================
+  // TRUST PLATFORM SECTION ANIMATIONS
+  // ====================================
+  const trustSection = document.querySelector('.trust-platform-section');
+  if (trustSection) {
+    // Animate header on scroll
+    gsap.from('.trust-badge', {
+      scrollTrigger: {
+        trigger: '.trust-header',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.trust-title-line', {
+      scrollTrigger: {
+        trigger: '.trust-header',
+        start: 'top 75%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.2,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.trust-title-gradient', {
+      scrollTrigger: {
+        trigger: '.trust-header',
+        start: 'top 75%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      delay: 0.4,
+      ease: 'power3.out'
+    });
+    
+    gsap.from('.trust-subtitle', {
+      scrollTrigger: {
+        trigger: '.trust-header',
+        start: 'top 70%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.6,
+      ease: 'power3.out'
+    });
+    
+    // Animate module cards with stagger
+    gsap.from('.trust-module-card', {
+      scrollTrigger: {
+        trigger: '.trust-modules-grid',
+        start: 'top 75%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+    
+    // Animate trust indicators
+    gsap.from('.trust-indicator', {
+      scrollTrigger: {
+        trigger: '.trust-indicators',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: 'power3.out'
+    });
+    
+    // Interactive feature items - add hover pulse effect
+    const featureItems = document.querySelectorAll('.feature-item');
+    featureItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        gsap.to(item, {
+          scale: 1.02,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, {
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+    });
+    
+    // Animate hub rings continuously
+    const hubRings = document.querySelectorAll('.hub-ring');
+    hubRings.forEach((ring, index) => {
+      gsap.to(ring, {
+        rotation: index % 2 === 0 ? 360 : -360,
+        duration: 20 + (index * 5),
+        repeat: -1,
+        ease: 'none'
+      });
+    });
+    
+    // Module card 3D tilt effect
+    const moduleCards = document.querySelectorAll('.trust-module-card');
+    moduleCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        gsap.to(card, {
+          rotateX: rotateX,
+          rotateY: rotateY,
+          transformPerspective: 1000,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+        
+        // Move glow to cursor position
+        const glow = card.querySelector('.module-glow');
+        if (glow) {
+          gsap.to(glow, {
+            x: x - rect.width,
+            y: y - rect.height,
+            duration: 0.3
+          });
+        }
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          rotateX: 0,
+          rotateY: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+      });
+    });
+    
+    // Animate floating shields parallax
+    const shields = document.querySelectorAll('.floating-shield');
+    shields.forEach((shield, i) => {
+      gsap.to(shield, {
+        y: -100 - (i * 20),
+        scrollTrigger: {
+          trigger: '.trust-platform-section',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+    });
+  }
+
+  // ====================================
+  // COMPLIANCE NEXUS SECTION ANIMATIONS
+  // ====================================
+  const complianceSection = document.querySelector('.compliance-nexus');
+  if (complianceSection) {
+    // Animate header elements on scroll
+    gsap.from('.compliance-badge-animated', {
+      scrollTrigger: {
+        trigger: '.compliance-header',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+
+    gsap.from('.compliance-title .title-word', {
+      scrollTrigger: {
+        trigger: '.compliance-header',
+        start: 'top 75%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+
+    gsap.from('.compliance-subtitle', {
+      scrollTrigger: {
+        trigger: '.compliance-header',
+        start: 'top 70%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.4,
+      ease: 'power3.out'
+    });
+
+    // Globe container animation
+    gsap.from('.globe-container', {
+      scrollTrigger: {
+        trigger: '.compliance-globe-section',
+        start: 'top 70%',
+        toggleActions: 'play none none reverse'
+      },
+      scale: 0.5,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'back.out(1.7)'
+    });
+
+    // Orbit cards animation
+    gsap.from('.compliance-orbit-card', {
+      scrollTrigger: {
+        trigger: '.compliance-globe-section',
+        start: 'top 60%',
+        toggleActions: 'play none none reverse'
+      },
+      scale: 0,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'back.out(1.7)',
+      delay: 0.5
+    });
+
+    // KYC flow steps animation
+    gsap.from('.kyc-step', {
+      scrollTrigger: {
+        trigger: '.kyc-process-section',
+        start: 'top 75%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+
+    // Stats banner animation
+    gsap.from('.compliance-stats-banner', {
+      scrollTrigger: {
+        trigger: '.compliance-stats-banner',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
+
+    // Animate stat numbers on scroll
+    const statNumbers = document.querySelectorAll('.compliance-stats-banner .stat-number');
+    statNumbers.forEach(stat => {
+      const target = parseInt(stat.dataset.count) || 0;
+      
+      ScrollTrigger.create({
+        trigger: stat,
+        start: 'top 85%',
+        onEnter: () => {
+          gsap.to(stat, {
+            textContent: target,
+            duration: 2,
+            snap: { textContent: 1 },
+            ease: 'power2.out'
+          });
+        },
+        once: true
+      });
+    });
+
+    // Standards badges animation
+    gsap.from('.standard-badge', {
+      scrollTrigger: {
+        trigger: '.compliance-standards',
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power3.out'
+    });
+
+    // Parallax effect for data particles
+    gsap.utils.toArray('.data-particle').forEach((particle, i) => {
+      gsap.to(particle, {
+        y: -200 - (i * 30),
+        scrollTrigger: {
+          trigger: '.compliance-nexus',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+    });
+  }
 
   console.log('🚀 NEXT-LEVEL cinematic effects initialized!');
   console.log('✨ Site flow enhanced to maximum engagement!');

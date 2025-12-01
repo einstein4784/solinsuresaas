@@ -19,12 +19,20 @@
     <meta property="og:description" content="Manage treaty and facultative programs with automated cessions and bordereaux generation." />
     <meta property="og:image" content="https://sol-insure.com/global/og-image.png" />
     <meta property="og:site_name" content="Sol-Insure" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sol-insure.com/features/reinsurance" />
     <meta name="twitter:title" content="Reinsurance Management Software | Sol-Insure" />
     <meta name="twitter:description" content="Manage treaty and facultative programs with automated cessions." />
     <meta name="twitter:image" content="https://sol-insure.com/global/og-image.png" />
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://sol-insure.com/features/reinsurance" />
+    <link rel="alternate" hreflang="es" href="https://sol-insure.com/features/reinsurance?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="https://sol-insure.com/features/reinsurance" />
     
     <!-- Additional Meta -->
     <meta name="theme-color" content="#0f172a" />
@@ -51,12 +59,12 @@
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/features.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
   </head>
   <body class="feature-page light-theme">
     <!-- Language Toggle -->
-    <div class="language-toggle">
+    <div class="language-toggle fixed-toggle">
       <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-      <div class="lang-divider"></div>
       <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
     </div>
 
@@ -69,28 +77,33 @@
     <div class="mask-transition"></div>
     <div class="mask-bg-overlay"></div>
 
-    <nav class="menu">
-      <div class="menu-header">
-        <a href="/" class="menu-logo"><img src="/global/logo.png" alt="Sol-Insure" /></a>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <div class="menu menu-hamburger-icon">
-            <span class="menu-item"></span>
-            <span class="menu-item"></span>
+    <!-- Navigation Header -->
+    <header class="feature-header-nav">
+      <div class="feature-nav-container">
+        <div class="feature-nav-left">
+          <a href="/" class="feature-logo">
+            <img src="/global/LOGO233.png" alt="Sol-Insure" />
+          </a>
+          <div class="language-toggle">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
           </div>
-        </button>
-      </div>
-      <div class="menu-overlay">
-        <nav class="menu-nav">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/work">Features</a></li>
-            <li><a href="/project">How It Works</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+        </div>
+        <nav class="feature-nav-links">
+          <a href="/">Home</a>
+          <a href="/work" class="active">Features</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/project">How It Works</a>
+          <a href="/ai">AI</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
+        <div class="nav-buttons">
+          <a href="/login" class="nav-login">Login</a>
+          <a href="/contact" class="feature-nav-cta">Get Started</a>
+        </div>
       </div>
-    </nav>
+    </header>
 
     <!-- Feature Hero -->
     <section class="feature-hero">
@@ -289,7 +302,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <img src="/global/logo.png" alt="Sol-Insure" />
+            <img src="/global/LOGO233.png" alt="Sol-Insure" />
             <p>Modern P&C Insurance. Delivered as SaaS.</p>
           </div>
           <div class="footer-links">
