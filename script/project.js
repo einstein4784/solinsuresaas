@@ -1,10 +1,12 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { initAnimations } from "./anime";
+import { initI18n } from "./i18n";
 
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   initAnimations();
+  initI18n(); // Initialize language system
 
   setTimeout(() => {
     initSnapshotsScroll();

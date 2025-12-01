@@ -1,5 +1,10 @@
 import gsap from "gsap";
 import { initAnimations } from "./anime.js";
+import { initI18n } from "./i18n";
+
+document.addEventListener("DOMContentLoaded", () => {
+  initI18n(); // Initialize language system
+});
 
 function flickerReveal(element, delay = 0) {
   gsap.set(element, {

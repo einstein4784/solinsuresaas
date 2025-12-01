@@ -1,7 +1,13 @@
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
+import { initI18n } from "./i18n";
 
-gsap.registerPlugin(SplitText);
+// Initialize i18n on all pages (menu.js is loaded on every page)
+document.addEventListener("DOMContentLoaded", () => {
+  initI18n();
+});
+
+// SplitText is premium - using fallback
+let SplitText = null;
 
 const menu = document.querySelector(".menu");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -47,18 +53,30 @@ function scrambleText(elements, duration = 0.4) {
 }
 
 function initMenu() {
+  if (!menuOverlay) return;
+  
   gsap.set(menuOverlay, {
     scaleY: 0,
     transformOrigin: "top center",
   });
 
-  menuItems.forEach((item) => {
+  menuItems.forEach((item, index) => {
     const link = item.querySelector("a");
     if (link) {
-      const split = new SplitText(link, {
-        type: "words",
-        mask: "words",
+      // Create fallback split text manually
+      const text = link.textContent;
+      const words = text.split(/\s+/);
+      const wordSpans = [];
+      link.innerHTML = '';
+      words.forEach((word, i) => {
+        const span = document.createElement('span');
+        span.style.display = 'inline-block';
+        span.textContent = word + (i < words.length - 1 ? ' ' : '');
+        link.appendChild(span);
+        wordSpans.push(span);
       });
+      
+      const split = { words: wordSpans, element: link };
       splitTexts.push(split);
 
       gsap.set(split.words, {
@@ -71,9 +89,19 @@ function initMenu() {
     ".menu-social a, .menu-social span, .menu-time"
   );
   footerElements.forEach((element) => {
-    const split = new SplitText(element, {
-      type: "chars",
+    const text = element.textContent;
+    const chars = text.split('');
+    const charSpans = [];
+    element.innerHTML = '';
+    chars.forEach(char => {
+      const span = document.createElement('span');
+      span.style.display = 'inline-block';
+      span.textContent = char;
+      element.appendChild(span);
+      charSpans.push(span);
     });
+    
+    const split = { chars: charSpans, element: element };
     footerSplitTexts.push(split);
 
     gsap.set(split.chars, {
@@ -89,10 +117,12 @@ function initMenu() {
     opacity: 1,
   });
 
-  gsap.set(menuFooter, {
-    opacity: 1,
-    y: 20,
-  });
+  if (menuFooter) {
+    gsap.set(menuFooter, {
+      opacity: 1,
+      y: 20,
+    });
+  }
 }
 
 function toggleMenu() {
@@ -128,19 +158,24 @@ function openMenu() {
   });
 
   const allWords = splitTexts.reduce((acc, split) => {
-    return acc.concat(split.words);
+    if (split && split.words && Array.isArray(split.words)) {
+      return acc.concat(split.words);
+    }
+    return acc;
   }, []);
 
-  tl.to(
-    allWords,
-    {
-      duration: 0.75,
-      yPercent: 0,
-      stagger: 0.05,
-      ease: "power4.out",
-    },
-    "-=0.3"
-  );
+  if (allWords.length > 0) {
+    tl.to(
+      allWords,
+      {
+        duration: 0.75,
+        yPercent: 0,
+        stagger: 0.05,
+        ease: "power4.out",
+      },
+      "-=0.3"
+    );
+  }
 
   tl.to(
     menuFooter,
@@ -154,9 +189,12 @@ function openMenu() {
           gsap.set(timeElement, { opacity: 1 });
         }
 
-        const allFooterChars = footerSplitTexts.reduce((acc, split) => {
+      const allFooterChars = footerSplitTexts.reduce((acc, split) => {
+        if (split && split.chars && Array.isArray(split.chars)) {
           return acc.concat(split.chars);
-        }, []);
+        }
+        return acc;
+      }, []);
 
         allFooterChars.forEach((char, index) => {
           setTimeout(() => {
@@ -186,7 +224,10 @@ function closeMenu() {
   });
 
   const allWords = splitTexts.reduce((acc, split) => {
-    return acc.concat(split.words);
+    if (split && split.words && Array.isArray(split.words)) {
+      return acc.concat(split.words);
+    }
+    return acc;
   }, []);
 
   tl.to([menuFooter], {
@@ -200,22 +241,29 @@ function closeMenu() {
       }
 
       const allFooterChars = footerSplitTexts.reduce((acc, split) => {
-        return acc.concat(split.chars);
+        if (split && split.chars && Array.isArray(split.chars)) {
+          return acc.concat(split.chars);
+        }
+        return acc;
       }, []);
-      gsap.set(allFooterChars, { opacity: 0 });
+      if (allFooterChars.length > 0) {
+        gsap.set(allFooterChars, { opacity: 0 });
+      }
     },
   });
 
-  tl.to(
-    allWords,
-    {
-      duration: 0.25,
-      yPercent: 120,
-      stagger: -0.025,
-      ease: "power2.in",
-    },
-    "-=0.25"
-  );
+  if (allWords.length > 0) {
+    tl.to(
+      allWords,
+      {
+        duration: 0.25,
+        yPercent: 120,
+        stagger: -0.025,
+        ease: "power2.in",
+      },
+      "-=0.25"
+    );
+  }
 
   tl.to(
     menuOverlay,
@@ -260,10 +308,10 @@ function updateTime() {
       timeElement.textContent = `${timeString} LOCAL`;
     } else {
       const timeSplit = footerSplitTexts.find(
-        (split) => split.element === timeElement
+        (split) => split && split.element === timeElement
       );
 
-      if (timeSplit && timeSplit.chars) {
+      if (timeSplit && timeSplit.chars && Array.isArray(timeSplit.chars)) {
         const newText = `${timeString} LOCAL`;
         const oldChars = timeSplit.chars;
 
@@ -272,16 +320,38 @@ function updateTime() {
             oldChars[index].textContent = char;
           }
         });
+      } else {
+        // Fallback: just update text directly
+        timeElement.textContent = `${timeString} LOCAL`;
       }
     }
   }
 }
 
 function init() {
+  if (!menu || !menuToggle) {
+    console.warn("Menu elements not found");
+    return;
+  }
+  
   initMenu();
 
+  // Add click listener to the toggle button
+  if (menuToggle) {
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+  }
+
+  // Also allow clicking the header to toggle
   if (menuHeader) {
-    menuHeader.addEventListener("click", toggleMenu);
+    menuHeader.addEventListener("click", (e) => {
+      // Only toggle if not clicking the toggle button itself
+      if (e.target !== menuToggle && !menuToggle.contains(e.target)) {
+        toggleMenu();
+      }
+    });
   }
 
   menuItems.forEach((item) => {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 
 :root {
   --base-100: #f9f4eb;
@@ -18,9 +18,12 @@
 }
 
 body {
-  font-family: "Host Grotesk";
-  background-color: var(--base-100);
+  font-family: "Inter", "DM Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9fafb;
   color: var(--base-300);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 img {
@@ -34,27 +37,39 @@ h1,
 h2,
 h3,
 h4 {
-  text-transform: uppercase;
-  font-family: "Barlow Condensed";
-  font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -0.02rem;
+  font-family: "Inter", "DM Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }
 
 h1 {
-  font-size: 12rem;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: "Inter", sans-serif;
 }
 
 h2 {
-  font-size: 8rem;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
 }
 
 h3 {
-  font-size: 6rem;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
 }
 
 h4 {
-  font-size: 2.5rem;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  font-family: "Inter", sans-serif;
 }
 
 a {
@@ -62,23 +77,33 @@ a {
 }
 
 p {
-  font-family: "Host Grotesk";
-  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 p.md {
-  font-size: 1.3rem;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 p.lg {
-  font-size: 1.5rem;
+  font-family: "DM Sans", "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 p.mono {
   text-transform: uppercase;
-  font-family: "DM Mono";
-  font-size: 0.85rem;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
 }
 
 p.mono span,
@@ -108,33 +133,216 @@ a span {
 
 @media (max-width: 1000px) {
   h1 {
-    font-size: 6rem;
+    font-size: 48px;
   }
   h2 {
-    font-size: 5rem;
+    font-size: 32px;
   }
 
   h3 {
-    font-size: 3rem;
+    font-size: 32px;
+  }
+  
+  h4 {
+    font-size: 18px;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   p.md {
-    font-size: 1.125rem;
+    font-size: 18px;
   }
 
   p.lg {
-    font-size: 1.25rem;
+    font-size: 20px;
   }
 
   p.mono {
-    font-size: 0.8rem;
+    font-size: 14px;
   }
 
   .container {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 42px;
+  }
+  
+  h2, h3 {
+    font-size: 28px;
+  }
+  
+  h4 {
+    font-size: 18px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  p.md {
+    font-size: 16px;
+  }
+  
+  p.mono {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   LANGUAGE TOGGLE STYLES
+   ======================================== */
+
+.language-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 50px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(68, 176, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  border-color: rgba(68, 176, 255, 0.4);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(68, 176, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lang-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(68, 176, 255, 0.3), rgba(168, 85, 247, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50px;
+}
+
+.lang-btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.lang-btn:hover::before {
+  opacity: 0.5;
+}
+
+.lang-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(68, 176, 255, 0.4), rgba(168, 85, 247, 0.4));
+  box-shadow: 
+    0 0 20px rgba(68, 176, 255, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn.active::before {
+  opacity: 1;
+}
+
+.lang-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 2px;
+}
+
+/* Light theme pages - adjust toggle for visibility */
+.light-section .language-toggle,
+.feature-page .language-toggle {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.light-section .lang-btn,
+.feature-page .lang-btn {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.light-section .lang-btn:hover,
+.feature-page .lang-btn:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.light-section .lang-btn.active,
+.feature-page .lang-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+.light-section .lang-divider,
+.feature-page .lang-divider {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .language-toggle {
+    top: 1rem;
+    right: 1rem;
+    padding: 3px;
+  }
+  
+  .lang-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  
+  .lang-divider {
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+  
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 10px;
   }
 }

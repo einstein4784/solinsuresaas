@@ -1,8 +1,12 @@
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
 import slides from "./slides";
+import { initI18n } from "./i18n";
+
+// SplitText is premium - using fallback
+let SplitText = null;
 
 document.addEventListener("DOMContentLoaded", () => {
+  initI18n(); // Initialize language system
   const totalSlides = slides.length;
   let currentSlide = 1;
 
@@ -139,23 +143,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function splitText(slide) {
+    if (!SplitText) {
+      // Fallback: just animate elements directly
+      const slideHeader = slide.querySelector(".slide-title h2");
+      const slideContent = slide.querySelectorAll("p, a");
+      gsap.set([slideHeader, ...slideContent], { opacity: 0, y: 20 });
+      gsap.to([slideHeader, ...slideContent], { opacity: 1, y: 0, duration: 0.8, stagger: 0.1 });
+      return;
+    }
+    
     const slideHeader = slide.querySelector(".slide-title h2");
     if (slideHeader) {
-      SplitText.create(slideHeader, {
-        type: "words",
-        wordsClass: "word",
-        mask: "words",
-      });
+      try {
+        SplitText.create(slideHeader, {
+          type: "words",
+          wordsClass: "word",
+          mask: "words",
+        });
+      } catch (e) {
+        gsap.set(slideHeader, { opacity: 0 });
+        gsap.to(slideHeader, { opacity: 1, duration: 0.8 });
+      }
     }
 
     const slideContent = slide.querySelectorAll("p, a");
     slideContent.forEach((element) => {
-      SplitText.create(element, {
-        type: "lines",
-        linesClass: "line",
-        mask: "lines",
-        reduceWhiteSpace: false,
-      });
+      try {
+        SplitText.create(element, {
+          type: "lines",
+          linesClass: "line",
+          mask: "lines",
+          reduceWhiteSpace: false,
+        });
+      } catch (e) {
+        gsap.set(element, { opacity: 0 });
+        gsap.to(element, { opacity: 1, duration: 0.5 });
+      }
     });
   }
 

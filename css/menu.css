@@ -19,10 +19,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--base-300);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   z-index: 2;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .menu-logo {
@@ -67,12 +69,12 @@
   width: 20px;
   height: 2px;
   margin: 0 0 4px;
-  background: var(--base-100);
+  background: var(--base-300);
   border-radius: 1px;
 }
 
 .menu-hamburger-icon.open .menu-item {
-  background: var(--base-100);
+  background: var(--base-300);
 }
 
 .menu-hamburger-icon.open .menu-item:first-child {
@@ -90,7 +92,8 @@
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--base-300);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 0 0 8px 8px;
   margin-top: -8px;
   padding-top: 8px;
@@ -98,6 +101,7 @@
   transform: scaleY(0);
   overflow: hidden;
   will-change: transform;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .menu-nav {
@@ -121,7 +125,7 @@
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--base-100);
+  color: var(--base-300);
   font-family: "Barlow Condensed";
   font-size: 5rem;
   letter-spacing: -0.02rem;
@@ -151,8 +155,7 @@
 
 .menu-social a,
 .menu-time {
-  color: var(--base-100);
-  font-size: 0.9rem;
+  color: var(--base-300);
   text-decoration: none;
   transition: all 0.3s ease;
   text-transform: uppercase;
@@ -163,7 +166,7 @@
 
 .menu-time {
   width: max-content;
-  color: var(--base-secondary-dark);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 1000px) {

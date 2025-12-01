@@ -1,12 +1,16 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import { initAnimations } from "./anime";
+import { initI18n } from "./i18n";
+
+// SplitText is premium - using fallback
+let SplitText = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
+  gsap.registerPlugin(ScrollTrigger);
 
   initAnimations();
+  initI18n(); // Initialize language system
 
   const animeTextParagraphs = document.querySelectorAll(".anime-text p");
   const wordHighlightBgColor = "191, 188, 180";
@@ -417,12 +421,23 @@ document.addEventListener("DOMContentLoaded", () => {
   let outroSplit = null;
 
   if (outroHeader) {
-    outroSplit = SplitText.create(outroHeader, {
-      type: "words",
-      wordsClass: "outro-word",
-    });
-
-    gsap.set(outroSplit.words, { opacity: 0 });
+    if (SplitText) {
+      try {
+        outroSplit = SplitText.create(outroHeader, {
+          type: "words",
+          wordsClass: "outro-word",
+        });
+        if (outroSplit && outroSplit.words) {
+          gsap.set(outroSplit.words, { opacity: 0 });
+        }
+      } catch (e) {
+        gsap.set(outroHeader, { opacity: 0 });
+        gsap.to(outroHeader, { opacity: 1, duration: 1, delay: 0.25 });
+      }
+    } else {
+      gsap.set(outroHeader, { opacity: 0 });
+      gsap.to(outroHeader, { opacity: 1, duration: 1, delay: 0.25 });
+    }
   }
 
   const outroStrips = document.querySelectorAll(".outro-strip");
@@ -438,7 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onUpdate: (self) => {
       const progress = self.progress;
 
-      if (outroSplit && outroSplit.words.length > 0) {
+      if (outroSplit && outroSplit.words && outroSplit.words.length > 0) {
         if (progress >= 0.25 && progress <= 0.75) {
           const textProgress = (progress - 0.25) / 0.5;
           const totalWords = outroSplit.words.length;

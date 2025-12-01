@@ -1,7 +1,53 @@
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(SplitText);
+// SplitText is a premium plugin - use fallback implementation
+// This ensures the site works without the premium plugin
+function createFallbackSplitText(element, options) {
+  const text = element.textContent || element.innerText || "";
+  const type = options?.type || "words";
+  
+  // Store original text for revert
+  const originalHTML = element.innerHTML;
+  
+  if (type === "chars") {
+    const chars = text.split('');
+    const charSpans = [];
+    element.innerHTML = '';
+    chars.forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.display = 'inline-block';
+      element.appendChild(span);
+      charSpans.push(span);
+    });
+    return { 
+      chars: charSpans, 
+      revert: () => { element.innerHTML = originalHTML; } 
+    };
+  } else if (type === "words") {
+    const words = text.split(/\s+/);
+    const wordSpans = [];
+    element.innerHTML = '';
+    words.forEach((word, i) => {
+      const span = document.createElement('span');
+      span.textContent = word + (i < words.length - 1 ? ' ' : '');
+      span.style.display = 'inline-block';
+      element.appendChild(span);
+      wordSpans.push(span);
+    });
+    return { 
+      words: wordSpans, 
+      revert: () => { element.innerHTML = originalHTML; } 
+    };
+  } else {
+    return { lines: [element], revert: () => {} };
+  }
+}
+
+// Always use fallback for now
+function getSplitText(element, options) {
+  return createFallbackSplitText(element, options);
+}
 
 let splitInstances = [];
 
@@ -16,7 +62,7 @@ export function scrambleAnimation(element, delay = 0) {
 
   if (!textContent.trim()) return;
 
-  const split = new SplitText(element, {
+  const split = getSplitText(element, {
     type: "chars",
   });
 
@@ -38,7 +84,7 @@ export function revealAnimation(element, delay = 0) {
 
   if (!textContent.trim()) return;
 
-  const split = new SplitText(element, {
+  const split = getSplitText(element, {
     type: "words",
     mask: "words",
   });
@@ -65,7 +111,7 @@ export function lineRevealAnimation(element, delay = 0) {
 
   if (!textContent.trim()) return;
 
-  const split = new SplitText(element, {
+  const split = getSplitText(element, {
     type: "lines",
     mask: "lines",
   });
