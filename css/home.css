@@ -7708,9 +7708,17 @@ section::before {
    ==================================== */
 
 .demo-section {
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 60%, #f8fcff 100%);
+  background: #ffffff;
   padding: 5rem 0;
   overflow: visible;
+}
+
+.demo-section .light-floating-element {
+  display: none;
+}
+
+.demo-section .section-transition-top {
+  display: none;
 }
 
 @media (min-width: 1024px) {
