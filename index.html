@@ -51,8 +51,9 @@
     <link rel="dns-prefetch" href="https://app.sol-insure.com" />
     
     <!-- Performance: Preload critical assets -->
-    <link rel="preload" href="/global/LOGO233.png" as="image" />
+    <link rel="preload" href="/global/LOGO233.png" as="image" fetchpriority="high" />
     <link rel="preload" href="/globals.css" as="style" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
     
     <!-- Structured Data: Organization -->
     <script type="application/ld+json">
@@ -220,7 +221,7 @@
     <div class="transition">
       <div class="transition-overlay overlay"></div>
       <div class="transition-logo">
-        <img src="/global/logo.png" alt="Sol-Insure" />
+        <img src="/global/logo.png" alt="Sol-Insure" width="150" height="40" />
       </div>
     </div>
     <div class="mask-transition"></div>
@@ -267,7 +268,7 @@
             <div class="flex items-center flex-shrink-0 gap-4">
               <a href="/" title="Sol-Insure" class="inline-flex">
                 <span class="sr-only">Sol-Insure logo</span>
-                <img class="w-auto h-8" src="/global/LOGO233.png" alt="Sol-Insure" />
+                <img class="w-auto h-8" src="/global/LOGO233.png" alt="Sol-Insure" width="120" height="32" />
               </a>
               <!-- Language Toggle -->
               <div class="language-toggle">
@@ -391,7 +392,7 @@
                 <div class="hero-carousel">
                   <div class="carousel-track">
                     <div class="carousel-slide active">
-                      <img src="https://picsum.photos/seed/dashboard/600/400" alt="Insurance Dashboard" />
+                      <img src="https://picsum.photos/seed/dashboard/600/400" alt="Insurance Dashboard" width="600" height="400" loading="lazy" decoding="async" />
                       <div class="slide-overlay">
                         <div class="slide-icon">📊</div>
                         <span class="slide-label">Dashboard Analytics</span>
@@ -399,7 +400,7 @@
                       </div>
                     </div>
                     <div class="carousel-slide">
-                      <img src="https://picsum.photos/seed/insights/600/400" alt="Data Insights" />
+                      <img src="https://picsum.photos/seed/insights/600/400" alt="Data Insights" width="600" height="400" loading="lazy" decoding="async" />
                       <div class="slide-overlay">
                         <div class="slide-icon">💡</div>
                         <span class="slide-label">Real-Time Insights</span>
@@ -407,7 +408,7 @@
                       </div>
                     </div>
                     <div class="carousel-slide">
-                      <img src="https://picsum.photos/seed/team/600/400" alt="Team Collaboration" />
+                      <img src="https://picsum.photos/seed/team/600/400" alt="Team Collaboration" width="600" height="400" loading="lazy" decoding="async" />
                       <div class="slide-overlay">
                         <div class="slide-icon">🤝</div>
                         <span class="slide-label">Team Collaboration</span>
@@ -415,7 +416,7 @@
                       </div>
                     </div>
                     <div class="carousel-slide">
-                      <img src="https://picsum.photos/seed/cloud/600/400" alt="Cloud Platform" />
+                      <img src="https://picsum.photos/seed/cloud/600/400" alt="Cloud Platform" width="600" height="400" loading="lazy" decoding="async" />
                       <div class="slide-overlay">
                         <div class="slide-icon">☁️</div>
                         <span class="slide-label">Cloud Platform</span>
@@ -2151,7 +2152,7 @@
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-col-2">
-            <img class="footer-logo-img" src="/global/LOGO233.png" alt="Sol-Insure" />
+            <img class="footer-logo-img" src="/global/LOGO233.png" alt="Sol-Insure" width="150" height="40" loading="lazy" />
             <p class="footer-description">Modern P&C Insurance. Delivered as SaaS. Enterprise power without enterprise complexity. A cloud-native platform built for insurers who demand clarity, speed, and control.</p>
             <div class="footer-contact-info">
               <p><strong>Email:</strong> <a href="mailto:saas@solace-systems.com">saas@solace-systems.com</a></p>
@@ -2226,11 +2227,14 @@
       </div>
     </section>
 
-    <script type="module" src="/script/lenis-scroll.js"></script>
+    <!-- Critical scripts -->
     <script type="module" src="/script/transition.js"></script>
     <script type="module" src="/script/menu.js"></script>
-    <script type="module" src="/script/home.js"></script>
-    <script src="/script/chatbot.js"></script>
+    
+    <!-- Deferred non-critical scripts -->
+    <script type="module" src="/script/lenis-scroll.js" defer></script>
+    <script type="module" src="/script/home.js" defer></script>
+    <script src="/script/chatbot.js" defer></script>
 
     <!-- MOBILE NAVIGATION - Always visible, hidden only on desktop -->
     <style>
@@ -2435,7 +2439,7 @@
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-header">
-        <img src="/global/LOGO233.png" alt="Sol-Insure" class="mobile-drawer-logo">
+        <img src="/global/LOGO233.png" alt="Sol-Insure" class="mobile-drawer-logo" width="120" height="32" loading="lazy">
         <button class="mobile-drawer-close" id="closeMobileDrawer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
