@@ -11,6 +11,7 @@ const translations = {
     nav_contact: "Contact",
     nav_login: "Login",
     nav_get_started: "Get Started",
+    nav_menu: "Menu",
     
     // Hero Section
     hero_title: "Sol-Insure",
@@ -656,6 +657,7 @@ const translations = {
     nav_contact: "Contacto",
     nav_login: "Iniciar Sesión",
     nav_get_started: "Empezar",
+    nav_menu: "Menú",
     
     // Hero Section
     hero_title: "Sol-Insure",
