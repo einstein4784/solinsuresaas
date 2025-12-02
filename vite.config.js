@@ -13,6 +13,7 @@ export default defineConfig({
         contact: resolve(__dirname, "contact.html"),
         pricing: resolve(__dirname, "pricing.html"),
         ai: resolve(__dirname, "ai.html"),
+        brokers: resolve(__dirname, "brokers.html"),
         // Feature pages
         policyAdmin: resolve(__dirname, "features/policy-admin.html"),
         claims: resolve(__dirname, "features/claims.html"),

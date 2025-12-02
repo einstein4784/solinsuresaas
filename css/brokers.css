@@ -1,0 +1,1146 @@
+/* ====================================
+   BROKERS PAGE - MIXED THEME STYLING
+   ==================================== */
+
+/* Base */
+.brokers-page {
+  background: #ffffff;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* ====================================
+   ANIMATIONS
+   ==================================== */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ====================================
+   HEADER
+   ==================================== */
+
+.broker-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.broker-nav .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.broker-nav .nav-logo img {
+  height: 32px;
+  width: auto;
+}
+
+.broker-nav .nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.broker-nav .nav-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.broker-nav .nav-links a:hover,
+.broker-nav .nav-links a.active {
+  color: #ffffff;
+}
+
+.broker-nav .nav-cta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.broker-nav .btn-login {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.broker-nav .btn-demo {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.broker-nav .btn-demo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* ====================================
+   HERO - DARK THEME
+   ==================================== */
+
+.broker-hero {
+  position: relative;
+  padding: 10rem 1.5rem 4rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.broker-hero .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.broker-hero .orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #818cf8 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+}
+
+.broker-hero .orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+  bottom: 0;
+  left: -50px;
+  animation-delay: -4s;
+}
+
+.broker-hero .orb-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #a78bfa 0%, transparent 70%);
+  top: 30%;
+  left: 20%;
+  animation-delay: -2s;
+}
+
+.broker-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.broker-hero .hero-badge {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a5b4fc;
+  background: rgba(165, 180, 252, 0.1);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(165, 180, 252, 0.2);
+}
+
+.broker-hero h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff !important;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.broker-hero .hero-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.broker-hero .hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.broker-hero .btn-primary {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e1b4b;
+  background: #ffffff;
+  padding: 0.875rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.broker-hero .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.broker-hero .btn-secondary {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.875rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.broker-hero .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: "Inter", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* ====================================
+   SECTIONS - ALTERNATING THEMES
+   ==================================== */
+
+.broker-section {
+  padding: 5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.broker-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Light Theme Section */
+.broker-section.light-theme {
+  background: #ffffff;
+}
+
+/* Dark Theme Section */
+.broker-section.dark-theme {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+}
+
+.broker-section.dark-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(129, 140, 248, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-header.light-text h2,
+.section-header.light-text p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-badge {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.dark-theme .section-badge {
+  color: #a5b4fc;
+  background: rgba(165, 180, 252, 0.1);
+}
+
+.section-header h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.dark-theme .section-header h2 {
+  color: #ffffff;
+}
+
+.section-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.dark-theme .section-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ====================================
+   FEATURES GRID
+   ==================================== */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #818cf8;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ====================================
+   SPLIT CONTENT
+   ==================================== */
+
+.split-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.split-content.reverse {
+  direction: rtl;
+}
+
+.split-content.reverse > * {
+  direction: ltr;
+}
+
+.content-left h2,
+.content-right h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.light-theme .content-left h2,
+.light-theme .content-right h2 {
+  color: #0f172a;
+}
+
+.content-left p,
+.content-right p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.light-theme .content-left p,
+.light-theme .content-right p {
+  color: #64748b;
+}
+
+/* Feature List */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.feature-check {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.feature-item h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.light-theme .feature-item h4 {
+  color: #0f172a;
+}
+
+.feature-item > div > p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.light-theme .feature-item > div > p {
+  color: #64748b;
+}
+
+/* ====================================
+   COMMISSION DEMO
+   ==================================== */
+
+.commission-demo {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-header span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.demo-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.demo-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.demo-dots span:first-child { background: #ef4444; }
+.demo-dots span:nth-child(2) { background: #eab308; }
+.demo-dots span:last-child { background: #22c55e; }
+
+.demo-content {
+  padding: 1.5rem;
+}
+
+.demo-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.demo-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.demo-value {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.demo-value.highlight {
+  color: #22c55e;
+}
+
+.demo-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(129, 140, 248, 0.3);
+}
+
+.demo-total span {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.total-value {
+  font-size: 1.25rem !important;
+  color: #818cf8 !important;
+}
+
+/* ====================================
+   QUOTING FEATURES
+   ==================================== */
+
+.quoting-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.quoting-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.quoting-card:hover {
+  border-color: #818cf8;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(129, 140, 248, 0.12);
+}
+
+.quoting-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.quoting-card h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.quoting-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Carrier Showcase */
+.carrier-showcase {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 1rem;
+}
+
+.carrier-showcase h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 1rem;
+}
+
+.carrier-types {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.carrier-types span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+}
+
+/* ====================================
+   BOOK FEATURES
+   ==================================== */
+
+.book-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.book-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+
+.book-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(129, 140, 248, 0.4);
+  transform: translateY(-4px);
+}
+
+.book-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.book-card h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.book-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* ====================================
+   PRODUCER DASHBOARD
+   ==================================== */
+
+.producer-dashboard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-header {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.dashboard-header span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dashboard-content {
+  padding: 1.5rem;
+}
+
+.producer-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.producer-stat {
+  text-align: center;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+}
+
+.stat-value {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: block;
+}
+
+.stat-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+.producer-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 80px;
+  padding: 0.5rem;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+}
+
+.chart-bar {
+  flex: 1;
+  background: linear-gradient(180deg, #c7d2fe 0%, #a5b4fc 100%);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.chart-bar.active {
+  background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+/* Producer Features List */
+.producer-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.producer-features li {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #475569;
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.producer-features li:last-child {
+  border-bottom: none;
+}
+
+.producer-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* ====================================
+   COMPLIANCE GRID
+   ==================================== */
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.compliance-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.compliance-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.compliance-card h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.compliance-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* ====================================
+   CTA SECTION
+   ==================================== */
+
+.broker-cta {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #6d28d9 50%, #7c3aed 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.broker-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  animation: float 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.broker-cta .container {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.broker-cta h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.broker-cta > .container > p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+.broker-cta .cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.broker-cta .btn-primary {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  background: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.broker-cta .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.broker-cta .btn-secondary {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.broker-cta .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-note {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ====================================
+   FOOTER
+   ==================================== */
+
+.brokers-page .footer {
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: #ffffff;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.brokers-page .footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brokers-page .footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.brokers-page .footer-brand img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.brokers-page .footer-brand p {
+  color: #94a3b8;
+  font-size: 0.9375rem;
+}
+
+.brokers-page .footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.brokers-page .footer-column h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.brokers-page .footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brokers-page .footer-column li {
+  margin-bottom: 0.5rem;
+}
+
+.brokers-page .footer-column a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.brokers-page .footer-column a:hover {
+  color: #818cf8;
+}
+
+.brokers-page .footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.brokers-page .footer-bottom p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* ====================================
+   RESPONSIVE
+   ==================================== */
+
+@media (max-width: 1024px) {
+  .features-grid,
+  .book-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quoting-features,
+  .compliance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .split-content.reverse {
+    direction: ltr;
+  }
+
+  .brokers-page .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Disable animations */
+  .broker-hero .orb,
+  .broker-cta::before {
+    display: none !important;
+  }
+
+  .broker-cta {
+    animation: none !important;
+    background-size: 100% 100% !important;
+  }
+
+  .feature-card:hover,
+  .quoting-card:hover,
+  .book-card:hover,
+  .compliance-card:hover {
+    transform: none !important;
+  }
+
+  .broker-hero {
+    padding: 7rem 1rem 2rem;
+  }
+
+  .broker-hero h1 {
+    font-size: 2rem;
+  }
+
+  .broker-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .stats-bar {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .broker-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .features-grid,
+  .book-features,
+  .quoting-features,
+  .compliance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .producer-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .broker-cta .cta-buttons {
+    flex-direction: column;
+  }
+
+  .brokers-page .footer-links {
+    grid-template-columns: 1fr;
+  }
+}
+

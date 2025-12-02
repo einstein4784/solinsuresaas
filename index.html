@@ -316,13 +316,13 @@
               </div>
             </div>
 
-            <div id="desktop-nav-links" class="desktop-nav-only hidden lg:flex lg:justify-center lg:space-x-10 xl:space-x-14">
-              <a href="/work" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_features">Features</a>
-              <a href="/project" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_how_it_works">How It Works</a>
-              <a href="/pricing" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="pricing_nav_pricing">Pricing</a>
-              <a href="/ai" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_ai">AI</a>
-              <a href="/about" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_about">About</a>
-              <a href="/contact" title="" class="text-base font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_contact">Contact</a>
+            <div id="desktop-nav-links" class="desktop-nav-only hidden lg:flex lg:justify-center lg:space-x-8 xl:space-x-10">
+              <a href="/work" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_features">Features</a>
+              <a href="/brokers" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_brokers">Brokers</a>
+              <a href="/pricing" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_pricing">Pricing</a>
+              <a href="/ai" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_ai">AI</a>
+              <a href="/about" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_about">About</a>
+              <a href="/contact" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_contact">Contact</a>
             </div>
 
             <div class="flex items-center justify-end space-x-4">
@@ -2236,8 +2236,8 @@
             <ul class="footer-links-list">
               <li><a href="/about" class="footer-link">About</a></li>
               <li><a href="/work" class="footer-link">Features</a></li>
-              <li><a href="/project" class="footer-link">How It Works</a></li>
-              <li><a href="/pricing" class="footer-link" data-i18n="pricing_nav_pricing">Pricing</a></li>
+              <li><a href="/brokers" class="footer-link" data-i18n="nav_brokers">Brokers</a></li>
+              <li><a href="/pricing" class="footer-link" data-i18n="nav_pricing">Pricing</a></li>
               <li><a href="/contact" class="footer-link">Contact</a></li>
             </ul>
           </div>
@@ -2449,7 +2449,7 @@
     <!-- Mobile Bottom Navigation Bar -->
     <nav class="mobile-bottom-nav">
       <div class="mobile-bottom-nav-inner">
-        <a href="/" class="mobile-nav-item">
+        <a href="/" class="mobile-nav-item active">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           <span data-i18n="nav_home">Home</span>
         </a>
@@ -2457,13 +2457,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
           <span data-i18n="nav_features">Features</span>
         </a>
+        <a href="/brokers" class="mobile-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <span data-i18n="nav_brokers">Brokers</span>
+        </a>
         <a href="/pricing" class="mobile-nav-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 10v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <span data-i18n="pricing_nav_pricing">Pricing</span>
-        </a>
-        <a href="/ai" class="mobile-nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <span data-i18n="nav_ai">AI</span>
+          <span data-i18n="nav_pricing">Pricing</span>
         </a>
         <a href="#" class="mobile-nav-item" id="openMobileMenu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -2484,7 +2484,7 @@
         </button>
       </div>
       <nav class="mobile-drawer-nav">
-        <a href="/" class="mobile-drawer-link">
+        <a href="/" class="mobile-drawer-link active">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
           <span data-i18n="nav_home">Home</span>
         </a>
@@ -2492,9 +2492,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
           <span data-i18n="nav_features">Features</span>
         </a>
+        <a href="/brokers" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <span data-i18n="nav_brokers">Brokers</span>
+        </a>
         <a href="/pricing" class="mobile-drawer-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 10v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          <span data-i18n="pricing_nav_pricing">Pricing</span>
+          <span data-i18n="nav_pricing">Pricing</span>
         </a>
         <a href="/project" class="mobile-drawer-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
