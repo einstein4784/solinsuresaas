@@ -350,6 +350,13 @@ section {
   flex-shrink: 0;
 }
 
+/* Ensure the logo + language toggle container aligns items properly */
+.hero-header-nav .flex.items-center.flex-shrink-0 {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
 .hero-header-nav .inline-flex {
   display: inline-flex !important;
   padding: 0 !important;
@@ -366,6 +373,15 @@ section {
 .hero-header-nav .inline-flex img {
   width: auto;
   height: 2rem;
+}
+
+/* Language toggle in header - ensure proper alignment */
+.hero-header-nav .language-toggle {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  position: relative !important;
+  top: 0 !important;
 }
 
 .hero-header-nav .hidden {
