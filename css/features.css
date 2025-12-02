@@ -982,29 +982,33 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Animation Classes */
+/* Animation Classes - Start visible, animate in */
 .feature-animate-up {
-  animation: fadeInUp 0.7s ease-out forwards;
-  opacity: 0;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .feature-animate-left {
-  animation: fadeInLeft 0.7s ease-out forwards;
-  opacity: 0;
+  animation: fadeInLeft 0.8s ease-out both;
 }
 
 .feature-animate-right {
-  animation: fadeInRight 0.7s ease-out forwards;
-  opacity: 0;
+  animation: fadeInRight 0.8s ease-out both;
 }
 
 .feature-animate-scale {
-  animation: scaleIn 0.6s ease-out forwards;
-  opacity: 0;
+  animation: scaleIn 0.7s ease-out both;
 }
 
 .feature-animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+/* Ensure hero content is always visible */
+.feature-hero-enhanced .feature-animate-up,
+.feature-hero-enhanced .feature-animate-left,
+.feature-hero-enhanced .feature-animate-right,
+.feature-hero-enhanced .feature-animate-scale {
+  opacity: 1;
 }
 
 /* Stagger delays */
@@ -1190,12 +1194,29 @@
   z-index: 1;
 }
 
-.feature-hero-enhanced h1 {
-  color: #ffffff;
+.feature-hero-enhanced h1,
+.feature-hero-enhanced .feature-title {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: unset !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  opacity: 1 !important;
 }
 
-.feature-hero-enhanced p {
-  color: rgba(255, 255, 255, 0.7);
+.feature-hero-enhanced p,
+.feature-hero-enhanced .feature-subtitle {
+  color: rgba(255, 255, 255, 0.85) !important;
+  opacity: 1 !important;
+}
+
+.feature-hero-enhanced .feature-badge {
+  opacity: 1 !important;
+}
+
+.feature-hero-enhanced .feature-back-link {
+  opacity: 1 !important;
 }
 
 /* Enhanced CTA Section */

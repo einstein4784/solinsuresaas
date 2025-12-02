@@ -83,29 +83,33 @@
   to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
 }
 
-/* Animation Classes */
+/* Animation Classes - Start visible, animate in */
 .animate-fade-up {
-  animation: fadeInUp 0.8s ease-out forwards;
-  opacity: 0;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .animate-fade-left {
-  animation: fadeInLeft 0.8s ease-out forwards;
-  opacity: 0;
+  animation: fadeInLeft 0.8s ease-out both;
 }
 
 .animate-fade-right {
-  animation: fadeInRight 0.8s ease-out forwards;
-  opacity: 0;
+  animation: fadeInRight 0.8s ease-out both;
 }
 
 .animate-scale {
-  animation: scaleIn 0.6s ease-out forwards;
-  opacity: 0;
+  animation: scaleIn 0.7s ease-out both;
 }
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+/* Ensure hero content is always visible */
+.guide-hero .animate-fade-up,
+.guide-hero .animate-fade-left,
+.guide-hero .animate-fade-right,
+.guide-hero .animate-scale {
+  opacity: 1;
 }
 
 /* Stagger delays */
@@ -287,8 +291,27 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+  opacity: 1 !important;
+}
+
+.guide-hero .guide-badge {
+  opacity: 1 !important;
+}
+
+.guide-hero .hero-breadcrumb {
+  opacity: 1 !important;
+}
+
+.guide-hero .guide-intro {
+  color: rgba(255, 255, 255, 0.9) !important;
+  opacity: 1 !important;
+}
+
+.guide-hero .guide-meta {
+  opacity: 1 !important;
 }
 
 .guide-intro {
