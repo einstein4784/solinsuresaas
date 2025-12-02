@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import { initI18n } from "./i18n";
-import { initFloatingMenu } from "./floating-menu.js";
 
 // Initialize i18n on all pages (menu.js is loaded on every page)
 document.addEventListener("DOMContentLoaded", () => {
@@ -359,11 +358,8 @@ function updateTime() {
 }
 
 function init() {
-  // Initialize floating menu first (independent of overlay menu)
-  initFloatingMenu();
-
   if (!menu || !menuToggle) {
-    console.warn("Menu elements not found - overlay menu skipped");
+    console.warn("Menu elements not found");
     return;
   }
   
