@@ -4,10 +4,117 @@
  */
 
 (function() {
-  // Only initialize on mobile/tablet
-  if (window.innerWidth > 1023) return;
+  function isMobile() {
+    return window.innerWidth <= 1023 || 
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
 
-  document.addEventListener('DOMContentLoaded', initMobileNav);
+  // Run on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', function() {
+    if (isMobile()) {
+      // Hide desktop navigation elements
+      hideDesktopNav();
+      // Initialize mobile navigation
+      initMobileNav();
+    }
+  });
+
+  // Also handle resize
+  window.addEventListener('resize', function() {
+    if (isMobile()) {
+      hideDesktopNav();
+      if (!document.getElementById('mobileNavDrawer')) {
+        initMobileNav();
+      }
+    } else {
+      showDesktopNav();
+    }
+  });
+
+  function hideDesktopNav() {
+    // Hide desktop nav links - multiple selectors for different page types
+    const navSelectors = [
+      '#desktop-nav-links',
+      '.features-nav-links',
+      '.feature-nav-links', 
+      '.ai-nav-links',
+      '.contact-nav-links',
+      '.hiw-nav-links',
+      '.pricing-nav .nav-links',
+      '.about-nav .nav-links',
+      '.desktop-nav-only'
+    ];
+    
+    navSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.display = 'none';
+      });
+    });
+    
+    // Hide buttons
+    const btnSelectors = [
+      '#desktop-login-btn',
+      '#desktop-cta-btn',
+      '.nav-buttons',
+      '.features-nav-buttons'
+    ];
+    
+    btnSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.display = 'none';
+      });
+    });
+    
+    // Show menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+      menuToggle.style.display = 'flex';
+      menuToggle.style.visibility = 'visible';
+    }
+    
+    // Add mobile class to body
+    document.body.classList.add('is-mobile');
+  }
+
+  function showDesktopNav() {
+    const navSelectors = [
+      '#desktop-nav-links',
+      '.features-nav-links',
+      '.feature-nav-links',
+      '.ai-nav-links', 
+      '.contact-nav-links',
+      '.hiw-nav-links',
+      '.pricing-nav .nav-links',
+      '.about-nav .nav-links'
+    ];
+    
+    navSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.display = '';
+      });
+    });
+    
+    const btnSelectors = [
+      '#desktop-login-btn',
+      '#desktop-cta-btn',
+      '.nav-buttons',
+      '.features-nav-buttons'
+    ];
+    
+    btnSelectors.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.display = '';
+      });
+    });
+    
+    // Hide menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+      menuToggle.style.display = 'none';
+    }
+    
+    document.body.classList.remove('is-mobile');
+  }
 
   function initMobileNav() {
     createMobileDrawer();
