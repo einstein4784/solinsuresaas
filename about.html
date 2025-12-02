@@ -1149,6 +1149,282 @@
     </footer>
 
     <script type="module" src="/script/about.js"></script>
-    <script src="/script/mobile-menu.js"></script>
+
+    <!-- MOBILE NAVIGATION - Always visible, hidden only on desktop -->
+    <style>
+      /* Mobile Bottom Navigation - ALWAYS VISIBLE by default */
+      .mobile-bottom-nav {
+        display: block !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 65px !important;
+        background: #0f172a !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+        z-index: 99999 !important;
+        padding-bottom: env(safe-area-inset-bottom, 0) !important;
+      }
+      .mobile-bottom-nav-inner {
+        display: flex !important;
+        height: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto !important;
+      }
+      .mobile-nav-item {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: rgba(255,255,255,0.6) !important;
+        text-decoration: none !important;
+        font-size: 10px !important;
+        font-weight: 500 !important;
+        gap: 4px !important;
+        transition: color 0.2s !important;
+      }
+      .mobile-nav-item:hover, .mobile-nav-item.active {
+        color: #818cf8 !important;
+      }
+      .mobile-nav-item svg {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      /* Mobile Drawer Overlay */
+      .mobile-drawer-overlay {
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0,0,0,0.7) !important;
+        z-index: 99998 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.3s, visibility 0.3s !important;
+      }
+      .mobile-drawer-overlay.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      /* Mobile Drawer */
+      .mobile-drawer {
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 280px !important;
+        max-width: 85% !important;
+        background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%) !important;
+        z-index: 100000 !important;
+        transform: translateX(100%) !important;
+        transition: transform 0.3s ease !important;
+        overflow-y: auto !important;
+      }
+      .mobile-drawer.open {
+        transform: translateX(0) !important;
+      }
+      .mobile-drawer-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 16px 20px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      }
+      .mobile-drawer-logo {
+        height: 28px !important;
+        width: auto !important;
+      }
+      .mobile-drawer-close {
+        width: 36px !important;
+        height: 36px !important;
+        border: none !important;
+        background: rgba(255,255,255,0.1) !important;
+        border-radius: 8px !important;
+        color: white !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .mobile-drawer-nav {
+        padding: 16px !important;
+      }
+      .mobile-drawer-link {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        padding: 14px 16px !important;
+        color: rgba(255,255,255,0.9) !important;
+        text-decoration: none !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        border-radius: 10px !important;
+        margin-bottom: 4px !important;
+      }
+      .mobile-drawer-link:hover {
+        background: rgba(99,102,241,0.15) !important;
+      }
+      .mobile-drawer-link svg {
+        width: 22px !important;
+        height: 22px !important;
+        opacity: 0.7 !important;
+      }
+      .mobile-drawer-divider {
+        height: 1px !important;
+        background: rgba(255,255,255,0.1) !important;
+        margin: 12px 0 !important;
+      }
+      .mobile-drawer-cta {
+        padding: 16px !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+      }
+      .mobile-cta-btn {
+        display: block !important;
+        padding: 14px !important;
+        text-align: center !important;
+        border-radius: 10px !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        margin-bottom: 10px !important;
+      }
+      .mobile-cta-login {
+        background: rgba(255,255,255,0.1) !important;
+        color: white !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+      }
+      .mobile-cta-start {
+        background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+        color: white !important;
+      }
+      
+      /* Add body padding for mobile nav */
+      body {
+        padding-bottom: 70px !important;
+      }
+      
+      /* HIDE mobile nav on desktop screens (1024px and up) */
+      @media (min-width: 1024px) {
+        .mobile-bottom-nav,
+        .mobile-drawer-overlay,
+        .mobile-drawer {
+          display: none !important;
+          visibility: hidden !important;
+        }
+        body {
+          padding-bottom: 0 !important;
+        }
+      }
+    </style>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+      <div class="mobile-bottom-nav-inner">
+        <a href="/" class="mobile-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span data-i18n="nav_home">Home</span>
+        </a>
+        <a href="/work" class="mobile-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+          <span data-i18n="nav_features">Features</span>
+        </a>
+        <a href="/pricing" class="mobile-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 10v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span data-i18n="pricing_nav_pricing">Pricing</span>
+        </a>
+        <a href="/ai" class="mobile-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span data-i18n="nav_ai">AI</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="openMobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span data-i18n="nav_menu">Menu</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <img src="/global/LOGO233.png" alt="Sol-Insure" class="mobile-drawer-logo">
+        <button class="mobile-drawer-close" id="closeMobileDrawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-drawer-nav">
+        <a href="/" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span data-i18n="nav_home">Home</span>
+        </a>
+        <a href="/work" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+          <span data-i18n="nav_features">Features</span>
+        </a>
+        <a href="/pricing" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 10v1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span data-i18n="pricing_nav_pricing">Pricing</span>
+        </a>
+        <a href="/project" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <span data-i18n="nav_how_it_works">How It Works</span>
+        </a>
+        <a href="/ai" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span data-i18n="nav_ai">AI</span>
+        </a>
+        <div class="mobile-drawer-divider"></div>
+        <a href="/about" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span data-i18n="nav_about">About</span>
+        </a>
+        <a href="/contact" class="mobile-drawer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span data-i18n="nav_contact">Contact</span>
+        </a>
+      </nav>
+      <div class="mobile-drawer-cta">
+        <a href="https://app.sol-insure.com/login" class="mobile-cta-btn mobile-cta-login" data-i18n="nav_login">Login</a>
+        <a href="/contact" class="mobile-cta-btn mobile-cta-start" data-i18n="nav_get_started">Get Started</a>
+      </div>
+    </div>
+
+    <!-- Simple Mobile Menu Script -->
+    <script>
+      (function() {
+        var openBtn = document.getElementById('openMobileMenu');
+        var closeBtn = document.getElementById('closeMobileDrawer');
+        var overlay = document.getElementById('mobileDrawerOverlay');
+        var drawer = document.getElementById('mobileDrawer');
+        
+        function openDrawer() {
+          overlay.classList.add('open');
+          drawer.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+        
+        function closeDrawer() {
+          overlay.classList.remove('open');
+          drawer.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+        
+        if (openBtn) openBtn.addEventListener('click', function(e) { e.preventDefault(); openDrawer(); });
+        if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+        if (overlay) overlay.addEventListener('click', closeDrawer);
+        
+        // Close on link click
+        var links = document.querySelectorAll('.mobile-drawer-link');
+        links.forEach(function(link) {
+          link.addEventListener('click', function() { setTimeout(closeDrawer, 100); });
+        });
+      })();
+    </script>
   </body>
 </html>
