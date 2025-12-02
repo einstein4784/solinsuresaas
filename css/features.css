@@ -802,3 +802,143 @@
   margin: 0;
 }
 
+/* ====================================
+   RELATED FEATURES SECTION
+   ==================================== */
+
+.related-features {
+  background: #f8fafc;
+  padding: 4rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.related-features-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.related-features-header h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.related-features-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.related-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.related-feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.related-feature-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+  transform: translateY(-3px);
+}
+
+.related-feature-card .card-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.related-feature-card h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.related-feature-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.related-feature-card .card-link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3b82f6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.related-feature-card .card-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.related-feature-card:hover .card-link svg {
+  transform: translateX(4px);
+}
+
+/* Quick Links Bar */
+.quick-links {
+  background: #0f172a;
+  padding: 1rem 0;
+}
+
+.quick-links-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.quick-links span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.quick-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #60a5fa;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.quick-links a:hover {
+  background: rgba(96, 165, 250, 0.1);
+  color: #93c5fd;
+}
+
