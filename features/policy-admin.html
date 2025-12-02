@@ -44,16 +44,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="/global/LOGO233.png" as="image" />
     
-    <!-- Structured Data -->
+    <!-- Structured Data: SoftwareApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Sol-Insure Policy Administration",
       "applicationCategory": "BusinessApplication",
-      "description": "Complete policy lifecycle management system for P&C insurers",
-      "featureList": ["Quote Generation", "Underwriting Workflows", "Policy Issuance", "Endorsement Processing", "Renewal Management", "Document Generation"],
-      "offers": {"@type": "Offer", "availability": "https://schema.org/OnlineOnly"}
+      "applicationSubCategory": "Insurance Policy Management",
+      "description": "Complete policy lifecycle management system for P&C insurers. Handle quotes, underwriting, issuance, endorsements, and renewals.",
+      "featureList": ["Quote Generation", "Underwriting Workflows", "Policy Issuance", "Endorsement Processing", "Renewal Management", "Document Generation", "Rating Engine", "Multi-line Support"],
+      "screenshot": "https://sol-insure.com/global/og-image.png",
+      "offers": {"@type": "Offer", "availability": "https://schema.org/OnlineOnly", "price": "0", "priceCurrency": "USD"}
+    }
+    </script>
+    
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sol-insure.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://sol-insure.com/work"},
+        {"@type": "ListItem", "position": 3, "name": "Policy Administration", "item": "https://sol-insure.com/features/policy-admin"}
+      ]
     }
     </script>
     

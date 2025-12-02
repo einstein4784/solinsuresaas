@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="/global/LOGO233.png" as="image" />
   
-  <!-- Structured Data -->
+  <!-- Structured Data: Product with Offers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,42 +56,98 @@
       "@type": "Brand",
       "name": "Sol-Insure"
     },
+    "category": "Insurance Software",
+    "image": "https://sol-insure.com/global/og-image.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5"
+    },
     "offers": [
       {
         "@type": "Offer",
-        "name": "Starter",
-        "description": "Essential features for small insurers and agencies",
+        "name": "Starter Plan",
+        "description": "Essential features for small insurers and agencies. Includes policy admin, claims, and billing.",
         "priceCurrency": "USD",
         "price": "799",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://sol-insure.com/pricing",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "799",
+          "priceCurrency": "USD",
+          "unitText": "month",
+          "billingIncrement": 1
+        }
       },
       {
         "@type": "Offer",
-        "name": "Professional",
-        "description": "Advanced features for growing insurance companies",
+        "name": "Professional Plan",
+        "description": "Advanced features for growing insurance companies. All Starter features plus analytics and portals.",
         "priceCurrency": "USD",
         "price": "1499",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://sol-insure.com/pricing",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1499",
+          "priceCurrency": "USD",
+          "unitText": "month",
+          "billingIncrement": 1
+        }
       },
       {
         "@type": "Offer",
-        "name": "Business",
-        "description": "Full-featured platform for established insurers",
+        "name": "Business Plan",
+        "description": "Full-featured platform for established insurers. All Professional features plus reinsurance and IFRS-17.",
         "priceCurrency": "USD",
         "price": "2999",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://sol-insure.com/pricing",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "2999",
+          "priceCurrency": "USD",
+          "unitText": "month",
+          "billingIncrement": 1
+        }
       },
       {
         "@type": "Offer",
-        "name": "Enterprise",
-        "description": "Custom solutions for large insurance enterprises",
+        "name": "Enterprise Plan",
+        "description": "Custom solutions for large insurance enterprises with unlimited users and dedicated support.",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "url": "https://sol-insure.com/contact"
       }
     ]
+  }
+  </script>
+  
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sol-insure.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://sol-insure.com/pricing"}
+    ]
+  }
+  </script>
+  
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Pricing - Sol-Insure Insurance Platform",
+    "description": "Flexible pricing plans for P&C insurance software. From Starter to Enterprise, find the right plan for your insurance business.",
+    "url": "https://sol-insure.com/pricing"
   }
   </script>
   

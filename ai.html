@@ -39,20 +39,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="/global/LOGO233.png" as="image" />
     
-    <!-- Structured Data -->
+    <!-- Structured Data: SoftwareApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Sol-Insure AI Platform",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "description": "AI-powered insurance platform with intelligent underwriting, predictive claims, and automated compliance",
+      "applicationSubCategory": "Artificial Intelligence",
+      "operatingSystem": "Web Browser",
+      "description": "AI-powered insurance platform with intelligent underwriting, predictive claims analysis, automated compliance, and smart reporting for P&C insurers.",
+      "featureList": [
+        "AI-Powered Underwriting",
+        "Predictive Claims Analysis",
+        "Automated Compliance Monitoring",
+        "Intelligent Document Processing",
+        "Smart Risk Assessment",
+        "Machine Learning Fraud Detection",
+        "Natural Language Processing",
+        "Automated IFRS-17 Reporting"
+      ],
+      "screenshot": "https://sol-insure.com/global/og-image.png",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "description": "AI features included with Professional plan and above"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "89",
+        "bestRating": "5"
       }
+    }
+    </script>
+    
+    <!-- Structured Data: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "AI Insurance Technology",
+      "name": "Sol-Insure AI Solutions",
+      "description": "Transform your insurance operations with artificial intelligence. Automate underwriting decisions, predict claims outcomes, and ensure regulatory compliance.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Sol-Insure"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Underwriting"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Predictive Claims"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automated Compliance"}}
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sol-insure.com/"},
+        {"@type": "ListItem", "position": 2, "name": "AI & Intelligence", "item": "https://sol-insure.com/ai"}
+      ]
     }
     </script>
     

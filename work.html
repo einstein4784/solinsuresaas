@@ -44,22 +44,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="/global/LOGO233.png" as="image" />
     
-    <!-- Structured Data -->
+    <!-- Structured Data: ItemList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Sol-Insure Platform Features",
-      "description": "Complete suite of P&C insurance platform modules",
+      "description": "Complete suite of P&C insurance platform modules for policy administration, claims, billing, and compliance.",
+      "numberOfItems": 8,
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Policy Administration", "url": "https://sol-insure.com/features/policy-admin"},
-        {"@type": "ListItem", "position": 2, "name": "Claims Management", "url": "https://sol-insure.com/features/claims"},
-        {"@type": "ListItem", "position": 3, "name": "Billing & Accounting", "url": "https://sol-insure.com/features/billing"},
-        {"@type": "ListItem", "position": 4, "name": "Analytics & Reporting", "url": "https://sol-insure.com/features/analytics"},
-        {"@type": "ListItem", "position": 5, "name": "Reinsurance", "url": "https://sol-insure.com/features/reinsurance"},
-        {"@type": "ListItem", "position": 6, "name": "IFRS-17 Compliance", "url": "https://sol-insure.com/features/ifrs17"},
-        {"@type": "ListItem", "position": 7, "name": "Self-Service Portals", "url": "https://sol-insure.com/features/portals"},
-        {"@type": "ListItem", "position": 8, "name": "Reserve Management", "url": "https://sol-insure.com/features/reserves"}
+        {"@type": "ListItem", "position": 1, "name": "Policy Administration", "url": "https://sol-insure.com/features/policy-admin", "description": "Complete policy lifecycle management from quote to renewal"},
+        {"@type": "ListItem", "position": 2, "name": "Claims Management", "url": "https://sol-insure.com/features/claims", "description": "Streamlined claims processing with FNOL to settlement"},
+        {"@type": "ListItem", "position": 3, "name": "Billing & Accounting", "url": "https://sol-insure.com/features/billing", "description": "Automated premium billing and collections"},
+        {"@type": "ListItem", "position": 4, "name": "Analytics & Reporting", "url": "https://sol-insure.com/features/analytics", "description": "Real-time dashboards and business intelligence"},
+        {"@type": "ListItem", "position": 5, "name": "Reinsurance", "url": "https://sol-insure.com/features/reinsurance", "description": "Treaty and facultative reinsurance management"},
+        {"@type": "ListItem", "position": 6, "name": "IFRS-17 Compliance", "url": "https://sol-insure.com/features/ifrs17", "description": "Automated IFRS-17 reporting and compliance"},
+        {"@type": "ListItem", "position": 7, "name": "Self-Service Portals", "url": "https://sol-insure.com/features/portals", "description": "Agent and policyholder self-service portals"},
+        {"@type": "ListItem", "position": 8, "name": "Reserve Management", "url": "https://sol-insure.com/features/reserves", "description": "Actuarial reserve calculations and management"}
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data: CollectionPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Sol-Insure Features",
+      "description": "Explore the complete suite of Sol-Insure insurance platform features and modules.",
+      "url": "https://sol-insure.com/work",
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Sol-Insure Platform",
+        "applicationCategory": "BusinessApplication"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sol-insure.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://sol-insure.com/work"}
       ]
     }
     </script>

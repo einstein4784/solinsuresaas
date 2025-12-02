@@ -44,13 +44,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="/global/LOGO233.png" as="image" />
     
-    <!-- Structured Data -->
+    <!-- Structured Data: ContactPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "name": "Contact Sol-Insure",
-      "description": "Get in touch with Sol-Insure for demos, pricing, and support",
+      "description": "Get in touch with Sol-Insure for demos, pricing, and support. Our team responds within 24 hours.",
       "url": "https://sol-insure.com/contact",
       "mainEntity": {
         "@type": "Organization",
@@ -62,13 +62,59 @@
           "addressLocality": "Port Of Spain",
           "addressCountry": "Trinidad and Tobago"
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "sales",
-          "telephone": "+1-868-460-3788",
-          "email": "saas@solace-systems.com",
-          "availableLanguage": ["English", "Spanish"]
-        }
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+1-868-460-3788",
+            "email": "saas@solace-systems.com",
+            "availableLanguage": ["English", "Spanish"],
+            "areaServed": "Worldwide"
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@solace-systems.com",
+            "availableLanguage": ["English", "Spanish"]
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sol-insure.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://sol-insure.com/contact"}
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareCompany",
+      "name": "Sol-Insure (Solace Systems)",
+      "image": "https://sol-insure.com/global/LOGO233.png",
+      "url": "https://sol-insure.com",
+      "telephone": "+1-868-460-3788",
+      "email": "saas@solace-systems.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port Of Spain",
+        "addressCountry": "TT"
+      },
+      "priceRange": "$$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
       }
     }
     </script>

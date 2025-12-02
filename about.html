@@ -44,22 +44,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="/global/LOGO233.png" as="image" />
     
-    <!-- Structured Data -->
+    <!-- Structured Data: Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Sol-Insure",
-      "description": "Modern, cloud-native P&C insurance platform with 20 years of industry experience.",
+      "alternateName": "Solace Systems",
+      "description": "Modern, cloud-native P&C insurance platform with 20 years of industry experience. Trusted by insurers across the Caribbean and Latin America.",
       "url": "https://sol-insure.com",
-      "logo": "https://sol-insure.com/global/logo.png",
+      "logo": "https://sol-insure.com/global/LOGO233.png",
+      "image": "https://sol-insure.com/global/og-image.png",
       "foundingDate": "2005",
-      "founders": [
-        {
-          "@type": "Person",
-          "name": "Sol-Insure Team"
-        }
-      ],
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Trinidad and Tobago"
+      },
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 50
+      },
+      "slogan": "Enterprise power without enterprise complexity",
+      "knowsAbout": ["Insurance Technology", "P&C Insurance", "Claims Management", "Policy Administration", "IFRS-17"],
       "sameAs": [
         "https://linkedin.com/company/sol-insure",
         "https://twitter.com/solinsure"
@@ -68,8 +75,41 @@
         "@type": "ContactPoint",
         "contactType": "sales",
         "telephone": "+1-868-460-3788",
-        "email": "saas@solace-systems.com"
+        "email": "saas@solace-systems.com",
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port of Spain",
+        "addressCountry": "Trinidad and Tobago"
       }
+    }
+    </script>
+    
+    <!-- Structured Data: AboutPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Sol-Insure",
+      "description": "Discover Sol-Insure's 20-year journey from a simple database to a global SaaS platform transforming P&C insurance.",
+      "url": "https://sol-insure.com/about",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Sol-Insure"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sol-insure.com/"},
+        {"@type": "ListItem", "position": 2, "name": "About", "item": "https://sol-insure.com/about"}
+      ]
     }
     </script>
     
