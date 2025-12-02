@@ -44,19 +44,78 @@
     <link rel="icon" type="image/png" href="/global/site-icon.png" />
     <link rel="apple-touch-icon" href="/global/site-icon.png" />
     
-    <!-- Structured Data -->
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://app.sol-insure.com" />
+    
+    <!-- Performance: Preload critical assets -->
+    <link rel="preload" href="/global/LOGO233.png" as="image" />
+    <link rel="preload" href="/globals.css" as="style" />
+    
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sol-Insure",
+      "alternateName": "Solace Systems",
+      "url": "https://sol-insure.com",
+      "logo": "https://sol-insure.com/global/LOGO233.png",
+      "description": "Modern, cloud-native P&C insurance platform delivered as SaaS.",
+      "foundingDate": "2005",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Port of Spain",
+        "addressCountry": "Trinidad and Tobago"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-868-460-3788",
+        "contactType": "sales",
+        "email": "saas@solace-systems.com",
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "sameAs": [
+        "https://linkedin.com/company/sol-insure",
+        "https://twitter.com/solinsure"
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sol-Insure",
+      "url": "https://sol-insure.com",
+      "description": "Modern P&C Insurance Platform - Cloud-Native SaaS",
+      "inLanguage": ["en", "es"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Sol-Insure"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: SoftwareApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Sol-Insure",
-      "description": "Modern, cloud-native P&C insurance platform delivered as SaaS. Streamline policy administration, claims management, billing, and more.",
+      "name": "Sol-Insure Insurance Platform",
+      "description": "Enterprise P&C insurance management software with policy administration, claims processing, billing, reinsurance, and IFRS-17 compliance.",
       "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Insurance Software",
       "operatingSystem": "Web Browser",
       "offers": {
-        "@type": "Offer",
-        "price": "0",
+        "@type": "AggregateOffer",
         "priceCurrency": "USD",
+        "lowPrice": "499",
+        "highPrice": "Custom",
+        "offerCount": "5",
         "availability": "https://schema.org/OnlineOnly"
       },
       "provider": {
@@ -65,14 +124,59 @@
         "url": "https://sol-insure.com"
       },
       "featureList": [
-        "Policy Administration",
-        "Claims Management",
-        "Billing & Collections",
-        "Reinsurance Management",
-        "IFRS-17 Compliance",
-        "Analytics & Reporting",
-        "Self-Service Portals",
-        "Reserve Management"
+        "Policy Administration & Lifecycle Management",
+        "Claims Management & FNOL Processing",
+        "Billing & Premium Collections",
+        "Reinsurance Treaty Management",
+        "IFRS-17 Compliance & Reporting",
+        "Real-time Analytics & Dashboards",
+        "Agent & Policyholder Self-Service Portals",
+        "Reserve Management & Actuarial Tools",
+        "AI-Powered Underwriting",
+        "Automated Document Generation"
+      ],
+      "screenshot": "https://sol-insure.com/global/og-image.png",
+      "softwareVersion": "2025.1",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "150",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Sol-Insure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sol-Insure is a modern, cloud-native P&C insurance platform delivered as SaaS. It provides comprehensive tools for policy administration, claims management, billing, reinsurance, and regulatory compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Sol-Insure IFRS-17 compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Sol-Insure includes built-in IFRS-17 compliance features with automated disclosures, reporting, and audit trails to meet international financial reporting standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What pricing plans does Sol-Insure offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sol-Insure offers flexible pricing tiers starting from Starter ($499/mo) for small insurers, Professional ($1,499/mo) for growing companies, Business ($3,499/mo) for established firms, and custom Enterprise solutions."
+          }
+        }
       ]
     }
     </script>
