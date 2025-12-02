@@ -31,14 +31,8 @@ export default defineConfig({
         },
       },
     },
-    // Performance optimizations
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    // Performance optimizations - use esbuild (default)
+    minify: 'esbuild',
     // Enable CSS code splitting
     cssCodeSplit: true,
     // Generate source maps for debugging (can be disabled in production)
