@@ -7721,6 +7721,10 @@ section::before {
   display: none;
 }
 
+.demo-section::before {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .demo-section {
     padding: 6rem 0;
