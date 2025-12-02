@@ -22,6 +22,8 @@ export default defineConfig({
         ifrs17: resolve(__dirname, "features/ifrs17.html"),
         portals: resolve(__dirname, "features/portals.html"),
         reserves: resolve(__dirname, "features/reserves.html"),
+        // Guide pages (Pillar Content)
+        insuranceGuide: resolve(__dirname, "guides/insurance-management-guide.html"),
       },
       output: {
         // Optimize chunk splitting
