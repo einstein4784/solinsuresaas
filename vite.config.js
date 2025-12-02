@@ -25,6 +25,8 @@ export default defineConfig({
         reserves: resolve(__dirname, "features/reserves.html"),
         // Guide pages (Pillar Content)
         insuranceGuide: resolve(__dirname, "guides/insurance-management-guide.html"),
+        // Landing pages
+        mexicoLanding: resolve(__dirname, "mexicolanding.html"),
       },
       output: {
         // Optimize chunk splitting
