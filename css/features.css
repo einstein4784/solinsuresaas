@@ -942,3 +942,365 @@
   color: #93c5fd;
 }
 
+/* ====================================
+   ANIMATIONS (Desktop Only)
+   ==================================== */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animation Classes */
+.feature-animate-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.feature-animate-left {
+  animation: fadeInLeft 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.feature-animate-right {
+  animation: fadeInRight 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.feature-animate-scale {
+  animation: scaleIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.feature-animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Stagger delays */
+.feature-delay-1 { animation-delay: 0.1s; }
+.feature-delay-2 { animation-delay: 0.2s; }
+.feature-delay-3 { animation-delay: 0.3s; }
+.feature-delay-4 { animation-delay: 0.4s; }
+.feature-delay-5 { animation-delay: 0.5s; }
+
+/* ====================================
+   DARK THEME SECTIONS
+   ==================================== */
+
+.feature-dark-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-dark-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(129, 140, 248, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.feature-dark-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dark orbs */
+.feature-dark-section .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.feature-dark-section .orb-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #818cf8 0%, transparent 70%);
+  top: -100px;
+  right: -50px;
+}
+
+.feature-dark-section .orb-2 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -4s;
+}
+
+/* Dark section typography */
+.feature-dark-section h2,
+.feature-dark-section .feature-content h2 {
+  color: #ffffff;
+}
+
+.feature-dark-section h3,
+.feature-dark-section .feature-content h3 {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.feature-dark-section p,
+.feature-dark-section .feature-content p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.feature-dark-section li {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.feature-dark-section li strong {
+  color: #ffffff;
+}
+
+/* Dark section cards */
+.feature-dark-section .feature-card,
+.feature-dark-section .benefit-card,
+.feature-dark-section .capability-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.feature-dark-section .feature-card:hover,
+.feature-dark-section .benefit-card:hover,
+.feature-dark-section .capability-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(129, 140, 248, 0.4);
+  transform: translateY(-4px);
+}
+
+.feature-dark-section .feature-card h3,
+.feature-dark-section .benefit-card h4,
+.feature-dark-section .capability-card h4 {
+  color: #ffffff;
+}
+
+.feature-dark-section .feature-card p,
+.feature-dark-section .benefit-card p,
+.feature-dark-section .capability-card p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ====================================
+   LIGHT THEME SECTIONS (Enhanced)
+   ==================================== */
+
+.feature-light-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+}
+
+.feature-light-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+}
+
+/* Enhanced Feature Hero */
+.feature-hero-enhanced {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  padding: 10rem 2rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-hero-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.feature-hero-enhanced .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 10s ease-in-out infinite;
+}
+
+.feature-hero-enhanced .orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #818cf8 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+}
+
+.feature-hero-enhanced .orb-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #a78bfa 0%, transparent 70%);
+  bottom: -100px;
+  left: 10%;
+  animation-delay: -5s;
+}
+
+.feature-hero-enhanced .container {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-hero-enhanced h1 {
+  color: #ffffff;
+}
+
+.feature-hero-enhanced p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Enhanced CTA Section */
+.feature-cta-enhanced {
+  background: linear-gradient(135deg, #1e3a8a 0%, #6d28d9 50%, #7c3aed 100%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-cta-enhanced::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  animation: float 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Stats bar with animation */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 3rem 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  display: block;
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* ====================================
+   MOBILE: DISABLE ANIMATIONS
+   ==================================== */
+
+@media (max-width: 768px) {
+  .feature-animate-up,
+  .feature-animate-left,
+  .feature-animate-right,
+  .feature-animate-scale,
+  .feature-animate-float {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .feature-dark-section .orb,
+  .feature-hero-enhanced .orb,
+  .feature-cta-enhanced::before {
+    display: none !important;
+  }
+
+  .feature-cta-enhanced {
+    animation: none !important;
+    background-size: 100% 100% !important;
+  }
+
+  .feature-dark-section::before {
+    opacity: 0.5;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  /* Disable hover transforms on mobile */
+  .feature-dark-section .feature-card:hover,
+  .feature-dark-section .benefit-card:hover,
+  .feature-dark-section .capability-card:hover,
+  .related-feature-card:hover {
+    transform: none !important;
+  }
+}
+
