@@ -17,39 +17,29 @@
   function init() {
     console.log('Mobile menu script loaded');
     
-    // Check if we should show mobile navigation
+    // ALWAYS create mobile menu - CSS will handle visibility
+    // This ensures it works on all devices
+    createMobileMenu();
+    
+    // Check if we should activate mobile navigation (hide desktop nav)
     var isMobile = window.innerWidth <= 1023 || 
                    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     console.log('Is mobile:', isMobile, 'Width:', window.innerWidth);
     
     if (isMobile) {
-      setupMobileNavigation();
+      hideDesktopNav();
     }
     
     // Handle resize
-    var resizeTimer;
     window.addEventListener('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
-        var nowMobile = window.innerWidth <= 1023;
-        if (nowMobile && !document.getElementById('mobile-nav-container')) {
-          setupMobileNavigation();
-        }
-      }, 250);
+      var nowMobile = window.innerWidth <= 1023;
+      if (nowMobile) {
+        hideDesktopNav();
+      } else {
+        showDesktopNav();
+      }
     });
-  }
-  
-  function setupMobileNavigation() {
-    console.log('Setting up mobile navigation...');
-    
-    // Hide desktop navigation elements
-    hideDesktopNav();
-    
-    // Create mobile menu if it doesn't exist
-    if (!document.getElementById('mobile-nav-container')) {
-      createMobileMenu();
-    }
   }
   
   function hideDesktopNav() {
@@ -84,6 +74,36 @@
     });
     
     console.log('Desktop nav hidden');
+  }
+  
+  function showDesktopNav() {
+    // Show desktop navigation elements
+    var showSelectors = [
+      '#desktop-nav-links',
+      '#desktop-login-btn', 
+      '#desktop-cta-btn',
+      '.desktop-nav-only',
+      '.features-nav-links',
+      '.features-nav-buttons',
+      '.nav-buttons'
+    ];
+    
+    showSelectors.forEach(function(selector) {
+      try {
+        var elements = document.querySelectorAll(selector);
+        elements.forEach(function(el) {
+          el.style.cssText = '';
+        });
+      } catch(e) {}
+    });
+    
+    // Hide the hamburger toggle
+    var toggles = document.querySelectorAll('.menu-toggle, button[aria-label="Toggle menu"]');
+    toggles.forEach(function(toggle) {
+      toggle.style.cssText = 'display: none !important;';
+    });
+    
+    console.log('Desktop nav shown');
   }
   
   function createMobileMenu() {
