@@ -12,6 +12,15 @@ const translations = {
     nav_login: "Login",
     nav_get_started: "Get Started",
     nav_menu: "Menu",
+    nav_guides: "Guides",
+    nav_resources: "Resources",
+    nav_pricing: "Pricing",
+    
+    // Footer Resources
+    footer_resources: "Resources",
+    footer_guide_insurance: "Insurance Management Guide",
+    footer_how_it_works: "How It Works",
+    footer_pricing: "Pricing",
     
     // Hero Section
     hero_title: "Sol-Insure",
@@ -658,6 +667,15 @@ const translations = {
     nav_login: "Iniciar Sesión",
     nav_get_started: "Empezar",
     nav_menu: "Menú",
+    nav_guides: "Guías",
+    nav_resources: "Recursos",
+    nav_pricing: "Precios",
+    
+    // Footer Resources
+    footer_resources: "Recursos",
+    footer_guide_insurance: "Guía de Gestión de Seguros",
+    footer_how_it_works: "Cómo Funciona",
+    footer_pricing: "Precios",
     
     // Hero Section
     hero_title: "Sol-Insure",
