@@ -301,27 +301,18 @@
       <div class="light-beam-2"></div>
       <div class="section-border-artifact-left"></div>
       <div class="section-border-artifact-right"></div>
-      <!-- Mexico Landing Dot -->
-      <a href="/mexicolanding" class="mexico-dot" title="Sol-Insure para LATAM" aria-label="Ver sitio en Español para LATAM">
-        <span class="mexico-dot-inner"></span>
-        <span class="mexico-dot-tooltip">LATAM</span>
-      </a>
-      
       <header class="hero-header-nav bg-gray-900 border-b border-gray-800">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 xl:px-12">
           <div class="flex items-center justify-between h-16 lg:h-[72px]">
-            <div class="flex items-center flex-shrink-0 gap-4">
+            <!-- Logo Only -->
+            <div class="flex items-center flex-shrink-0">
               <a href="/" title="Sol-Insure" class="inline-flex">
                 <span class="sr-only">Sol-Insure logo</span>
                 <img class="w-auto h-8" src="/global/LOGO233.png" alt="Sol-Insure" width="120" height="32" />
               </a>
-              <!-- Language Toggle -->
-              <div class="language-toggle">
-                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-                <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-              </div>
             </div>
 
+            <!-- Center Nav Links -->
             <div id="desktop-nav-links" class="desktop-nav-only hidden lg:flex lg:justify-center lg:space-x-8 xl:space-x-10">
               <a href="/work" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_features">Features</a>
               <a href="/pricing" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_pricing">Pricing</a>
@@ -331,19 +322,33 @@
               <a href="/contact" title="" class="text-sm font-medium text-gray-400 transition-all duration-200 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white hover:text-white" data-i18n="nav_contact">Contact</a>
             </div>
 
-            <div class="flex items-center justify-end space-x-4">
+            <!-- Right Side: Login, Language Toggle, Mexico Dot, Get Started -->
+            <div class="flex items-center justify-end space-x-3">
+              <!-- Login Button -->
               <a id="desktop-login-btn" href="/login" class="desktop-nav-only hidden lg:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-300 transition-all duration-200 border border-gray-600 rounded-lg hover:bg-gray-800 hover:text-white hover:border-gray-500" data-i18n="nav_login">
-                <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l5-5-5-5M15 12H3"/>
-                </svg>
                 Login
               </a>
+              
+              <!-- Language Toggle -->
+              <div class="language-toggle desktop-nav-only hidden lg:flex">
+                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
+              </div>
+              
+              <!-- Mexico Landing Dot -->
+              <a href="/mexicolanding" class="mexico-dot-inline desktop-nav-only hidden lg:flex" title="Sol-Insure para LATAM" aria-label="Ver sitio en Español para LATAM">
+                <span class="mexico-dot-inner"></span>
+              </a>
+              
+              <!-- Get Started Button -->
               <a id="desktop-cta-btn" href="/contact" class="desktop-nav-only hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg hover:from-indigo-600 hover:to-purple-700 shadow-lg shadow-indigo-500/25" data-i18n="nav_get_started">
                 Get Started
                 <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
+              
+              <!-- Mobile Menu Toggle -->
               <button type="button" class="p-2 -m-2 text-white transition-all duration-200 lg:hidden hover:text-gray-200 menu-toggle" aria-label="Toggle menu">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
