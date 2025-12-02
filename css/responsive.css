@@ -71,52 +71,46 @@ img, video, iframe {
    TABLET (768px - 1023px)
    ================================================ */
 @media screen and (max-width: 1023px) {
-  /* Force hide ALL desktop navigation on tablet/mobile */
-  /* Homepage navigation with Tailwind classes */
-  .hero-header-nav .lg\:flex,
-  .hero-header-nav .lg\:justify-center,
-  .hero-header-nav .lg\:space-x-10,
-  .hero-header-nav .lg\:space-x-14,
-  .hero-header-nav .xl\:space-x-14,
-  .hero-header-nav .hidden.lg\:flex,
-  .hero-header-nav div[class*="lg:flex"],
-  .hero-header-nav div[class*="lg:justify"],
-  .hero-header-nav div[class*="lg:space"],
+  /* ==== FORCE HIDE ALL DESKTOP NAVIGATION ==== */
   
-  /* All page navigation links */
+  /* Hide desktop nav links container - target the middle div with nav links */
+  .hero-header-nav > div > div:nth-child(2),
+  .hero-header-nav .hidden.lg\:flex {
+    display: none !important;
+  }
+  
+  /* Hide Login and Get Started buttons */
+  .hero-header-nav a[href="/login"],
+  .hero-header-nav a[href="/contact"]:not(.mobile-nav-btn-start),
+  .hero-header-nav .hidden.lg\:inline-flex {
+    display: none !important;
+  }
+  
+  /* Generic selectors for all nav links */
   .features-nav-links,
   .feature-nav-links,
   .ai-nav-links,
   .contact-nav-links,
   .hiw-nav-links,
-  .nav-links:not(.footer-links-list),
+  .nav-links:not(.footer-links-list):not(.mobile-nav-links),
   .pricing-nav .nav-links,
-  .about-nav .nav-links {
+  .about-nav .nav-links,
+  .nav-buttons {
     display: none !important;
-    visibility: hidden !important;
-  }
-  
-  /* Hide Login/Get Started buttons on tablet/mobile */
-  .hero-header-nav .lg\:inline-flex,
-  .hero-header-nav a[class*="lg:inline-flex"],
-  .hero-header-nav .hidden.lg\:inline-flex,
-  .features-header-nav .nav-buttons,
-  .feature-header-nav .nav-buttons,
-  .ai-header-clean .nav-buttons,
-  .contact-header-nav .nav-buttons,
-  .hiw-header .nav-buttons,
-  .pricing-nav .nav-buttons,
-  .about-nav .nav-buttons {
-    display: none !important;
-    visibility: hidden !important;
   }
   
   /* Show hamburger menu toggle */
   .hero-header-nav .menu-toggle,
-  .hero-header-nav button[class*="lg:hidden"],
+  .hero-header-nav button.lg\:hidden,
   .mobile-menu-toggle {
     display: flex !important;
     visibility: visible !important;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
   }
   
   /* Hero layout */
