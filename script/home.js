@@ -8,14 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   initAnimations();
   initI18n(); // Initialize language system
 
+  // Check if mobile - skip heavy animations
+  const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+
   gsap.registerPlugin(ScrollTrigger);
   
   // SplitText is premium - using fallback
   let SplitText = null;
   
-  // Initialize Lottie animation as background
+  // Initialize Lottie animation as background - DESKTOP ONLY
   const lottieContainer = document.getElementById("hero-lottie");
-  const isMobile = window.innerWidth <= 768;
   
   if (lottieContainer && !isMobile) {
     const animation = lottie.loadAnimation({
@@ -148,9 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Initialize World Map Lottie animation for home-about section
+  // Initialize World Map Lottie animation for home-about section - DESKTOP ONLY
   const homeAboutWorldMap = document.getElementById("home-about-world-map");
-  if (homeAboutWorldMap) {
+  if (homeAboutWorldMap && !isMobile) {
     const worldMapAnimation = lottie.loadAnimation({
       container: homeAboutWorldMap,
       renderer: "svg",
@@ -183,9 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Initialize Family Insurance Lottie animation for home-services section
+  // Initialize Family Insurance Lottie animation for home-services section - DESKTOP ONLY
   const familyInsuranceContainer = document.getElementById("home-services-family-insurance");
-  if (familyInsuranceContainer) {
+  if (familyInsuranceContainer && !isMobile) {
     const familyInsuranceAnimation = lottie.loadAnimation({
       container: familyInsuranceContainer,
       renderer: "svg",
@@ -218,9 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Initialize World Map Lottie animation (legacy - keep for backwards compatibility)
+  // Initialize World Map Lottie animation (legacy - keep for backwards compatibility) - DESKTOP ONLY
   const worldMapContainer = document.getElementById("world-map-lottie");
-  if (worldMapContainer) {
+  if (worldMapContainer && !isMobile) {
     const worldMapAnimation = lottie.loadAnimation({
       container: worldMapContainer,
       renderer: "svg",
@@ -464,9 +466,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const spotlightImages = document.querySelector(".home-spotlight-images");
-  const containerHeight = spotlightImages.offsetHeight;
-  const viewportHeight = window.innerHeight;
+  // Spotlight and Outro sections use heavy ScrollTrigger pinning - DESKTOP ONLY
+  if (!isMobile) {
+    const spotlightImages = document.querySelector(".home-spotlight-images");
+    const containerHeight = spotlightImages.offsetHeight;
+    const viewportHeight = window.innerHeight;
 
   const initialOffset = containerHeight * 0.05;
   const totalMovement = containerHeight + initialOffset + viewportHeight;
@@ -654,11 +658,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-  });
+    });
+  } // End of desktop-only ScrollTrigger sections
 
   // ====================================
-  // GOD-LEVEL INTERACTIVE EFFECTS
+  // GOD-LEVEL INTERACTIVE EFFECTS - DESKTOP ONLY
   // ====================================
+
+  // Skip ALL heavy effects on mobile
+  if (isMobile) {
+    console.log('📱 Mobile detected - skipping heavy animations for performance');
+    return; // Exit early on mobile
+  }
 
   // Create Custom Cursor
   const customCursor = document.createElement('div');

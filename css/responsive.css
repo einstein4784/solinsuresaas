@@ -964,20 +964,73 @@ textarea:focus {
   .ai-gradient-orb,
   .aurora-layer,
   .hero-lottie-bg,
+  .hero-lottie,
   .mesh-overlay,
   .liquid-shape,
   .floating-particles-container,
+  .particles-container,
   .hero-bg-elements video,
   .hero-bg-elements iframe,
   .section-transition-top,
-  .section-transition-bottom {
+  .section-transition-bottom,
+  .global-orb,
+  .cinematic-vignette,
+  .custom-cursor,
+  .cursor-glow,
+  .noise-overlay,
+  .particle-dot,
+  .ambient-orb,
+  .orb,
+  .floating-shield,
+  .data-particle,
+  .scroll-indicator {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 
   /* Disable expensive filters */
   * {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Prevent layout thrashing */
+  html, body {
+    overflow-x: hidden !important;
+  }
+  
+  /* Force stable backgrounds */
+  .hero,
+  section,
+  .home-services,
+  .home-spotlight,
+  .outro,
+  .trust-platform-section,
+  .compliance-nexus {
+    background-attachment: scroll !important;
+    will-change: auto !important;
+    transform: none !important;
+  }
+  
+  /* Disable scroll-based transforms */
+  .flowing-gradient,
+  .ambient-pulse {
+    animation: none !important;
+  }
+  
+  /* Disable 3D transforms on cards */
+  .user-centric-card,
+  .home-about-card,
+  .hero-card-inner,
+  .flip-card-inner {
+    transform: none !important;
+    perspective: none !important;
+  }
+  
+  /* Simplify scroll progress */
+  .scroll-progress {
+    display: none !important;
   }
 }
 

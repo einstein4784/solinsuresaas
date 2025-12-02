@@ -365,26 +365,30 @@ statCircles.forEach(circle => {
 });
 
 // ================================================
-// HOVER EFFECTS FOR CARDS
+// HOVER EFFECTS FOR CARDS (Desktop Only)
 // ================================================
-const cards = document.querySelectorAll('.benefit-card, .capability-card, .explain-card');
-cards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    gsap.to(card, {
-      y: -4,
-      duration: 0.3,
-      ease: 'power2.out'
+const isMobileDevice = window.innerWidth <= 768 || 'ontouchstart' in window;
+
+if (!isMobileDevice) {
+  const cards = document.querySelectorAll('.benefit-card, .capability-card, .explain-card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, {
+        y: -4,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        y: 0,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
     });
   });
-  
-  card.addEventListener('mouseleave', () => {
-    gsap.to(card, {
-      y: 0,
-      duration: 0.3,
-      ease: 'power2.out'
-    });
-  });
-});
+}
 
 // ================================================
 // INITIALIZATION

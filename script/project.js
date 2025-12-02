@@ -73,6 +73,9 @@ function initCustomCursor() {
  * Floating Particles
  */
 function initParticles() {
+  // Skip particles on mobile for performance
+  if (window.innerWidth < 768) return;
+  
   const container = document.getElementById('particles');
   if (!container) return;
   
