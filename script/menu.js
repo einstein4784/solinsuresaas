@@ -63,25 +63,28 @@ function initMenu() {
   menuItems.forEach((item, index) => {
     const link = item.querySelector("a");
     if (link) {
-      // Create fallback split text manually
-      const text = link.textContent;
-      const words = text.split(/\s+/);
-      const wordSpans = [];
-      link.innerHTML = '';
-      words.forEach((word, i) => {
-        const span = document.createElement('span');
-        span.style.display = 'inline-block';
-        span.textContent = word + (i < words.length - 1 ? ' ' : '');
-        link.appendChild(span);
-        wordSpans.push(span);
-      });
-      
-      const split = { words: wordSpans, element: link };
-      splitTexts.push(split);
-
-      gsap.set(split.words, {
-        yPercent: 120,
-      });
+      // Only split text on desktop for performance
+      if (window.innerWidth > 768) {
+        // Create fallback split text manually
+        const text = link.textContent;
+        const words = text.split(/\s+/);
+        const wordSpans = [];
+        link.innerHTML = '';
+        words.forEach((word, i) => {
+          const span = document.createElement('span');
+          span.style.display = 'inline-block';
+          span.textContent = word + (i < words.length - 1 ? ' ' : '');
+          link.appendChild(span);
+          wordSpans.push(span);
+        });
+        
+        const split = { words: wordSpans, element: link };
+        splitTexts.push(split);
+  
+        gsap.set(split.words, {
+          yPercent: 120,
+        });
+      }
     }
   });
 
@@ -175,6 +178,20 @@ function openMenu() {
       },
       "-=0.3"
     );
+  } else {
+    // Mobile fallback: animate items directly if no split text
+    tl.fromTo(
+      menuItems,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
   }
 
   tl.to(
@@ -259,6 +276,18 @@ function closeMenu() {
         duration: 0.25,
         yPercent: 120,
         stagger: -0.025,
+        ease: "power2.in",
+      },
+      "-=0.25"
+    );
+  } else {
+    // Mobile fallback
+    tl.to(
+      menuItems,
+      {
+        opacity: 0,
+        y: 20,
+        duration: 0.3,
         ease: "power2.in",
       },
       "-=0.25"

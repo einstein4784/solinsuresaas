@@ -954,3 +954,30 @@ textarea:focus {
   border: 0;
 }
 
+
+/* ================================================
+   PERFORMANCE OPTIMIZATIONS (Mobile)
+   ================================================ */
+@media (max-width: 767px) {
+  /* Disable heavy background animations */
+  .light-floating-element,
+  .ai-gradient-orb,
+  .aurora-layer,
+  .hero-lottie-bg,
+  .mesh-overlay,
+  .liquid-shape,
+  .floating-particles-container,
+  .hero-bg-elements video,
+  .hero-bg-elements iframe,
+  .section-transition-top,
+  .section-transition-bottom {
+    display: none !important;
+  }
+
+  /* Disable expensive filters */
+  * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+

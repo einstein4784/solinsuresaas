@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Initialize Lottie animation as background
   const lottieContainer = document.getElementById("hero-lottie");
-  if (lottieContainer) {
+  const isMobile = window.innerWidth <= 768;
+  
+  if (lottieContainer && !isMobile) {
     const animation = lottie.loadAnimation({
       container: lottieContainer,
       renderer: "svg",
