@@ -17,9 +17,29 @@
     -webkit-backdrop-filter: blur(10px);
   }
 
+  /* FORCE HIDE ALL DESKTOP NAVIGATION ELEMENTS */
+  .hero-header-nav > div > div > div:nth-child(2),
+  .hero-header-nav .hidden.lg\:flex,
+  .hero-header-nav [class*="lg:flex"]:not(.menu-toggle),
+  .hero-header-nav [class*="lg:inline-flex"],
+  .hero-header-nav a[href="/login"],
+  .hero-header-nav a[href="/contact"].hidden,
+  .hero-header-nav .flex.items-center.justify-end a:not(.menu-toggle) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Hide the entire desktop nav links container */
+  .hero-header-nav .px-4 > .flex > div.hidden {
+    display: none !important;
+  }
+
   /* Make the menu toggle visible and styled */
-  .menu-toggle {
+  .menu-toggle,
+  .hero-header-nav button[type="button"],
+  button.lg\:hidden {
     display: flex !important;
+    visibility: visible !important;
     align-items: center;
     justify-content: center;
     width: 44px;
