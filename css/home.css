@@ -202,7 +202,9 @@
 }
 
 .hero::after {
-  content: "";
+  display: none !important;
+  content: none !important;
+  /* DISABLED - was creating gradient above demo section
   position: absolute;
   bottom: 0;
   left: 0;
@@ -222,8 +224,11 @@
   animation: borderFlowReverse 8s ease-in-out infinite;
 }
 
-/* Wave Transition to Next Section */
+/* Wave Transition to Next Section - DISABLED */
 .hero .wave-transition {
+  display: none !important;
+  visibility: hidden !important;
+  /* DISABLED - was creating gradient above demo section
   position: absolute;
   bottom: -50px;
   left: 0;
@@ -240,6 +245,9 @@
 }
 
 .hero .section-border-artifact-left {
+  display: none !important;
+  visibility: hidden !important;
+  /* DISABLED
   position: absolute;
   bottom: 0;
   left: 0;
@@ -255,6 +263,9 @@
 }
 
 .hero .section-border-artifact-right {
+  display: none !important;
+  visibility: hidden !important;
+  /* DISABLED
   position: absolute;
   bottom: 0;
   right: 0;
