@@ -8320,6 +8320,28 @@ section::before {
     transform: none;
     box-shadow: none;
   }
+  
+  /* Disable demo section floating orbs on mobile */
+  .demo-section::before,
+  .demo-section::after {
+    display: none !important;
+  }
+  
+  /* Disable demo section morphing shape on mobile */
+  .demo-wrapper::after {
+    display: none;
+  }
+  
+  /* Disable demo section sparkles on mobile */
+  .demo-section .demo-content::before,
+  .demo-section .demo-content::after {
+    display: none;
+  }
+  
+  /* Simplify demo section background on mobile */
+  .demo-section {
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  }
 }
 
 /* Reduce motion for users who prefer it */
@@ -8351,6 +8373,15 @@ section::before {
   .wheel-stage,
   .standard-item {
     transition: none;
+  }
+  
+  /* Disable demo section animations for reduced motion */
+  .demo-section::before,
+  .demo-section::after,
+  .demo-wrapper::after,
+  .demo-section .demo-content::before,
+  .demo-section .demo-content::after {
+    animation: none;
   }
 }
 
@@ -8387,42 +8418,153 @@ section::before {
 }
 
 /* ====================================
-   DEMO REQUEST SECTION
+   DEMO REQUEST SECTION - Light Aesthetics
    ==================================== */
 
 .demo-section {
-  background: #ffffff !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #e8f4fc 50%, #f0f4ff 75%, #faf5ff 100%) !important;
   padding: 5rem 0;
   overflow: hidden !important;
   position: relative;
   margin-top: 0 !important;
 }
 
-/* Remove ALL gradients and decorative elements from demo section */
-.demo-section .light-floating-element,
-.demo-section .section-transition-top,
-.demo-section .section-transition-bottom,
-.demo-section .section-flow-overlay {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
+/* Floating orbs for visual interest */
+.demo-section::before {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.04) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatOrb1 20s ease-in-out infinite;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-.demo-section::before,
 .demo-section::after {
-  display: none !important;
-  content: none !important;
-  background: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  bottom: -20%;
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, rgba(147, 197, 253, 0.03) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatOrb2 25s ease-in-out infinite;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Remove gradients from sections adjacent to demo-section */
-.demo-section + .user-centric-section::before,
-.hero + .demo-section::before,
-.demo-section + section::before {
-  display: none !important;
-  background: none !important;
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, 20px) scale(1.05); }
+  50% { transform: translate(10px, 40px) scale(1); }
+  75% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, -30px) scale(1.03); }
+  66% { transform: translate(20px, -15px) scale(0.97); }
+}
+
+/* Subtle grid pattern overlay */
+.demo-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.demo-section .demo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Decorative accent shapes */
+.demo-wrapper {
+  position: relative;
+}
+
+.demo-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.03) 100%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morphShape 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes morphShape {
+  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg); }
+  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; transform: rotate(45deg); }
+  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+}
+
+/* Floating sparkles */
+.demo-section .demo-content::before {
+  content: '✦';
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  font-size: 1.5rem;
+  color: rgba(99, 102, 241, 0.15);
+  animation: sparkle 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.demo-section .demo-content::after {
+  content: '✦';
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  font-size: 1rem;
+  color: rgba(139, 92, 246, 0.12);
+  animation: sparkle 4s ease-in-out infinite 1s;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.8; transform: scale(1.2) rotate(180deg); }
+}
+
+/* Light glow behind the form */
+.demo-form-wrapper {
+  position: relative;
+}
+
+.demo-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  border-radius: 2rem;
+  pointer-events: none;
+  z-index: -1;
 }
 
 @media (min-width: 1024px) {
