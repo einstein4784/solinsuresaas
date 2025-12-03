@@ -7949,6 +7949,61 @@ section::before {
   color: #0f172a;
 }
 
+/* Guide Link CTA */
+.guide-link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.guide-link-cta:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateX(4px);
+}
+
+.guide-link-cta svg:first-child {
+  width: 22px;
+  height: 22px;
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+.guide-link-cta span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #4f46e5;
+  letter-spacing: -0.01em;
+}
+
+.guide-link-cta .guide-arrow {
+  width: 18px;
+  height: 18px;
+  color: #6366f1;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.guide-link-cta:hover .guide-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+  .guide-link-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Demo Form */
 .demo-form-wrapper {
   display: flex;
