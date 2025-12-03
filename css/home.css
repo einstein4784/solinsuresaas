@@ -8154,14 +8154,204 @@ section::before {
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   color: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Animated gradient background on hover */
+.light-module-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(139, 92, 246, 0.12) 25%,
+    rgba(236, 72, 153, 0.08) 50%,
+    rgba(59, 130, 246, 0.12) 75%,
+    rgba(139, 92, 246, 0.08) 100%
+  );
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.light-module-card:hover::before {
+  opacity: 1;
+  animation: bgGradientWave 4s ease infinite;
+}
+
+@keyframes bgGradientWave {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Shine effect on hover */
+.light-module-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg) translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.light-module-card:hover::after {
+  transform: rotate(45deg) translateX(100%);
 }
 
 .light-module-card:hover {
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
-  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 
+    0 20px 50px rgba(59, 130, 246, 0.2),
+    0 8px 20px rgba(139, 92, 246, 0.15),
+    inset 0 0 0 1px rgba(139, 92, 246, 0.1);
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* Icon pulse animation on hover */
+.light-module-card:hover .light-module-icon {
+  animation: iconPulse 0.6s ease;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Staggered entrance animation for cards */
+.light-modules-grid .light-module-card {
+  opacity: 0;
+  animation: moduleCardEntrance 0.6s ease forwards;
+}
+
+.light-modules-grid .light-module-card:nth-child(1) { animation-delay: 0.1s; }
+.light-modules-grid .light-module-card:nth-child(2) { animation-delay: 0.15s; }
+.light-modules-grid .light-module-card:nth-child(3) { animation-delay: 0.2s; }
+.light-modules-grid .light-module-card:nth-child(4) { animation-delay: 0.25s; }
+.light-modules-grid .light-module-card:nth-child(5) { animation-delay: 0.3s; }
+.light-modules-grid .light-module-card:nth-child(6) { animation-delay: 0.35s; }
+.light-modules-grid .light-module-card:nth-child(7) { animation-delay: 0.4s; }
+.light-modules-grid .light-module-card:nth-child(8) { animation-delay: 0.45s; }
+
+@keyframes moduleCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Optimization - Disable complex animations for performance */
+@media (max-width: 768px) {
+  /* Disable animated gradient background on mobile */
+  .light-module-card::before {
+    display: none;
+  }
+  
+  /* Disable shine effect on mobile */
+  .light-module-card::after {
+    display: none;
+  }
+  
+  /* Simplify hover effects on mobile */
+  .light-module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+  }
+  
+  /* Disable staggered entrance animations on mobile */
+  .light-modules-grid .light-module-card {
+    opacity: 1;
+    animation: none;
+  }
+  
+  /* Disable icon pulse on mobile */
+  .light-module-card:hover .light-module-icon {
+    animation: none;
+  }
+  
+  /* Disable lifecycle wheel connection ring animations on mobile */
+  .connection-ring {
+    animation: none !important;
+  }
+  
+  /* Simplify lifecycle wheel hover effects */
+  .wheel-stage:hover {
+    transform: none;
+  }
+  
+  .wheel-stage:hover .stage-icon {
+    box-shadow: none;
+    background: rgba(99, 102, 241, 0.15);
+  }
+  
+  /* Disable floating glow animations on mobile */
+  .lifecycle-glow {
+    animation: none !important;
+  }
+  
+  /* Simplify standards card hover on mobile */
+  .standard-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .light-module-card::before,
+  .light-module-card::after {
+    display: none;
+  }
+  
+  .light-module-card,
+  .light-module-card:hover {
+    transition: none;
+    transform: none;
+  }
+  
+  .light-modules-grid .light-module-card {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .connection-ring {
+    animation: none !important;
+  }
+  
+  .lifecycle-glow {
+    animation: none !important;
+  }
+  
+  .wheel-stage,
+  .standard-item {
+    transition: none;
+  }
 }
 
 .light-module-icon {
@@ -10299,6 +10489,162 @@ section::before {
 
 .standard-badge:hover span {
   color: #818cf8;
+}
+
+/* Compliance Standards - Light/Dark Mixed Design */
+.compliance-standards-mixed {
+  position: relative;
+  z-index: 10;
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
+
+.standards-light-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.standards-light-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.standards-check-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.standards-check-icon svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.standards-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.standards-subtitle {
+  font-size: 0.9375rem;
+  color: #64748b;
+}
+
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .standards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .standards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .standards-light-card {
+    padding: 1.5rem;
+  }
+}
+
+.standard-item {
+  padding: 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.standard-item.standard-dark {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.standard-item.standard-dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+}
+
+.standard-item.standard-light {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.standard-item.standard-light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.standard-code {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.standard-item.standard-dark .standard-code {
+  color: #c4b5fd;
+}
+
+.standard-item.standard-light .standard-code {
+  color: #4f46e5;
+}
+
+.standard-name {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.standard-item.standard-dark .standard-name {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.standard-item.standard-light .standard-name {
+  color: #64748b;
+}
+
+.standards-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.standards-verified-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.standards-verified-text svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Responsive Styles */

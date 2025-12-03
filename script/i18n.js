@@ -172,6 +172,23 @@ const translations = {
     scalability_stat_4_value: "50+",
     scalability_stat_4_label: "Countries Supported",
     
+    // International Standards Section
+    standards_title: "International Standards Verified",
+    standards_subtitle: "Fully compliant with global regulatory requirements",
+    standards_fatf: "FATF",
+    standards_fatf_name: "Financial Action Task Force",
+    standards_aml: "AML",
+    standards_aml_name: "Anti-Money Laundering",
+    standards_cft: "CFT",
+    standards_cft_name: "Counter Financing of Terrorism",
+    standards_gdpr: "GDPR",
+    standards_gdpr_name: "General Data Protection",
+    standards_soc2: "SOC 2",
+    standards_soc2_name: "Service Organization Control",
+    standards_iso: "ISO 27001",
+    standards_iso_name: "Information Security",
+    standards_verified: "Audited annually by third-party security firms",
+    
     // Built for Insurers Section
     built_for_badge: "Core Values",
     built_for_title: "Built for Insurers",
@@ -921,6 +938,23 @@ const translations = {
     scalability_stat_3_label: "Pólizas Gestionadas",
     scalability_stat_4_value: "50+",
     scalability_stat_4_label: "Países Soportados",
+    
+    // International Standards Section
+    standards_title: "Estándares Internacionales Verificados",
+    standards_subtitle: "Totalmente conforme con los requisitos regulatorios globales",
+    standards_fatf: "GAFI",
+    standards_fatf_name: "Grupo de Acción Financiera",
+    standards_aml: "AML",
+    standards_aml_name: "Anti-Lavado de Dinero",
+    standards_cft: "CFT",
+    standards_cft_name: "Contra el Financiamiento del Terrorismo",
+    standards_gdpr: "RGPD",
+    standards_gdpr_name: "Protección de Datos",
+    standards_soc2: "SOC 2",
+    standards_soc2_name: "Control de Organización de Servicios",
+    standards_iso: "ISO 27001",
+    standards_iso_name: "Seguridad de la Información",
+    standards_verified: "Auditado anualmente por firmas de seguridad independientes",
     
     // Built for Insurers Section
     built_for_badge: "Valores Fundamentales",
