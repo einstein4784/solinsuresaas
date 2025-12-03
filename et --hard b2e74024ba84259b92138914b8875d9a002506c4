@@ -1,0 +1,20 @@
+[33me65d5c7[m[33m ([m[1;31morigin/main[m[33m)[m Fix CLS 0.706: reserve space for all elements, inline critical CSS, optimize LCP and TBT for desktop
+[33mec62abe[m Maximum mobile performance optimizations: disable animations, simplify effects, optimize touch targets, layout containment
+[33mb2e7402[m Add How It Works link to desktop navigation on all pages
+[33m37c062c[m Add light aesthetics to demo section with floating orbs, sparkles, and morphing shapes - mobile optimized
+[33m1e79b85[m Add light/dark standards section, module card hover animations, Spanish translations, and mobile optimizations
+[33m8792763[m Swap lifecycle section with Built for modern insurance operations section
+[33m4064d74[m Redesign lifecycle section: visual wheel showing complete insurance lifecycle coverage
+[33ma90e522[m Add Insurance Management Guide link to demo section on homepage
+[33m9a3d98f[m Sync navigation across all pages: add Brokers link, remove duplicates, add i18n data attributes
+[33m24e9091[m Refactor header: move language toggle next to logo, clean up nav structure
+[33m4165786[m Reorganize home page header: Login, EN/ES toggle, Mexico dot moved to right before Get Started
+[33m29b079e[m Fix header alignment: perfect center align EN/ES toggle with nav text, add Mexico landing dot
+[33m4128dc1[m Fix home page header alignment - align logo and language toggle to match Contact page
+[33me1615b2[m Add Spanish LATAM landing page (mexicolanding) with full conversion funnel: hero, USPs, features, form, FAQ
+[33m28dc62c[m Fix home page header navigation alignment - remove unwanted styling from logo link
+[33m740623e[m Fix navigation order: Brokers moved to last position (before Contact) across all pages and mobile menus
+[33m3137a1f[m Add Brokers page with dark/light theme, custom commission features, multi-carrier quoting - Update all navigation menus including Spanish translations
+[33m557b7a6[m Fix hero headings - make titles bold and fully visible, remove fade effect
+[33mad1b866[m Add dark/light themed sections with animations to guide and feature pages - animations disabled on mobile
+[33m96f0730[m Update navigation and Spanish translations across all pages - add Resources section with guide links
